@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Then VS Now</title>
+</head>
+<body>
+    
+    <h3>Show us your workout progress!</h3>
+    <h4>Upload your "then VS now" photos</h4>
+
+    <form action="handle-upload.html">
+        <p>
+            <label for="before_photo">Upload your "then" photo here:</label>
+            <input type="file" name="before_photo" id="before_photo">
+        </p>
+        
+        <p>
+            <label for="now_photo">Upload your "now" photo here:</label>
+            <input type="file" name="now_photo" id="now_photo">
+        </p>
+
+        <textarea name="description" id="description" cols="30" rows="10" placeholder="Describe your photos"></textarea>
+        
+        <p>
+            <input type="submit" value="Send">
+        </p>
+    </form>
+
+</body>
+</html>

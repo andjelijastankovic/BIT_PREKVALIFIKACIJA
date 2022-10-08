@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <form action="">
+        
+        <fieldset>
+
+            <legend>
+                Enter username and password:
+            </legend>
+            <p>
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" required>
+            </p>
+    
+            <p>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required>
+            </p>
+
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+            </p>
+        </fieldset>
+
+        <p>
+            <label for="date">Enter date of birth:</label>
+            <input type="date" name="date" id="date">
+        </p>
+
+        <p>
+            <label for="number">Enter your phone number</label>
+            <input type="number" name="number" id="number">
+        </p>
+
+        <p>
+            <label for="url">Your website:</label>
+            <input type="url" name="url" id="url" required>
+        </p>
+        
+        <p>
+            Add comment:
+            <textarea name="textarea" cols="30" rows="10"></textarea>
+        </p>
+
+        <p>
+            
+            Please select your favorite genre:
+            <label for="rock"></label>
+            <input type="radio" name="genre" value="rock" id="rock" checked> Rock
+            <label for="pop"></label>
+            <input type="radio" name="genre" value="pop" id="pop"> Pop
+            <label for="jazz"></label>
+            <input type="radio" name="genre" value="jazz" id="jazz"> Jazz
+            <!--Ukoliko se name promeni, mogu da se cekiraju dve opcije jer 
+            vise ne pripadaju istoj grupi-->
+        </p>
+
+        <p>
+            <input type="checkbox" name="genre" value="rock" checked> Rock
+            <input type="checkbox" name="genre" value="pop"> Pop
+            <input type="checkbox" name="genre" value="jazz"> Jazz
+        </p>
+
+        <p>
+            Select your favorite genre:
+            <select name="genre" multiple="multiple">
+                <option value="rock">Rock</option>
+                <option value="pop">Pop</option>
+                <option value="jazz">Jazz</option>
+            </select>
+        </p>
+
+        <p>
+            <input type="file" name="file">
+        </p>
+
+        <p>
+            <input type="submit" value="upload">
+        </p>
+
+        <input type="reset" value="reset">
+
+        <br><br>
+
+        <input type="search" name="search" id="search" placeholder="Enter keywords...">
+        <button>
+            Search:
+        </button>
+
+        <br><br>
+
+        <button type="submit">
+            <img src="../02_01_10/images/icon-256x256.gif" alt="">
+            Upload
+        </button>
+        
+    </form>
+</body>
+</html>

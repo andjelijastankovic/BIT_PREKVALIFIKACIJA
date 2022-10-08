@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labels, grouping</title>
+</head>
+<body>
+    
+    <form action="">
+        <fieldset>
+            <legend>Personal data</legend>
+
+            <p>
+                <label for="name_surname">Name:</label>
+                <input type="text" name="name" id="name" required>
+            </p>
+               
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+            </p>
+
+            <p>
+                <label for="phone">Phone number:</label>
+                <input type="number" name="phone" id="phone" required>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Location</legend>
+
+            <p>
+                <label for="city">City:</label>
+                <input type="text" name="city" id="city">
+            </p>
+
+            <p>
+                <label for="street">Street:</label>
+                <input type="text" name="street" id="street">
+            </p>
+
+            <p>
+                <label for="street_number">Street number:</label>
+                <input type="number" name="street_number" id="street_number">
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Event info</legend>
+
+            <select name="event_info" id="event_info">
+                <option value="birthday">Birthday</option>
+                <option value="wedding" selected>Wedding</option>
+                <option value="company">Company</option>
+            </select>
+
+            <p>
+                <label for="guests_number">Number of expected guests:</label>
+                <input type="number" name="guests_number" id="guests_number" placeholder="45">
+            </p>
+            
+        </fieldset>
+    </form>
+
+</body>
+</html>
