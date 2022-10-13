@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercize</title>
+</head>
+<body>
+    
+    <!--
+        Home Page content
+        ● Create a page with two columns
+        ● Width of the left column is 300px
+        ● Right column stretches to cover the rest of the screen
+    -->
+
+    <table border="1" width="100%" height="100%">
+        
+        <tr>
+
+            <!--
+                Left column content
+                ○ Logo image with height set to 250px
+                ○ Under the logo, there should be a list of links
+                ○ One of the links should be &quot;Contact&quot;
+                ○ The link should link to &quot;./contact.html&quot; page
+            -->
+
+            <td width="300px">
+                <img src="../02_01_10/images/icon-256x256.gif" alt="logo" height="250px">
+                
+                <ul>
+                    <li><a href="#" target="_blank">Home</a></li>
+                    <li><a href="#" target="_blank">About</a></li>
+                    <li><a href="./contact.html" target="_blank">Contact</a></li>
+                </ul>
+            </td>
+
+
+            <!--
+                Right column content
+                ● There should be two posts in form of groups
+
+                ● The first group content:
+                ○ Title
+                ○ Embedded YouTube video
+                ● The second group content:
+                ○ Title
+                ○ Video (HTML5) that you will find on the web
+            -->
+
+            <td>
+                <div>
+                    <h1>
+                        Learn JavaScript
+                    </h1>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/PkZNo7MFNFg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div>
+                    <h1>HTML video tutorials (W3Schools)</h1>
+                    <video width="560" height="315" controls>
+                        <source src="W3Schools HTML Video Tutorial Introduction.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </td>
+        </tr>
+
+        
+    </table>
+
+</body>
+</html>
