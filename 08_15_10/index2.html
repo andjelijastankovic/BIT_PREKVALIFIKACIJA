@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+        <h4>
+            Create two variables (or if you know how to do it - input fields). 
+            One should be a number, other should be a noun. 
+        </h4>
+
+        <p>
+            Create two variables (or if you know how to do it - input fields). <br> One should be a number, other
+            should be a noun. <br> Print on screen the number and pluralized form, like “5 cats” or “1 dog”. <br> Bonus: Make
+            it handle a few collective nouns like “sheep” and “geese”.
+        </p>
+    </div>
+
+    <label for="number_animals">Number of animals:</label>
+    <input type="number" name="number_animals" id="number_animals">
+
+    <label for="animal">Animal:</label>
+    <input type="text" name="noun_animal" id="noun_animal">
+
+    <button type="submit" onclick="getAnimals()";>Print</button>
+
+    <p id="show"></p>
+
+    <script>
+        function getAnimals() {
+            var number_animals = document.getElementById("number_animals").value;
+            var noun_animal = document.getElementById("noun_animal").value;
+            
+            if(number_animals == 1 && noun_animal == 'dog') {
+                document.getElementById("show").innerHTML = number_animals + ' ' + noun_animal;
+            }
+            else if(number_animals > 1 && noun_animal == 'dog')
+            {
+                document.getElementById("show").innerHTML = number_animals + ' ' + noun_animal + 's';
+            }
+            else if(number_animals == 1 && noun_animal == 'cat') {
+                document.getElementById("show").innerHTML = number_animals + ' ' + noun_animal;
+            } 
+            else if(number_animals > 1 && noun_animal == 'cat'){
+                document.getElementById("show").innerHTML = number_animals + ' ' + noun_animal + 's';
+            } 
+            else if(number_animals == 1 && noun_animal == 'sheep') 
+            {
+                document.getElementById("show").innerHTML = number_animals + ' ' + noun_animal;
+            } 
+            else if(number_animals > 1 && noun_animal == 'sheep') 
+            {
+                document.getElementById("show").innerHTML = number_animals + ' ' + noun_animal + 's';
+            }
+            else if(number_animals > 1 && noun_animal == 'geese')
+            {
+                document.getElementById("show").innerHTML = number_animals + ' ' + noun_animal;
+            }
+            else if(number_animals == 1 && noun_animal == 'geese')
+            {
+                noun_animal = 'goose';
+                document.getElementById("show").innerHTML = number_animals + ' ' + noun_animal;
+            } 
+        }
+        
+    </script>
+</body>
+</html>

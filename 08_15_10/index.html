@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <h4>
+            Find the grade for input marks (you should have at 
+            least two input marks). 
+        </h4>
+        <p>
+            Grades are:
+            A (91-100), B (81-90), C (71-80), 
+            D (61-70), E (51-60). 
+            Optionally print if student has failed the exam.
+        </p>
+    </div>
+        
+    <label for="number">Input number:</label>
+    <input type="number" name="number" id="number">
+
+    <button type="submit" onclick="getGrades()";>See your score</button>
+
+    <script>
+
+        function getGrades() {
+            var marks = document.getElementById("number").value;
+
+            if(marks >= 91 && marks <= 100) {
+                alert('You passed! Your grade is ' + 'A' + '(' + marks + ')');
+            } else if(marks >= 81  && marks <= 90) {
+                alert('You passed! Your grade is ' + 'B' + '(' + marks + ')');
+            } else if(marks >=71 && marks <= 80) {
+                alert('You passed! Your grade is ' + 'C' + '(' + marks + ')');
+            } else if (marks >=61 && marks <= 70) {
+                alert('You passed! Your grade is ' + 'D' + '(' + marks + ')');
+            } else if(marks >=51 && marks <= 60) {
+                alert('You passed! Your grade is ' + 'E' + '(' + marks + ')');
+            } else if (marks < 51 || marks > 100){
+                alert('Sorry, you failed the exam...');
+            }
+        }
+    </script>
+    <hr>
+
+    <div>
+
+        <h4>
+            Create two variables (or if you know how to do it - input fields). 
+            One should be a number, other should be a noun. 
+        </h4>
+
+        <p>
+            Create two variables (or if you know how to do it - input fields). <br> One should be a number, other
+            should be a noun. <br> Print on screen the number and pluralized form, like “5 cats” or “1 dog”. <br> Bonus: Make
+            it handle a few collective nouns like “sheep” and “geese”.
+        </p>
+    </div>
+
+    <label for="number_animals">Number of animals:</label>
+    <input type="number" name="number_animals" id="number_animals">
+
+    <label for="animal">Animal:</label>
+    <input type="text" name="noun_animal" id="noun_animal">
+
+    <button type="submit" onclick="getAnimals()";>Print</button>
+
+    <p id="show"></p>
+
+    <script>
+        function getAnimals() {
+            var number_animals = document.getElementById("number_animals").value;
+            var noun_animal = document.getElementById("noun_animal").value;
+            
+            if(number_animals == 1 && noun_animal == 'dog') {
+                document.getElementById("show").innerHTML = number_animals + ' ' + noun_animal;
+            }
+            else if(number_animals > 1 && noun_animal == 'dog')
+            {
+                document.getElementById("show").innerHTML = number_animals + ' ' + noun_animal + 's';
+            }
+            else if(number_animals == 1 && noun_animal == 'cat') {
+                document.getElementById("show").innerHTML = number_animals + ' ' + noun_animal;
+            } 
+            else if(number_animals > 1 && noun_animal == 'cat'){
+                document.getElementById("show").innerHTML = number_animals + ' ' + noun_animal + 's';
+            } 
+            else if(number_animals == 1 && noun_animal == 'sheep') 
+            {
+                document.getElementById("show").innerHTML = number_animals + ' ' + noun_animal;
+            } 
+            else if(number_animals > 1 && noun_animal == 'sheep') 
+            {
+                document.getElementById("show").innerHTML = number_animals + ' ' + noun_animal + 's';
+            }
+            else if(number_animals > 1 && noun_animal == 'geese')
+            {
+                document.getElementById("show").innerHTML = number_animals + ' ' + noun_animal;
+            }
+            else if(number_animals == 1 && noun_animal == 'geese')
+            {
+                noun_animal = 'goose';
+                document.getElementById("show").innerHTML = number_animals + ' ' + noun_animal;
+            } 
+        }
+        
+    </script>
+
+    <hr>
+
+    <div>
+        <h4>
+            Write a program to show you age based on entered number (if you know how to create input field, if
+            not create variable and give it a value). 
+        </h4>
+        <p>
+            If your age is 18 or older - print “You are old enough to drive”, <br>
+            but if not than print how many years you need to turn 18. <br> If your age is greater than 18 - try one
+            example with 13.
+        </p>
+        
+        
+    </div>
+
+    <label for="age">Your age:</label>
+    <input type="number" name="age" id="age">
+    <button type="submit" onclick="getAge()";>Calculate</button>
+
+    <p id="age_show"></p>
+
+    <script>
+        function getAge() {
+            var age = document.getElementById("age").value;
+            var difference;
+            if(age >= 18) {
+                document.getElementById("age_show").innerHTML = 'You are old enough to drive';
+            } else if(age < 18) {
+                difference = 18 - age;
+                document.getElementById("age_show").innerHTML = 'For ' + difference + ' years, you will turn 18';
+            }
+        }   
+    </script>
+
+    <hr>
+    
+
+</body>
+</html>

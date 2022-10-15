@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create new most wanted poster</title>
+</head>
+<body>
+
+    <p>
+        <a href="../index.html">Back to Homepage</a>
+    </p>
+    
+    <form action="">
+        <fieldset>
+            <legend>Top headline</legend>
+                <label for="">Headline text:</label>
+                <input type="text" name="headline" id="headline">
+        </fieldset>
+
+        <fieldset>
+            <legend>Images</legend>
+
+            <p>
+                <label for="image1">Image 1:</label>
+                <input type="file" name="image1" id="image1">
+            </p>
+
+            <p>
+                <label for="image2">Image 2:</label>
+                <input type="file" name="image2" id="image2">
+            </p>
+            
+            <p>
+                <label for="image3">Image 3:</label>
+                <input type="file" name="image3" id="image3">
+            </p>  
+        </fieldset>
+
+        <fieldset>
+            <legend>Reward money</legend>
+
+            <label for="reward">Reward money:</label>
+            <input type="number" name="reward" id="reward">
+        </fieldset>
+
+        <fieldset>
+            <!--greska u dokumentaciji, za legend pise Reward-->
+            <legend>Informations for most wanted criminal</legend>
+
+            <p>
+                <label for="aliases">Aliases:</label>
+                <br>
+                <input type="text" name="aliases" id="aliases">
+            </p>
+
+            <p>
+                <label for="birth">Birth:</label>
+                <br>
+                <input type="date" name="birth" id="birth">
+            </p>
+
+            <p>
+                <label for="hair">Hair:</label>
+                <br>
+                <input type="text" name="hair" id="hair">
+            </p>
+            
+            <p>
+                <label for="eyes">Eyes:</label>
+                <br>
+                <input type="text" name="eyes" id="eyes">
+            </p>
+
+            <p>
+                <label for="height">Height</label>
+                <br>
+                <input type="number" name="height" id="height">
+            </p>
+
+            <p>
+                <label for="weight">Weight</label>
+                <br>
+                <input type="number" name="weight" id="weight">
+            </p>
+
+            <p>
+                <label for="sex">Sex:</label>
+                <br>
+                <input type="text" name="sex" id="sex">
+            </p>
+
+            <p>
+                <label for="id_number">ID Number:</label>
+                <br>
+                <input type="number" name="id_number" id="id_number">
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Remarks</legend>
+            <textarea name="remarks" id="remarks" cols="45" rows="10" placeholder="Remarks text" style="width: 100%;"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Caution</legend>
+            <textarea name="caution" id="caution" cols="45" rows="10" placeholder="Caution text" style="width: 100%;"></textarea>
+        </fieldset>
+        
+        <br>
+
+        <button type="reset"><img src="https://icons.veryicon.com/png/o/miscellaneous/jt2/reset-filter.png" alt="reset_button" width="12px"> Reset </button>
+        <button type="submit"><img src="https://spng.pngfind.com/pngs/s/52-523186_plus-sign-comments-plus-icon-svg-hd-png.png" alt="create_button" width="12px"> Create new poster </button>
+    </form>
+</body>
+</html>
