@@ -73,10 +73,10 @@ for(var i = 0; i < lenght; i++) {
 
 console.log('foreach ili for-in petlja:');
 
-//  for(var element in negativeNumbers) {
-//  if(element < 0) {
-        //console.log('For-in petlja sa negativnim brojevima', element);
-//  }
-//}
+ for(var element in negativeNumbers) {
+ if(element < 0) {
+        console.log('For-in petlja sa negativnim brojevima', element);
+ }
+}
 
 
