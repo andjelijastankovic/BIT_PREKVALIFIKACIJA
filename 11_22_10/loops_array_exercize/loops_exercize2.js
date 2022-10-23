@@ -129,15 +129,19 @@ for(var i = 0; i < a.length; i++) {
 console.log(a);
 
 /* 
-    Write a program that intertwines two arrays. You can assume the arrays are of the same
-    length.
+    Write a program that intertwines two arrays. 
+    You can assume the arrays are of the same length.
     Input arrays: [4, 5, 6, 2], [3, 8, 11, 9]
     Output array: [4, 3, 5, 8, 6, 11, 2, 9]
 */
 var one = [4, 5, 6, 2];
 var two = [3, 8, 11, 9];
+var c = [];
 
-//ovo ne valja
+for(i = 0; i < one.length; i++) {
+    c.push(one[i], two[i]);
+}
+console.log(c);
 
 
 /* 
@@ -145,8 +149,14 @@ var two = [3, 8, 11, 9];
     Input arrays: [4, 5, 6, 2], [3, 8, 11, 9]
     Output array: [4, 5, 6, 2, 3, 8, 11, 9]
 */
+var one = [4, 5, 6, 2];
+var two = [3, 8, 11, 9];
 
+for(i = 0; i < two.length; i++) {
+    one.push(two[i]);
+}
 
+console.log(one);
 
 /* 
     Write a program that inserts a given element 
@@ -156,3 +166,22 @@ var two = [3, 8, 11, 9];
     Input: e = 78, p = 3, a = [2, -2, 33, 12, 5, 8]
     Output: [2, -2, 33, 78, 12, 5, 8]
 */
+
+//console.log - [ 2, -2, 33 ] using splice function
+var e = 78;
+var p = 3;
+var a = [2, -2, 33, 12, 5, 8];
+
+if(p <= a.length && p >= 0) {
+    for(i = a.length; i > p; i--) {
+        a[i] = a[i-1];
+    }
+
+    a[p] = e;
+
+    for(i = 0; i < a.length; i++) {
+        console.log(a[i]);
+    }
+} else {
+    console.log('error');
+}
