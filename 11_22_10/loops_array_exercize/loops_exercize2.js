@@ -185,3 +185,36 @@ if(p <= a.length && p >= 0) {
 } else {
     console.log('error');
 }
+
+/* 
+    Write a code to count all letters in a word and show that count on screen. 
+    Example: Given word is "Eclip542se". Result should be something 
+    like "There is 7 letters in this word".
+*/
+
+var word = 'Eclip542se';
+var numberOfLetters = 0;
+var int;
+for(var i = 0; i < word.length; i++) {
+    
+    int = parseInt(word[i], 10);
+    if(isNaN(int)) {
+        numberOfLetters++;
+    }
+}
+console.log('There is ' + numberOfLetters + ' letters in this word');
+
+/* 
+    Write a code to find on which index in array is letter "C" 
+    and show that index on screen. 
+    Given array is: [1, 3, 32, $, g, h, t, s, c, 66, 23, h2].
+*/
+
+var arr = [1, 3, 32, '$', 'g', 'h', 't', 's', 'c', 66, 23, 'h2'];
+for(i = 0; i < arr.length; i++) {
+    if(arr[i] == 'c' || arr[i] == 'C') {
+        console.log(i);
+    }
+}
+
+
