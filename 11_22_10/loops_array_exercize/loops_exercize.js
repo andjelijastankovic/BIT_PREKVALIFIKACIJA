@@ -72,10 +72,19 @@ var a = [
     [8, 11, 9, 4],
     [7, 0, 7, 27]
 ];
+/*
 for(var i in a) {
     console.log("ROW:" + i);
     for(var j in a[i]) {
         console.log(' ' + a[i][j]);
+    }
+}
+*/
+
+for(var i = 0; i < a.length; i++) {
+    console.log(a[i]);
+    for(j = 0; j < a[i].length; j++) {
+        console.log(a[i][j]);
     }
 }
 
@@ -127,6 +136,7 @@ else if (avg < 80) {
     &quot;Fizz&quot; or &quot;Buzz&quot; for numbers divisible by only one of those).
 */
 
+//ovde ne upada u fizzbuzz uslov
 for(var i = 1; i <= 100; i++) {
     if(i % 3 == 0) {
         console.log('Fizz');
@@ -136,6 +146,18 @@ for(var i = 1; i <= 100; i++) {
         console.log('FizzBuzz');
     }
     else {
+        console.log(i);
+    }
+}
+
+for(var i = 0; i <= 100; i++) {
+    if(i % 3 == 0 && i % 5 != 0) {
+        console.log('fizz', i);
+    } else if(i % 5 == 0 && i % 3 != 0) {
+        console.log('buzz', i);
+    } else if(i % 3 == 0 && i % 5 == 0) {
+        console.log('fizzbuzz', i);
+    } else {
         console.log(i);
     }
 }

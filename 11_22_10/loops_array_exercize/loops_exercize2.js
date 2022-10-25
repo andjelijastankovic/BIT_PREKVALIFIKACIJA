@@ -8,11 +8,19 @@
 var e = 3;
 var a = [5, -4.2, 3, 7];
 
+//console.log se vrti do kraja, resenje ispod je bolje
 for(var i = 0; i < a.length; i++) {
     if(a[i] == e) {
         console.log('yes');
     } else {
         console.log('no');
+    }
+}
+
+for(var i = 0; i < a.length; i++) {
+    if(a[i] === e) {
+        console.log('yes, and its index is ' + i);
+        break;
     }
 }
 
@@ -43,13 +51,16 @@ console.log(arr);
 
 var arr = [4, 2, 2, -1, 6];
 var min = arr[0];
+var index = 0;
 for(var i = 0; i < arr.length; i++) { 
     if(min > arr[i]) {
         min = arr[i];
+        index = i;
     }
 }
 
 console.log(min + ', ' + arr.indexOf(min));
+console.log(min + ', ' + index);
 
 /* 
     Write a program that finds the first element 
@@ -59,7 +70,55 @@ console.log(min + ', ' + arr.indexOf(min));
 */
 var arr = [4, 2, 2, -1, 6];
 var min = arr[0];
+var sec = arr[0];
 
+//nikolin nacin
+for(var i = 0; i < arr.length; i++) { 
+    if(min > arr[i]) {
+        min = arr[i];
+    }
+}
+
+for(var i = 0; i < arr.length; i++) {
+    if(arr[i] < sec && sec && arr[i] > min) {
+        sec = arr[i];
+    }
+}
+
+console.log(min, sec); 
+
+/* 
+Andrijana Mladenovic - var min moze da se izbaci iz 
+niza, i prodje opet kroz niz da se nadje novi minimum
+ 
+var o = [4,2,2,-1,6]
+var min = o[0]
+for(i = 0 ; i < o.length ; i++){
+  if (o[i] < min ) {
+    min = o[i]
+  }
+}
+console.log("min je" + min)
+
+// ostali bez minimuma
+var ostali = [];
+for (var i = 0; i < o.length; i++) {
+  if (o[i] !== min)
+    ostali.push(o[i]);
+}
+
+// minimum od ostalih
+var min2 = ostali[0]
+for(i = 0 ; i < ostali.length ; i++){
+  if (ostali[i] < min2 ) {
+    min2 = ostali[i]
+  }
+}
+
+console.log("broj je " + min2);
+
+*/
+//stvara se kvadratni problem jer se vrte dve petlje, koristiti nacin iznad
 for(i = 0; i < arr.length; i++) {
     if(arr[i] < min) {
         min = arr[i];
@@ -101,7 +160,40 @@ console.log(sum);
 */
 
 var first = [2, 4, -2, 7, -2, 4, 2];
-var sec = 0;
+var result = false;
+for(i = 0; i < first.length; i++) {
+    if(first[i] == first[(first.length - 1) - i]) {
+        result = true;
+    } else {
+        result = false;
+        break;
+    }
+}
+
+if(result) {
+    console.log('The array is symmetric');
+} else {
+    console.log('The array isn\'t symmetric');
+}
+
+//nikolin nacin za simetrican niz
+var j = first.length - 1;
+//j ide s kraja, i ide od pocetka, zato se j smanjuje na kraju
+for(var i = 0; i < first.length; i++) {
+    if(i == j) {
+        break;
+    }
+    if(first[i] == first[(first.length - 1) - i]) {
+        result = true;
+    } else {
+        result = false;
+        break;
+    }
+
+    j--;
+}
+
+//net
 for(var i = 0; i < first.length / 2; i++) {
     if(first[i] != first[first.length - i -1]) {
         console.log('The array isn\'t symmetric');
@@ -138,6 +230,9 @@ var one = [4, 5, 6, 2];
 var two = [3, 8, 11, 9];
 var c = [];
 
+//bez push funkcije - ne radi ovo
+
+
 for(i = 0; i < one.length; i++) {
     c.push(one[i], two[i]);
 }
@@ -172,6 +267,29 @@ var e = 78;
 var p = 3;
 var a = [2, -2, 33, 12, 5, 8];
 
+//sa splice funkcijom
+a.splice(p, 0, e);
+console.log(a);
+
+//nikola - resenje
+if(p > a.length) {
+    console.log('position is greater than the array length');
+} 
+
+var result = [];
+for(var i = 0; i < a.length; i++) {
+    if(i == p) {
+        result[i] = e;
+    } else if(i < p) {
+        result[i] = a[i];
+    } else {
+        result[i] = a[(i-1)];
+    }
+}
+
+var e = 78;
+var p = 3;
+var a = [2, -2, 33, 12, 5, 8];
 if(p <= a.length && p >= 0) {
     for(i = a.length; i > p; i--) {
         a[i] = a[i-1];
@@ -179,9 +297,15 @@ if(p <= a.length && p >= 0) {
 
     a[p] = e;
 
+
+    console.log(a);
+    /*
+    ovo je samo za ispisivanje, moze console.log(a)
     for(i = 0; i < a.length; i++) {
         console.log(a[i]);
     }
+    */
+
 } else {
     console.log('error');
 }
