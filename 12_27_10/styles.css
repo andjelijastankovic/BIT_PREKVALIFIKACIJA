@@ -1,0 +1,33 @@
+.box {
+    height: 300px;
+    width: 300px;
+    background-color: #bbbaaa;
+    border: 2px dotted red;
+}
+
+.box p {
+    border-width: 2px;
+    border-style: solid;
+    border-color: blue;
+    padding: 10px;
+    margin: 10px auto;
+    text-align: center;
+    min-width: 50%;
+    height: 25%; /* zauzima 75% parent elementa, tj. diva*/
+    overflow: auto;
+    width: 75%;
+    min-width: 40%;
+    background-color: rgb(22,138,218);
+    box-sizing: border-box;
+}
+
+ul {
+    -webkit-box-shadow: -14px 15px 33px 16px rgba(122,57,122,0.39);
+    -moz-box-shadow: -14px 15px 33px 16px rgba(122,57,122,0.39);
+    box-shadow: -14px 15px 33px 16px rgba(122,57,122,0.39);
+}
+
+li {
+    display: inline;
+    margin-right: 10px;
+}

@@ -228,10 +228,18 @@ console.log(a);
 */
 var one = [4, 5, 6, 2];
 var two = [3, 8, 11, 9];
-var c = [];
 
-//bez push funkcije - ne radi ovo
-
+//bez push funkcije
+var result = [];
+var j = 0;
+var z = 0;
+for(var i = 0; i< one.length + two.length; i+=2) {
+    j=i+1;
+    result[i]=one[z];
+    result[j]=two[z];
+    z++;
+}
+console.log(c);
 
 for(i = 0; i < one.length; i++) {
     c.push(one[i], two[i]);

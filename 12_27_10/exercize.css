@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Lato', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+}
+
+#first {
+    background-color: yellow;
+    width: 400px;
+    max-width: 300px;
+    height: 500px;
+    overflow: hidden;
+}
+
+#second {
+    background-color: red;
+    width: 400px;
+    height: 500px;
+    max-height: 200px;
+    overflow: scroll;
+}
+
+#yellow p {
+    background-color: yellow;
+    border-width: thick;
+    margin-right: 20px !important;
+    padding: 0 !important;
+}
+
+#yellow p:nth-child(odd) {
+    border: 5px dashed red;
+    padding: 50px;
+}
+
+#yellow p:nth-child(even) {
+    border: 5px solid green;
+    padding-top: 50px;
+}
+
+#yellow p:nth-child(1) {
+    width: 300px;
+    margin: 50px;
+}
+
+#yellow p:nth-child(2) {
+    width: 400px;
+    margin: 10px auto;
+    
+}
+
+#yellow p:nth-child(3) {
+    width: 200px;
+    margin-left: 100px;
+    box-sizing: border-box;
+    
+}
+
+#yellow p {
+    display: inline-block;
+}
+
+#title {
+    text-align: center;
+    color: red;
+    width: 960px;
+    font-family: 'Lato', sans-serif;
+    -webkit-box-shadow: 0px 10px 85px 40px rgba(0,0,0,0.67);
+    -moz-box-shadow: 0px 10px 85px 40px rgba(0,0,0,0.67);
+    box-shadow: 0px 10px 85px 40px rgba(0,0,0,0.67);
+    border-radius: 45px;
+    padding: 50px 0px;
+    margin: 50px auto;
+}
