@@ -1,0 +1,149 @@
+#first {
+    list-style: circle;
+}
+
+#second {
+    list-style: square;
+}
+
+#third {
+    list-style: upper-alpha;
+}
+
+#last {
+    list-style: upper-roman;
+}
+
+.fa-ul {
+    width: 200px;
+}
+
+.image_marker {
+    list-style-position: inside;
+    width: 200px;
+}
+
+.image_marker li {
+    list-style-image: url(../lists_tables_forms/list_style.png);
+    list-style-position: inside;
+    border: 1px solid blue;
+    padding: 5px;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    /* text-align: center; */
+}
+
+th {
+    background-color: rgb(200,53,47);
+    color: white;
+    text-transform: capitalize;
+    padding: 10px;
+}
+
+td {
+    padding: 10px 5px;
+}
+
+tr:nth-child(odd) {
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+tr:hover {
+    background-color: rgb(255,188,64);
+    transition: all 1s ease;
+}
+
+td > img {
+    width: 100px;
+}
+
+form {
+    width: 300px;
+    height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+    background-color: rgba(185, 184, 184, 0.651);
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+legend {
+    color: rgb(45,62,80);
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+hr {
+    color: gray;
+    width: 280px;
+}
+
+legend > span {
+    color: rgb(255,190,0);
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+button {
+    display: block;
+    margin: 50px auto;
+    padding: 6px 0px;
+    width: 280px;
+    background-color: rgb(193,57,43);
+    color: white;
+    border-radius: 5px;
+    border-style: none;
+}
+
+button:hover {
+    background-color: rgb(165, 48, 35);
+    transition: ease 0.5s;
+    cursor: url(../lists_tables_forms/cursor.png) 15 15, move;
+}
+
+label {
+    width: 150px;
+    margin: 10px 0px 0px 10px;
+    display: inline-block;
+    color: rgb(45,62,80);
+}
+
+input {
+    -webkit-box-shadow: 0px 0px 5px 5px rgba(175,179,183,1);
+    -moz-box-shadow: 0px 0px 5px 5px rgba(175,179,183,1);
+    box-shadow: 0px 0px 5px 5px rgba(175,179,183,1);
+    display: block;
+    border-radius: 5px;
+    border-style: none;
+    margin: 10px auto;
+    padding: 6px 0px;
+    cursor: pointer;
+    width: 280px;
+    max-width: 100%;
+}
+
+input::placeholder {
+    padding-left: 10px;
+}

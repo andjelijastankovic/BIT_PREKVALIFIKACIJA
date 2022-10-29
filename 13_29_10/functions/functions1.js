@@ -107,22 +107,26 @@ console.log(result);
     * * *
     * * * * * * *
 */
-function chart(n1, n2, n3) {
-    var arr = [n1, n2, n3];
-    var string = '';
-    /*
-    for(var i = 0; i <= arr.length; i++) {
-        for(var j = 0; j < i; j++) {
-            string += '*';
-        }
 
-        string += '\n';
+//nikolino resenje
+function draw(a) {
+    var result = '';
+    for (var i = 0; i < a; i++) {
+        result += '*'
     }
 
-    return string;
-    */
-
+    console.log(result);
 }
+
+function drawLines() {
+    var args = arguments;
+    for (var i = 0; i < args.length; i++) {
+        var value = args[i + '']
+        draw(value);
+    }
+}
+
+drawLines(8, 3, 5);
 
 var result = chart(4, 5, 6);
 console.log(result);
