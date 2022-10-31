@@ -227,7 +227,7 @@ function dots(string, n) {
     return new_string;
 }
 
-var result = dots('abcdefgh', 4);
+var result = dots('abcdefghiiii', 7);
 console.log(result);
 
 /* 
@@ -261,7 +261,35 @@ console.log(result);
     65 and for women at age of 60. If someone is
     already retired, a proper message should be displayed.
 */
+function retirement(age, gender) {
+    var current_time = new Date();
+    var year = current_time.getFullYear();
+    var message = '';
+    var still_work;
+    
+    if(gender == 'f' || gender == 'F') {
+        if(age >= 60) {
+            message = 'You\'re already retired';
+            return message;
+        } else if(age < 60) {
+            still_work = 60 - age;
+            message = still_work + ' years to retirement';
+            return message;
+        }
+    } else if(gender == 'm' || gender == 'M') {
+        if(age >= 65) {
+            message = 'You\'re already retired';
+            return message;
+        } else if(age < 65) {
+            still_work = 65 - age;
+            message = still_work + ' years to retirement';
+            return message;
+        }
+    }
+}
 
+var result = retirement(85, 'm');
+console.log(result);
 /* 
     13. Write a function to humanize a number (formats a number 
     to a human-readable string) with
@@ -269,3 +297,19 @@ console.log(result);
     1 -> 1st
     11 -> 11th
 */
+
+function humanize(number) {
+    if(number % 100 >= 11 && number % 100 <= 13)
+        return number + "th";
+    
+    switch(number % 10) {
+        case 1: return number + "st";
+        case 2: return number + "nd";
+        case 3: return number + "rd";
+    }
+    
+    return number + "th";
+}
+
+var result = humanize(27);
+console.log(result);
