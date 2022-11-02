@@ -12,13 +12,13 @@ function switch_places(arr) {
     var min = arr[0];
     var index_min = 0;
 
-    for(var i = 0; i < arr.length; i++) {
-        if(arr[i] < min) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] < min) {
             min = arr[i];
             index_min = i;
         }
 
-        if(arr[i] > max) {
+        if (arr[i] > max) {
             max = arr[i];
             index_max = i;
         }
@@ -28,10 +28,10 @@ function switch_places(arr) {
     max[i] = max[index_min];
 
     return arr;
-    
+
 }
 
-console.log(switch_places([ 3, 500, 12, 149, 53, 414, 1, 19 ]));
+console.log(switch_places([3, 500, 12, 149, 53, 414, 1, 19]));
 
 /* 
     Use the following array to make a new one 
@@ -42,10 +42,10 @@ console.log(switch_places([ 3, 500, 12, 149, 53, 414, 1, 19 ]));
 */
 function divide_add(arr) {
     var arr_new = [];
-    for(var i = 0; i < arr.length; i++) {
-        arr[i] = arr[i]/2 + 5;
+    for (var i = 0; i < arr.length; i++) {
+        arr[i] = arr[i] / 2 + 5;
 
-        if(arr[i] == 0) {
+        if (arr[i] == 0) {
             arr[i] = 20;
         }
     }
@@ -53,7 +53,7 @@ function divide_add(arr) {
     return arr;
 }
 
-console.log(divide_add([ 3, 500, -10, 149, 53, 414, 1, 19 ]));
+console.log(divide_add([3, 500, -10, 149, 53, 414, 1, 19]));
 
 /* 
     Initialize two arrays. The first one should contain 
@@ -80,10 +80,15 @@ function grades(students, grades) {
     var students_grades = [];
     var message = '';
     var grade = 0;
-    for(var i = 0;  i < students.length; i++) {
-        students_grades.push([students[i], grades[i]]);      
+    for (var i = 0; i < students.length; i++) {
+        students_grades.push([students[i], grades[i]]);
     }
-    
+
+    //vraća multidimenzionalni niz tipa [[student, poeni], ...]
+    //return students_grades;
+
+
+    /*
     for(var i = 0; i < students_grades.length; i++) {
         for(var j = 0; j < students_grades[j].length; j++) {
             if(students_grades[j] < 51) {
@@ -112,10 +117,10 @@ function grades(students, grades) {
                 message = 'error';
             }
         }
+        
     }
+    */
 
-
-    
 }
 
 console.log(grades(["Micahel", "Anne", "Frank", "Joe", "John", "David", "Mark", "Bill"], [50, 39, 63, 72, 99, 51, 83, 59]));
@@ -128,12 +133,51 @@ console.log(grades(["Micahel", "Anne", "Frank", "Joe", "John", "David", "Mark", 
     Output: [ 2, 10, 12, 16, 22, 24, 26, 30 ]
 */
 
+function sort_array(arr) {
+
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = i + 1; j < arr.length; j++) {
+            if (arr[i] > arr[j]) {
+                //zasto se ovde koristi pomocna promenljiva temp? -> pitanje
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+
+    for (var i = 0; i < arr.length; i++) {
+        arr[i] *= 2;
+    }
+
+    return arr;
+
+}
+
+console.log(sort_array([13, 11, 15, 5, 6, 1, 8, 12]));
+
 /* 
     Sort a previously defined array in a descending order 
     and display it in the console.
     Input: [ 13, 11, 15, 5, 6, 1, 8, 12 ]
     Output: [ 15, 13, 12, 11, 8, 6, 5, 1 ]
 */
+
+function sort_descending(arr) {
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = i + 1; j < arr.length; j++) {
+            if (arr[i] < arr[j]) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+
+    return arr;
+}
+
+console.log(sort_descending([13, 11, 15, 5, 6, 1, 8, 12]));
 
 /* 
     6. Write a program that uses a loop to add all the even numbers 
@@ -143,6 +187,30 @@ console.log(grades(["Micahel", "Anne", "Frank", "Joe", "John", "David", "Mark", 
     Output: 2350000
 */
 
+function loop_even_substract_odd() {
+    var sum = 0;
+    var result;
+
+    for (var i = 1; i <= 1000; i++) {
+        if (i % 2 == 0) {
+            sum += i;
+        }
+    }
+
+    for (var i = 1; i <= 500; i++) {
+        if (i % 2 != 0) {
+            sum -= i;
+        }
+    }
+
+
+    result = sum * 12.5;
+    return result;
+
+}
+
+console.log(loop_even_substract_odd());
+
 /* 
     Define a 10 element array. Take the first two letters from 
     every string (that has at least 2 letters) in the array and 
@@ -151,6 +219,33 @@ console.log(grades(["Micahel", "Anne", "Frank", "Joe", "John", "David", "Mark", 
     "Mark", true, "A"]
     Output: AnStJoJoDaMa
 */
+function substring(arr) {
+    var new_string = '';
+    var new_arr = [];
+
+    //ovom petljom se dobija novi niz stringova cija je duzina veca od 2 karaktera
+    for (var i = 0; i < arr.length; i++) {
+        if (typeof (arr[i]) === 'string' && arr[i].length >= 2) {
+            new_arr.push(arr[i]);
+        }
+    }
+
+    //ovom petljom se po dva karaktera guraju u novi niz
+    var strings_substrings = [];
+    for (var i = 0; i < new_arr.length; i++) {
+        strings_substrings.push(new_arr[i].substring(0, 2));
+    }
+
+    new_string = strings_substrings.join('');
+
+    return new_string;
+
+}
+
+console.log(substring(["M", "Anne", 12, "Steve", "Joe", "John", "David",
+    "Mark", true, "A"]));
+
+
 
 /* 
     Write a program that takes a string and prints 
@@ -158,6 +253,18 @@ console.log(grades(["Micahel", "Anne", "Frank", "Joe", "John", "David", "Mark", 
     Input: Belgrade Institute of Technology
     Output: ygolonhceT fo etutitsnI edargleB
 */
+
+function reversed_string(string) {
+    var splitted = string.split('');
+    var reversed_string = '';
+    for (var i = splitted.length - 1; i >= 0; i--) {
+        reversed_string += splitted[i];
+    }
+
+    return reversed_string;
+
+}
+console.log(reversed_string('Belgrade Institute of Technology'));
 
 /* 
     Write a program that displays all the combinations of 
@@ -167,6 +274,19 @@ console.log(grades(["Micahel", "Anne", "Frank", "Joe", "John", "David", "Mark", 
     (E.g. (1.2),(2,1) is allowed, but not (1,1), (2,2)...).
 */
 
+function combinations() {
+    var combinations = [];
+    var count = 0;
+    for (var i = 1; i < 7; i++) {
+        for (var j = i + 1; j <= 7; j++) {
+            combinations.push(i + '.' + j);
+        }
+    }
+    return combinations;
+}
+console.log(combinations());
+
+
 /* 
     Write a program that checks if the entered number is a 
     prime number (i.e. divisible only by 1 and by itself).
@@ -174,11 +294,31 @@ console.log(grades(["Micahel", "Anne", "Frank", "Joe", "John", "David", "Mark", 
     Output: true | false
 */
 
+function primeOrNot(n) {
+    if (n === 1) {
+        return false;
+    } else if (n === 2) {
+        return true;
+    } else {
+        for (var x = 2; x < n; x++) {
+            if (n % x === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+console.log(primeOrNot(18));
+
 /* 
     Check if a given string is a palindrome (spaces are ignored).
     Input: eye | Geek | a nut for a jar of tuna
     Output: true | false | true
 */
+
+function palindrome(string) {
+    
+}
 
 /* 
     Write a program that calculates the greatest common divisor 
