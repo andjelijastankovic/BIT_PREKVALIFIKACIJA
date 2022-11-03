@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: rgb(200,53,47);
+    width: 960px;
+    display: block;
+    overflow: hidden;
+}
+
+nav ul {
+    list-style-type: none;
+    float: right;
+}
+
+nav ul li {
+    padding: 0 5px;
+    margin: 0 15px;
+    float: left;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
