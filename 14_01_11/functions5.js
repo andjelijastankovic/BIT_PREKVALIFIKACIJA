@@ -316,9 +316,21 @@ console.log(primeOrNot(18));
     Output: true | false | true
 */
 
-function palindrome(string) {
-    
+function palindrome(str) {
+    /* remove special characters, spaces and make lowercase*/
+    var removeChar = str.replace(/[^A-Z0-9]/ig, "").toLowerCase();
+
+    /* reverse removeChar for comparison*/
+    var checkPalindrome = removeChar.split('').reverse().join('');
+
+    /* Check to see if str is a Palindrome*/
+    if (removeChar === checkPalindrome) {
+        return true;
+    } else {
+        return false;
+    }
 }
+console.log(palindrome('geek'));
 
 /* 
     Write a program that calculates the greatest common divisor 
