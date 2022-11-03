@@ -1,0 +1,54 @@
+.one_color {
+    background-color: rgb(193,57,43);
+}
+
+.two_color {
+    background-color: rgb(255,190,0);
+}
+
+.three_color {
+    background-color: rgb(45,62,80);
+}
+
+.width_height {
+    width: 200px;
+    height: 200px;
+}
+
+#five {
+    position: relative;
+    z-index: 1;
+    top: -100px;
+    left: 100px;
+}
+
+#six {
+    position: relative;
+    z-index: 1;
+    top: -200px;
+    left: 200px;
+}
+
+.absolute_divs {
+    position: relative;
+}
+
+#seven {
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+
+#eight {
+    position: absolute;
+    right: 100px;
+    z-index: -1;
+    top: 100px;
+}
+
+#nine {
+    position: absolute;
+    z-index: -2;
+    top: 200px;
+    right: 200px;
+}

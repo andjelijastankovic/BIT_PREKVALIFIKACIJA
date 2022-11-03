@@ -1,0 +1,40 @@
+.relative {
+    position: relative;
+    left: 100px;
+}
+
+.absolute {
+    position: absolute;
+}
+
+div {
+    width: 200px;
+    height: 100px;
+    overflow: auto;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    background-color: green;
+}
+
+img {
+    position: absolute;
+    z-index: 1;
+    width: 150px;
+}
+
+.left {
+    float: left;
+    width: 150px;
+}
+
+.right {
+    float: right;
+    width: 150px;
+}
