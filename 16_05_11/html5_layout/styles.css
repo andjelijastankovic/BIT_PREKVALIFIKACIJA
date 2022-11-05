@@ -1,0 +1,35 @@
+/*
+.first {
+    height: 200px;
+    padding: 10px;
+    display: block;
+    margin-left: auto;
+}
+
+.second {
+    width: 200px;
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+.third {
+    width: 200px;
+    padding: 10px;
+    height: 200px;
+    display: block;
+    margin-right: auto;
+}
+*/
+
+body {
+    background-image: url(https://images.unsplash.com/photo-1553095066-5014bc7b7f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d2FsbCUyMGJhY2tncm91bmR8ZW58MHx8MHx8&w=1000&q=80);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+h1, h3, p {
+    color: whitesmoke;
+}
