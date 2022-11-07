@@ -77,52 +77,35 @@ console.log(divide_add([3, 500, -10, 149, 53, 414, 1, 19]));
 
 //nije gotovo, pokusaj
 function grades(students, grades) {
-    var students_grades = [];
-    var message = '';
     var grade = 0;
-    for (var i = 0; i < students.length; i++) {
-        students_grades.push([students[i], grades[i]]);
+    var students_grades = [];
+    for(var i = 0; i < grades.length; i++) { 
+        if(grades[i] >= 51 && grades[i] <= 60) {
+            grade = ' and earned 6';
+        } else if(grades[i] >= 61 && grades[i] <= 70) {
+            grade = ' and earned 7';
+        } else if(grades[i] >= 71 && grades[i] <= 80) {
+            grade = ' and earned 8';
+        } else if(grades[i] >= 81 && grades[i] <= 90) {
+            grade = ' and earned 9';
+        } else if(grades[i] >= 91 && grades[i] <= 100) {
+            grade = ' and earned 10';
+        } else {
+            grade = ' and failed to complete the exam';
+        }
     }
 
-    //vraća multidimenzionalni niz tipa [[student, poeni], ...]
+    var message = '';
+    for(var j = 0; j < students.length; j++) {
+        message = students[j] + ' acquired ' + grades[j] + grade;
+        students_grades.push(message);
+    }
     //return students_grades;
 
-
-    /*
-    for(var i = 0; i < students_grades.length; i++) {
-        for(var j = 0; j < students_grades[j].length; j++) {
-            if(students_grades[j] < 51) {
-                message = students_grades[i] + ' acquired ' + students_grades[j] + ' and failed to complete the exam.';
-            }
-            else if(students_grades[j] >= 51 && students_grades[j] <= 60) {
-                grade = 6;
-                message = students_grades[i] + ' acquired ' + students_grades[j] + ' points and earned ' + grade;
-            }
-            else if(students_grades[j] >= 61 && students_grades[j] <= 70) {
-                grade = 7;
-                message = students_grades[i] + ' acquired ' + students_grades[j] + ' points and earned ' + grade;
-            }
-            else if(students_grades[j] >= 71 && students_grades[j] <= 80) {
-                grade = 8;
-                message = students_grades[i] + ' acquired ' + students_grades[j] + ' points and earned ' + grade;
-            }
-            else if(students_grades[j] >= 81 && students_grades[j] <= 90) {
-                grade = 9;
-                message = students_grades[i] + ' acquired ' + students_grades[j] + ' points and earned ' + grade;
-            }
-            else if(students_grades[j] >= 91 && students_grades[j] <= 100) {
-                grade = 10;
-                message = students_grades[i] + ' acquired ' + students_grades[j] + ' points and earned ' + grade;
-            } else if(students_grades[j] > 100) {
-                message = 'error';
-            }
-        }
-        
-    }
-    */
-
+    var message = students_grades.join('\n');
+    return message;
+    
 }
-
 console.log(grades(["Micahel", "Anne", "Frank", "Joe", "John", "David", "Mark", "Bill"], [50, 39, 63, 72, 99, 51, 83, 59]));
 
 /* 
@@ -245,8 +228,6 @@ function substring(arr) {
 console.log(substring(["M", "Anne", 12, "Steve", "Joe", "John", "David",
     "Mark", true, "A"]));
 
-
-
 /* 
     Write a program that takes a string and prints 
     its characters out in reversed order in the console.
@@ -265,27 +246,6 @@ function reversed_string(string) {
 
 }
 console.log(reversed_string('Belgrade Institute of Technology'));
-
-/* 
-    Write a program that displays all the combinations of 
-    two numbers between 1 and 7.
-    Don't display two of the same numbers at the same time. 
-    Display the number of possible combinations, as well. 
-    (E.g. (1.2),(2,1) is allowed, but not (1,1), (2,2)...).
-*/
-
-function combinations() {
-    var combinations = [];
-    var count = 0;
-    for (var i = 1; i < 7; i++) {
-        for (var j = i + 1; j <= 7; j++) {
-            combinations.push(i + '.' + j);
-        }
-    }
-    return combinations;
-}
-console.log(combinations());
-
 
 /* 
     Write a program that checks if the entered number is a 
@@ -333,10 +293,62 @@ function palindrome(str) {
 console.log(palindrome('geek'));
 
 /* 
+    Write a program that displays all the combinations of 
+    two numbers between 1 and 7.
+    Don't display two of the same numbers at the same time. 
+    Display the number of possible combinations, as well. 
+    (E.g. (1.2),(2,1) is allowed, but not (1,1), (2,2)...).
+*/
+//ovo ne vrsi pos'o
+function combinations() {
+    var combinations = [];
+    var count = 0;
+    for (var i = 1; i <= 7; i++) {
+        for (var j = 1; j <= 7; j++) {
+            if(i != j) {
+                combinations.push(i + '.' + j);
+            }
+        }
+    }
+    return combinations;
+}
+console.log(combinations());
+
+/* 
     Write a program that calculates the greatest common divisor 
     of two integers. Note: The greatest common divisor of 
     two non-zero integers is the greatest positive number that
     divides both numbers with no remainder.
     Input: 192 42 | 81 9
-    Output: 6 | 9
+    Output: 6     | 9
 */
+
+function greatestCommonDivisor(n1, n2) {
+    divisorsN1 = [];
+    divisorsN2 = [];
+
+    for(i = 1; i <= n1; i++) {
+        if(n1 % i == 0) {
+            divisorsN1.push(i);
+        }
+    }
+
+    for(i = 1; i <= n2; i++) {
+        if(n2 % i == 0) {
+            divisorsN2.push(i);
+        }
+    }
+
+    var common = [];
+    for(var j = 0; j < divisorsN1.length; j++) {
+        for(var k = 0; k < divisorsN2.length; k++) {
+            if(divisorsN1[j] == divisorsN2[k]) {
+                common.push(divisorsN2[k]);
+            }
+        }
+    }
+
+    var greatest = common[common.length-1];
+    return greatest;
+}
+console.log(greatestCommonDivisor(192, 42));
