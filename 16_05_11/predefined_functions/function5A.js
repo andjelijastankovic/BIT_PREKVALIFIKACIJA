@@ -142,14 +142,14 @@ function stringAnalysis(string) {
     var length = string.length;
     analysis_arr.push(length);
     analysis_arr.push(string[0]);
-    analysis_arr.push(string.charAt(length-1));
+    analysis_arr.push(string.charAt(length - 1));
     var middle = '';
-    
-    for(var i = 0; i < string.length; i++) {
-        if(length % 2 == 0) {
-            middle = string.substring(string.length/2-1, string.length/2+1);
-        } else if(length % 2 == 1) {
-            middle = string.substring(string.length/2, string.length/2+1);
+
+    for (var i = 0; i < string.length; i++) {
+        if (length % 2 == 0) {
+            middle = string.substring(string.length / 2 - 1, string.length / 2 + 1);
+        } else if (length % 2 == 1) {
+            middle = string.substring(string.length / 2, string.length / 2 + 1);
         }
     }
     analysis_arr.push(middle);
@@ -157,15 +157,20 @@ function stringAnalysis(string) {
     //indeks drugog ponavljanja drugog karaktera 
     var second = string[1];
     var index;
-    for(var i = 2; i < string.length; i++) {
-        if(second === string[i]) {
+    for (var i = 2; i < string.length; i++) {
+
+        if (second === string[i]) {
             index = '@ index ' + i;
-        } //uslov kad nema stringa fali ovde
+            break;
+        } else {
+            index = 'not found';
+        }
     }
-    return index;
+
+    analysis_arr.push(index);
     return analysis_arr;
 }
-console.log(stringAnalysis('Science'));
+console.log(stringAnalysis('Computer'));
 
 
 /* 
@@ -175,9 +180,67 @@ console.log(stringAnalysis('Science'));
     se ne ponavljaju.
 */
 
+function no_repeat(arr) {
+
+    //rešenja sa stackoverflow.com
+    /*
+    var l = array.length,
+        i, j,
+        unique = [];
+
+    for (i = 0; i < l; i++) {
+        for (j = 0; j < l; j++) {
+            if (i === j) {
+                continue;
+            }
+            if (array[i] === array[j]) {
+                break;
+            }
+        }
+        if (j === l) {
+            unique.push(array[i]);
+        }
+    }
+    return unique;
+    */
+
+    var uniq = [];
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < arr.length; j++) {
+            if (arr[i] == arr[j] && i != j) {
+                break;
+            } else if (j == arr.length - 1) {
+                uniq.push(arr[i]);
+            }
+        }
+    }
+
+    return uniq;
+
+
+}
+
+console.log(no_repeat([9, 5, 6, 8, 7, 7, 1, 1, 1, 1, 1, 9, 8]));
+
 /* 
     8. Kreirati funkciju koja ulazni niz deli u podnizove duzine N i ispisuje ih.
     Primer 1: ([2, 3, 4, 5], N=2) =&gt; [[2, 3], [4, 5]]
     Primer 2: ([2, 3, 4, 5, 6], N=3) => [[2, 3, 4], [5, 6]]
 */
+
+function subArrays(arr, n) {
+    var chunkedArray = [];
+
+    for (var i = 0; i < arr.length; i++) {
+        var last = chunkedArray[chunkedArray.length - 1];
+        if (!last || last.length === n) {
+            chunkedArray.push([arr[i]]);
+        } else {
+            last.push(arr[i]);
+        }
+    }
+    return chunkedArray;
+
+}
+console.log(subArrays([2, 3, 4, 5, 6], 3));
 
