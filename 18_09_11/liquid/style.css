@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.photo_designer {
+    overflow: hidden;
+}
+
+.photo_designer img {
+    float: left;
+    padding: 3px;
+    margin-right: 35px;
+}
+
+.photo_designer h1, .photo_designer p {
+    position: relative;
+    top: 15px;
+}
+
+.container {
+    width: 100%;
+}
+
+.row {
+    overflow: hidden;
+}
+
+.column {
+    float: left;
+    padding: 15px;
+}
+
+.column h2, .column p {
+    margin: 20px 0 20px 0;
+}
+
+.photo_designer {
+    width: 100%;
+}
+
+.column:first-child{
+    width: 40%;
+}
+
+.column:nth-child(2) {
+    width: 60%;
+    border-left: 2px solid black;
+}
+

@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.photo_designer {
+    width: 960px;
+    overflow: hidden;
+}
+
+.photo_designer img {
+    float: left;
+    margin-right: 35px;
+}
+
+.photo_designer h1, .photo_designer p {
+    position: relative;
+    top: 15px;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.column {
+    float: left;
+    width: 450px;
+    margin: 5px;
+    padding: 10px 0px 10px 10px;
+}
+
+.column:nth-child(2) {
+    border-left: 2px solid black;
+}
+
+.post_no1 {
+    padding-top: 10px;
+}
