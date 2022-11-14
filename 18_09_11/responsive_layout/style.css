@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* mobile design */
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+    }
+    
+    header {
+        width: 100%;
+    }
+
+    header h1 {
+        font-weight: lighter;
+        text-align: center;
+        padding: 10px;
+        font-size: 5vw;
+    }
+
+    header img {
+        display: block;
+        width: 100%;
+        padding: 5px;
+        border: 0.5px solid rgba(197, 193, 193, 0.6);
+        border-radius: 2px;
+    }
+
+    nav {
+        width: 100%;
+        margin: 20px 0 20px 0;
+    }
+
+    nav ul {
+        list-style: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li {
+        width: 100%;
+        border: 0.5px solid rgba(197, 193, 193, 0.6);
+        border-radius: 2px 2px 0 0;
+    }
+
+    nav ul li:nth-child(2) {
+        border-top: 0;
+        border-bottom: 0;
+    }
+
+    nav ul li a {
+        display: inline-block;
+        padding: 10px;
+        width: 100%;
+        text-decoration: none;
+        color: black;
+    }
+
+    nav ul li a:hover {
+        background-color: rgb(66,139,202);
+        color: white;
+        font-weight: bold;
+        font-size: 105%;
+        transition: ease 0.5s;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    section > div {
+        width: 100%;
+        border: 0.5px solid rgba(197, 193, 193, 0.6);
+        border-radius: 2px;
+        margin: 20px 0 20px 0;
+    }
+
+    .divs_image {
+        display: block;
+        margin: auto;
+        width: 100%;
+        padding: 5px;
+    }
+
+    section p {
+        text-align: center;
+        padding: 15px 5px 10px 5px;
+    }
+}
+
+/* tablet design */
+@media (min-width: 576px) and (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+
+    header {
+        width: 100%;
+        position: relative;
+    }
+
+    header h1 {
+        font-weight: lighter;
+        padding: 10px;
+        font-size: 5vw;
+    }
+
+    header img {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: 0.5px solid rgba(197, 193, 193, 0.6);
+        border-radius: 4px;
+    }
+
+    nav {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+
+    nav ul {
+        list-style: none;
+        overflow: hidden;
+    }
+
+    nav ul li {
+        float: left;
+        margin-right: 15px;
+    }
+
+    nav ul li a {
+        display: inline-block;
+        padding: 10px;
+        width: 100%;
+        text-decoration: none;
+        color: rgb(66,139,202);
+    }
+
+    nav ul li a:hover {
+        background-color: rgb(66,139,202);
+        transition: ease 0.5s;
+        border: 0.5px solid rgba(197, 193, 193, 0.6);
+        border-radius: 2px;
+        color: white;
+    }
+
+    /* kopirano iz dela za mobile design */
+    section {
+        width: 100%;
+    }
+
+    section > div {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0.5px solid rgba(197, 193, 193, 0.6);
+        border-radius: 2px;
+        margin: 20px 0 20px 0;
+    }
+
+    /* slike se ne prikazuju kako treba */
+    .divs_image {
+        display: block;
+        float: left;
+        margin: auto;
+        width: 40%;
+        padding: 5px;
+    }
+
+    section p {
+        display: inline-block;
+        width: 60%;
+        text-align: center;
+        padding: 15px 5px 10px 5px;
+    }
+
+}
+
+/* desktop design */
+@media (min-width: 769px) {
+    .container {
+        width: 100%;
+    }
+
+    header {
+        width: 100%;
+        position: relative;
+    }
+
+    header h1 {
+        font-weight: lighter;
+        padding: 10px;
+        font-size: 3vw;
+    }
+
+    header img {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: 0.5px solid rgba(197, 193, 193, 0.6);
+        border-radius: 4px;
+    }
+
+    nav {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+
+    nav ul {
+        list-style: none;
+        overflow: hidden;
+    }
+
+    nav ul li {
+        float: left;
+        margin-right: 15px;
+    }
+
+    nav ul li a {
+        display: inline-block;
+        padding: 10px;
+        width: 100%;
+        text-decoration: none;
+        color: rgb(66,139,202);
+    }
+
+    nav ul li a:hover {
+        background-color: rgb(66,139,202);
+        transition: ease 0.5s;
+        border: 0.5px solid rgba(197, 193, 193, 0.6);
+        border-radius: 2px;
+        color: white;
+    }
+
+    section {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    section > div {
+        width: 33.33%;
+        float: left;
+        margin: 20px 0 20px 0;
+        text-align: center;
+    }
+
+    .divs_image {
+        display: block;
+        margin: auto;
+        width: 100%;
+        padding: 5px;
+    }
+
+    section p {
+        text-align: center;
+        padding: 15px 20px 10px 20px;
+    }
+
+}
