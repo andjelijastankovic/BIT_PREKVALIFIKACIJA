@@ -76,7 +76,7 @@ function vowels(string) {
     for (var i = 0; i < string2.length; i++) {
         if (string2[i] == 'a' || string2[i] == 'e' || string2[i] == 'i' || string2[i] == 'o' || string2[i] == 'u') {
             vowels++;
-        } 
+        }
     }
 
     return vowels;
@@ -107,13 +107,13 @@ console.log(combination(['a', 'b', 'c'], [1, 2, 3]));
 //ne vrsi pos'o, vraca [ 4, 5, 6, 1, 2, 3 ]
 function rotate(arr, k) {
 
-    for(var i = 0; i <= k + 1; i++) {
+    for (var i = 0; i <= k + 1; i++) {
         arr.unshift(arr.pop(arr[i]));
     }
 
     return arr;
 }
-console.log(rotate([1,2,3,4,5,6], 2));
+console.log(rotate([1, 2, 3, 4, 5, 6], 2));
 
 /* 
     4. Write a function that takes a 
@@ -123,7 +123,7 @@ console.log(rotate([1,2,3,4,5,6], 2));
 function digits(number) {
     var string = number.toString();
     var arr = [];
-    for(var i = 0; i < string.length; i++) {
+    for (var i = 0; i < string.length; i++) {
         arr.push(Number(string[i]));
     }
 
@@ -143,13 +143,13 @@ function multipleTo12() {
         console.log(12 + ' * ' + i + ' = ' + i*12);
     }
     */
-    
+
     for (var i = 1; i <= 12; i++) {
         for (var j = 1; j <= 12; j++) {
-            console.log(i + ' * ' + j + ' = ' + i*j);
+            console.log(i + ' * ' + j + ' = ' + i * j);
         }
     }
-    
+
 }
 
 multipleTo12();
@@ -158,26 +158,122 @@ multipleTo12();
     6. Write a function to input temperature in 
     Centigrade and convert to Fahrenheit.
 */
-
+function cToF(c) {
+    var f = (c * 9 / 5) + 32;
+    return f;
+}
+console.log(cToF(26));
 /* 
     7. Write a function to find the maximum element 
     in array of numbers. Filter out all non-number
     elements.
 */
 
+array = ['string', false, 19, 4, 99, true, 'new string', null];
+
+function max(arr) {
+    only_num = [];
+
+    for (var i = 0; i < arr.length; i++) {
+        if (typeof (arr[i]) === 'number') {
+            only_num.push(arr[i]);
+        }
+    }
+
+    var max = only_num[0];
+
+    for (var i = 0; i < only_num.length; i++) {
+        if (max < only_num[i]) {
+            max = only_num[i];
+        }
+    }
+
+    return max;
+}
+console.log(max(array));
+
 /* 
     8. Write a function to find the maximum and minimum 
     elements. Function returns an array.
 */
 
+function maxMin(arr) {
+    var arrMaxMin = [];
+    var max = arr[0];
+    var min = arr[0];
+
+    for (var i = 0; i < arr.length; i++) {
+        if (max < arr[i]) {
+            max = arr[i];
+        } else if (min > arr[i]) {
+            min = arr[i];
+        }
+
+    }
+
+    arrMaxMin.push(max, min);
+    return arrMaxMin;
+}
+console.log(maxMin([99, 4, 1, 0, -10, 5, 197, 7, 3, 0, -55]));
+
 /* 
     9. Write a function to find the median element of array.
 */
+
+function findMedian(arr) {
+    //numbers from lowest to greatest
+    
+    if(arr.length > 1) {
+        arr.sort((a, b) => a-b);
+    }
+    
+    // for (var i = 0; i < arr.length; i++) {
+    //     for (var j = i + 1; j < arr.length; j++) {
+    //         if (arr[i] > arr[j]) {
+    //             temp = arr[i];
+    //             arr[i] = arr[j];
+    //             arr[j] = temp;
+    //         }
+    //     }
+    // }
+    
+    var mid = Math.floor(arr.length/2);
+    if(arr.length % 2 == 0) {
+        return arr[mid];
+    } 
+    else {
+        return ((arr[mid-1] + arr[mid]) / 2.0);
+    }
+    
+    
+
+
+}
+console.log(findMedian([6, 5, 4, 3, 2, 1, 9]));
 
 /* 
     10. Write a function to find the element 
     that occurs most frequently.
 */
+function frequently(arr) {
+    var mf = 1;
+    var m = 0;
+    var item;
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = i; j < arr.length; j++) {
+            if (arr[i] == arr[j])
+                m++;
+            if (mf < m) {
+                mf = m;
+                item = arr[i];
+            }
+        }
+        m = 0;
+    }
+
+    return item;
+}
+console.log(frequently([1, 1, 5, 4, 1, 9, 1, 5]));
 
 /* 
     11. Write a function to find and return the first, middle 
@@ -187,16 +283,67 @@ multipleTo12();
     array), input array should be returned.
 */
 
+function returnArrayElements(arr) {
+    if(arr.length < 1) {
+        return arr;
+    }
+
+    if(arr.length % 2 == 0) {
+        return ('First: ' + arr[0] + ', Last: ' + arr[arr.length-1]);
+    } else {
+        var mid = Math.floor(arr.length/2);
+        return ('First: ' + arr[0] + ', Middle: ' + arr[mid] + ', Last: ' + arr[arr.length-1]);
+    }
+}
+console.log(returnArrayElements([99, 4, 1, 0, -10, 5, 197, 7, 3, 0, 1]));
+
 /* 
     12. Write a function to find the average of N elements. 
     Make the function flexible to receive dynamic number or 
     parameters.
 */
 
+function avg() {
+    var args = arguments;
+    var sum = 0;
+    for(var i = 0; i < args.length; i++) {
+        var value = args[i + ''];
+        sum += value;
+    }
+
+    var mean = sum / args.length;
+    return mean;
+}
+console.log(avg(1, 2, 3, 4, 5, 6, 99));
+
 /* 
     13. Write a function to find all the numbers 
     greater than the average.
 */
+
+function greaterThanAvg() {
+    var args = arguments;
+    var arrGreater = [];
+
+    var sum = 0;
+    for(var i = 0; i < args.length; i++) {
+        var value = args[i + ''];
+        sum += value;
+    }
+
+    var mean = sum / args.length;
+
+    
+    for(var i = 0; i < args.length; i++) {
+        var value = args[i + ''];
+        if(value > mean) {
+            arrGreater.push(value);
+        }
+    }
+
+    return arrGreater;
+}
+console.log(greaterThanAvg(1, 5, 8, 99, 6, 1888, 1889, 1900));
 
 /* 
     14. The body mass index (BMI) is the ratio of the weight 
@@ -212,3 +359,23 @@ multipleTo12();
     ● Obese: greater than or equal to 30 but less than 40
     ● Morbidly obese: greater than or equal to 40
 */
+
+function BMI(weight, height) {
+    var bmi = (weight / Math.pow(height, 2)).toFixed(1);
+    
+    if(bmi > 0 && bmi < 15) {
+        return 'Starvation, bmi index ' + bmi;
+    } else if(bmi > 15 && bmi < 17.5) {
+        return 'Anorexic, bmi index ' + bmi;
+    } else if(bmi > 17.5 && bmi < 18.5) {
+        return 'Underweight, bmi index ' + bmi;
+    } else if(bmi >= 18.5 && bmi < 25) {
+        return 'Ideal, bmi index ' + bmi;
+    } else if(bmi >=25 && bmi < 30) {
+        return 'Overweight, bmi index ' + bmi;
+    } else if(bmi >= 40) {
+        return 'Morbidly obese, bmi index ' + bmi;
+    }
+
+}
+console.log(BMI(67, 1.62));
