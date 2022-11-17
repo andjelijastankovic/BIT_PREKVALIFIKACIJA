@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin: 10px;
+    align-items: stretch;
+    height: 500px;
+    color: white;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column-reverse;  
+    order: 2;
+    flex: 40%;
+}
+
+.one {
+    background-color: #FCDD9E;
+    flex-grow: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.two {
+    background-color: #FAAB8C;
+    flex-grow: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.three {
+    background-color: #48464B;
+    flex-grow: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.four {
+    display: flex;
+    background-color: #C69897;
+    flex: 60%;
+    flex-grow: 0.5;
+    align-items: center;
+    justify-content: center;
+}

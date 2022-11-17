@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 30px;
+    color: white;
+}
+
+.nep, .dap {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.par {
+    display: flex;
+    background-color: aqua;
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nepar {
+    display: flex;
+    background-color: blueviolet;
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    /* font-size: 30px; */
+}
