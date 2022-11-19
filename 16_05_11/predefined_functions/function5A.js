@@ -65,6 +65,40 @@ console.log(prestupnaGodina(1400));
     samoglasnika i koliko suglasnika.
 */
 
+
+//Nikolino resenje
+/* https://stackoverflow.com/questions/10940137/regex-test-v-s-string-match-to-know-if-a-string-matches-a-regular-expression */
+
+function isLetter(str) {
+    return str.length === 1 && str.match(/[a-z]/i);
+}
+
+function isVowel(str) {
+    return str.length === 1 && str.match(/[aeiou]/i);
+}
+
+function countVowelsAndConsonants(word) {
+    if(!word || word.length == 0) {
+        return [];
+    }
+
+    var consonants = 0;
+    var vowels = 0;
+    for(var i = 0; i < word.length; i++) {
+        if(isLetter(word[i])) {
+            if(isVowel(word[i])) {
+                vowels++;
+            } else {
+                consonants++;
+            }
+        }
+    }
+
+    return [vowels, consonants];
+}
+var result = countVowelsAndConsonants('danas je subota');
+console.log('Broj samoglasnika: ' + result[0] + ' Broj samoglasnika: ' + result[1]);
+
 function sugSam(string2) {
     var string = string2.toLowerCase().split(/\s/).join('');;
     var samoglasnici = 0;
@@ -222,9 +256,41 @@ function no_repeat(arr) {
 
 console.log(no_repeat([9, 5, 6, 8, 7, 7, 1, 1, 1, 1, 1, 9, 8]));
 
+//Nikolino resenje
+function noRepeat(inputArray) {
+    if(!inputArray || inputArray.length == 0) {
+        return [];
+    }
+
+    var result = [];
+
+    for(var i = 0; i < inputArray.length; i++) {
+        //var counter = 0;
+        for(var j = 0; j < inputArray.length; j++) {
+            if(inputArray[i] == inputArray[j] && i != j) {
+                //counter++;
+                break;
+            }
+        }
+
+        /*
+        if(counter == 0) {
+            result.push(inputArray[i]);
+        }
+        */
+
+        if(j == inputArray.length) {
+            result.push(inputArray[i]);
+        }
+    }
+
+    return result;
+}
+console.log(noRepeat([9, 5, 6, 8, 7, 7, 1, 1, 1, 1, 1, 9, 8]));
+
 /* 
     8. Kreirati funkciju koja ulazni niz deli u podnizove duzine N i ispisuje ih.
-    Primer 1: ([2, 3, 4, 5], N=2) =&gt; [[2, 3], [4, 5]]
+    Primer 1: ([2, 3, 4, 5], N=2) => [[2, 3], [4, 5]]
     Primer 2: ([2, 3, 4, 5, 6], N=3) => [[2, 3, 4], [5, 6]]
 */
 
@@ -242,5 +308,31 @@ function subArrays(arr, n) {
     return chunkedArray;
 
 }
-console.log(subArrays([2, 3, 4, 5, 6], 3));
+console.log(subArrays([2, 3, 4, 5, 6, 7, 8], 3));
+
+//Nikolino resenje
+function arraySplit(inputArray, count) {
+    if(!inputArray /*|| inputArray.length == 0*/ || !count || count == 1 || count > inputArray.length) {
+        return [];
+    }
+
+    var result = [];
+
+    for(var i = 0; i < inputArray.length; i+=count) {
+        var smaller = [];
+        var z = i;
+        for(var j = 0; j < count; j++) {
+            if(inputArray[z]) {
+                smaller.push(inputArray[z]);
+                z++;
+            }
+            
+        }
+
+        result.push(smaller);
+    }
+
+    return result;
+}
+console.log(arraySplit([2, 3, 4, 5, 6], 3));
 
