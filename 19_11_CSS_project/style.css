@@ -88,6 +88,425 @@
     box-sizing: border-box;
 }
 
+/* mobile design first */
+@media screen and (max-width: 768px) {
+
+    .header {
+        width: 100%;
+    }
+
+
+    .logo {
+        color: rgb(103,103,103);
+        font-family: 'robotoblack';
+        font-size: 32px;
+    }
+    
+    .logo span {
+        padding: 3px 0 3px 5px;
+        font-size: 32px;
+        color: rgb(241, 155, 43);
+        border-top: 3px solid rgb(103,103,103);
+        border-left: 3px solid rgb(103,103,103);
+        border-bottom: 3px solid rgb(103,103,103);
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5%;
+    }
+
+    nav ul {
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        list-style: none;
+        background-color: rgb(127,194,247);
+        padding: 15px 20px;
+    }
+    
+    nav ul li a {
+        display: block;
+        width: 100%;
+        font-family: 'robotoblack';
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .head_text {
+        z-index: -1;
+        width: 100%;
+        height: 500px;
+        background-repeat: no-repeat;
+        /* background-size: cover; */
+        background-size: 100% 100%;
+        background-image: url(../19_11_CSS_project/assets/images/banner3.jpg);
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-family: 'robotothin';
+        letter-spacing: 2px;
+        font-size: 24px;
+        text-align: center;
+        color: white;
+        /* margin-bottom: 20px; */
+    }
+    
+    .text_and_button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .section_button {
+        border: none;
+        width: 200px;
+        background: rgb(28, 112, 177);
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-family: 'robotoregular';
+        letter-spacing: 2px;
+        font-size: 15px;
+    }
+    
+    .section_button a {
+        text-decoration: none;
+        color: white;
+    }
+
+    /* who we are section - mobile */
+    .who_we_are {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: flex-end; 
+        align-items: center; 
+        justify-content: center; 
+        padding: 0 5%;
+        margin-top: 100px;
+        /* margin-bottom: 20px; */
+    }
+    
+    .center_items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .texts_image {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        gap: 10px;
+    }
+
+    .text h3 {
+        padding-bottom: 20px;
+        color: rgb(83, 162, 224);
+        font-size: 22px;
+        font-family: 'robotoregular';
+    }
+    
+    .text p,
+    .list p {
+        line-height: 1.5;
+        padding: 5px 0px 5px 0;
+        font-family: 'robotoregular';
+    }
+    
+    .list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+    .list p {
+        color: rgb(119,119,119);
+    }
+
+    .subheading {
+        font-family: 'robotoregular';
+        font-size: 32px;
+    }
+    
+    .subheading_shape {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .shape {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+    }
+    
+    .line {
+        border: 1px solid black;
+        width: 150px;
+        height: 1px;
+    }
+    
+    .rectangle {
+        width: 20px;
+        height: 20px;
+        border: 1px solid black;
+        transform: rotate(45deg);
+    }
+
+    /* what people say - mobile */
+    .what_people_say {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: flex-end; 
+        align-items: center; 
+        justify-content: center; 
+        padding: 0 10%;
+        margin-top: 100px;
+        /* margin-bottom: 20px; */
+    }
+
+    .stars {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap; 
+        gap: 10px;
+    }
+
+    .image_name_stars {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        justify-content: flex-start;
+        /* margin-left: 20px; */
+    }
+
+    .name_and_stars {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        /* padding-top: 10px; */
+        gap: 5px;
+    }
+
+    .name_and_stars p {
+        font-family: 'robotobold';
+    }
+    
+    .name_and_stars span {
+        color: white;
+    }
+
+    .williamson, .lopez, .gomez {
+        background-color: rgb(130, 195, 245);
+        padding: 40px 10px 40px 20px;
+    }
+
+    .white_p {
+        color: white;
+        font-family: 'robotoregular';
+        line-height: 2;
+    }
+
+    .stars_img {
+        width: 100px;
+        border-radius: 50%;
+        border: 3px solid white;
+        padding: 3px;
+    }
+    
+    /* get in touch section - mobile */
+    /* copy */
+    .get_in_touch {
+        margin-top: 100px;
+        /* margin-bottom: 40px; */
+    }
+
+    .data {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        color: white;
+    }
+
+    .data h4 {
+        padding-bottom: 20px;
+        font-size: 24px;
+        font-family: 'robotothin';
+    }
+
+    .contact {
+        background-color: rgb(59, 221, 154);
+        display: flex;
+        flex: 50%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 70px 20px;
+        font-family: 'robotolight';
+        gap: 10px;
+    }
+
+    .connect {
+        background-color: rgb(253, 82, 130);
+        display: flex;
+        flex: 50%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 70px 20px;
+    }
+
+    .address {
+        background-color: rgb(55, 109, 228);
+        display: flex;
+        flex: 50%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 70px 20px;
+    }
+
+    .address p {
+        text-align: center;
+        font-family: 'robotolight';
+    }
+
+    .home {
+        background-color: rgb(130, 195, 245);
+        display: flex;
+        flex: 50%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+    }
+
+    #logos>span {
+        margin-right: 5px;
+    }
+    
+    .location {
+        width: 100%;
+    }
+    
+    .location > iframe {
+        width: 100%;
+    }
+    /* end */
+
+    /* mail us section - mobile */
+    .mail_us {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 5%;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    .mail_us_form {
+        width: 100%;
+    }
+    
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    input {
+        /* flex: 100%; */
+        height: 40px;
+        padding: 8px;
+    }
+    
+    ::placeholder {
+        font-family: 'robotolight';
+    }
+    
+    textarea {
+        width: 100%;
+        margin-top: 20px;
+        padding: 8px;
+        resize: vertical;
+        min-height: 200px;
+    }
+    
+    .mail_us_button {
+        background-color: rgb(253, 151, 39);
+        border: none;
+        width: 150px;
+        margin-top: 10px;
+        padding: 12px 30px;
+        border-radius: 2px;
+        font-size: 15px;
+        font-family: 'robotobold';
+    }
+    
+    .mail_us_button a {
+        display:block;
+        width: 100%;
+        text-decoration: none;
+        color: white;
+    }
+    
+    /* footer */
+    footer {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        background-color: rgb(33, 33, 33);
+        color: white;
+        font-family: 'robotobold';
+    }
+    
+    .links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    
+    .links>a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
 /* tablet design */
 @media screen and (min-width: 768px) and (max-width: 1200px) {
     header {
@@ -280,7 +699,7 @@
         transform: rotate(45deg);
     }
 
-    /* what people say section */
+    /* what people say section - tablet */
     .what_people_say {
         display: flex;
         flex-direction: column;
@@ -344,7 +763,7 @@
         padding: 3px;
     }
 
-    /* get in touch section */
+    /* get in touch section - tablet */
     .get_in_touch {
         margin-top: 100px;
         margin-bottom: 40px;
@@ -423,9 +842,7 @@
         width: 100%;
     }
 
-    /* mail us - section */
-
-    /* copy */
+    /* mail us section - tablet */
     .mail_us {
         display: flex;
         flex-direction: column;
@@ -433,7 +850,7 @@
         justify-content: center;
         padding: 0 8%;
         margin-top: 100px;
-        margin-bottom: 20px;
+        margin-bottom: 100px;
     }
 
     .mail_us_form {
@@ -460,7 +877,8 @@
         width: 100%;
         margin-top: 20px;
         padding: 8px;
-        resize: none;
+        resize: vertical;
+        min-height: 200px;
     }
     
     .mail_us_button {
@@ -503,7 +921,6 @@
         text-decoration: none;
         color: white;
     }
-    /* end */
 }
 
 /* desktop design */
@@ -826,7 +1243,7 @@
         justify-content: center;
         padding: 0 5%;
         margin-top: 100px;
-        margin-bottom: 20px;
+        margin-bottom: 100px;
     }
 
     .mail_us_form {
@@ -853,7 +1270,8 @@
         width: 100%;
         margin-top: 20px;
         padding: 8px;
-        resize: none;
+        resize: vertical;
+        min-height: 200px;
     }
     
     .mail_us_button {
