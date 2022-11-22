@@ -134,12 +134,13 @@
         text-align: center;
         list-style: none;
         background-color: rgb(127,194,247);
-        padding: 15px 20px;
+        
     }
     
     nav ul li a {
         display: block;
         width: 100%;
+        padding: 15px 20px;
         font-family: 'robotoblack';
         color: white;
         text-decoration: none;
