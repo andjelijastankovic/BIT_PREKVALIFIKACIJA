@@ -228,90 +228,87 @@ function validatePass(pass) {
 }
 
 // 5. Solution one:
-function lengthOK(password) {
-    var lengthMessage = "Password must be between 6 and 24 characters long!";
-    if (password.length >= 6 && password.length <= 24) {
-        return true;
-    } else {
-        console.log(lengthMessage);
-        return false;
-    }
-}
-function atLeastOneUppercase(password) {
-    var hasUppercaseMessage = "Password has NO uppercase letters!";
-    var containsUppercase = !!/[A-Z]+/.test(password);
-    if (containsUppercase) {
-        return true;
-    } else {
-        console.log(hasUppercaseMessage);
-        return false;
-    }
-}
-function atLeastOneLowercase(password) {
-    var hasLowercaseMessage = "Password has NO lowercase letters!";
-    var containsLowercase = !!/[a-z]+/.test(password);
-    if (containsLowercase) {
-        return true;
-    } else {
-        console.log(hasLowercaseMessage);
-        return false;
-    }
-}
-function atLeastOneDigit(password) {
-    hasAtLeastOneDigitMessage = "Password has NO numbers!";
-    var containsNumber = !!/[0-9]+/.exec(password);
-    if (containsNumber) {
-        return true;
-    } else {
-        console.log(hasAtLeastOneDigitMessage);
-        return false;
-    }
-}
-function noTwoOrMore(password) {
 
-    // var threeInRow = false;
-    // for(letter in password) {
-    //     if(password[letter] === password[parseInt(letter) + 1] && password[letter] === password[parseInt(letter) + 2]) {
-    //         threeInRow = true
-    //     }
-    // }
+function checkLetter(password, letterCase) {
+    for (var i = 0; i < password.length; i++) {
+        if(isLetter(password[i])) {
+            if(letterCase && password[i] === password[i].toUpperCase()) {
+                return true;
+            } else if(!letterCase && password[i] === password[i].toLowerCase()) {
+                return true;
+            }
+        }
+    }
 
-    // if(threeInRow) {
-    //     console.log('password cannot have three repeated characters')
-    //     return false;
-    // }
+    return false;
+}
 
-    if (!!/(.)\1{2,}/.exec(password)) {
-        console.log("Contains three characters in a row!");
+function checkIfContainsNumber(password) {
+    for(var i=0; i<password.length;i++) {
+        var parsed = Number(password[i])
+        if(!isNaN(parsed)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function validatePassword(password) {
+    if (password.length < 6 || password.length > 24) {
+        console.log('Password must be between 6 and 24');
         return false;
     }
 
-    return true;
-}
-function filterSpecialCharacters(password) {
-    var usesNotAllowedSpecials = false;
-    var specialChars = '! @ # $ % ^ & * ( ) + = _ - { } [ ] : ; ” ’ ? < > , .';
+    var containsUpper = checkLetter(password, true);   
+
+    if(!containsUpper) {
+        console.log('Password must contain at least one capitol letter');
+        return false;
+    }
+
+    var containsLower = checkLetter(password, false);
+    if (!containsLower) {
+        console.log('Password must contain at least one lower case letter');
+        return false;
+    }
+
+    var containsDigit = checkIfContainsNumber(password);
+    if (!containsDigit) {
+        console.log('Password must contain at least one digit');
+        return false;
+    }
+
+    var threeInRow = false;
     for (letter in password) {
-        if (!specialChars.includes(password[letter]) && !password[letter].match(/[a-z]/i) && isNaN(parseInt(password[letter]))) {
-            usesNotAllowedSpecials = true;
+        if (password[letter] === password[parseInt(letter) + 1] && password[letter] === password[parseInt(letter) + 2]) {
+            threeInRow = true
+            break;
+        }
+    }
+
+    if (threeInRow) {
+        console.log('password cannot have three repeated characters')
+        return false;
+    }
+
+    var specialChars = '! @ # $ % ^ & * ( ) + = _ - { } [ ] : ; ” ’ ? < > , .';
+    var usesSpecial = false;
+    for(var i = 0; i<password.length; i++) {
+        if(!isLetter(password[i]) && isNaN(password[i]) && !specialChars.includes(password[i])) {
+            usesSpecial = true;
+            break;
         }
     }
 
     if (usesNotAllowedSpecials) {
-        console.log('Password can only contain permitted characters!');
+        console.log('Password can only contain permitted characters')
         return false;
     }
 
     return true;
 }
-function validatePassword(password) {
-    return lengthOK(password) &&
-        atLeastOneUppercase(password) &&
-        atLeastOneLowercase(password) &&
-        atLeastOneDigit(password) &&
-        noTwoOrMore(password) &&
-        filterSpecialCharacters(password)
-}
+
 
 
 
