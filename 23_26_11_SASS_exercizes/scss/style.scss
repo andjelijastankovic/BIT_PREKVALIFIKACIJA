@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+$primary-col: rgb(3, 4, 94);
+$secondary-col: rgb(0, 119, 182);
+$third-col: rgb(0, 180, 216);
+$forth-col: rgb(202, 240, 248);
+$width_hundred: 100%;
+
+.container {
+    width: $width_hundred;
+    display: flex;
+    flex-direction: column;
+    background-color: $forth-col;
+}
+
+header {
+    width: $width_hundred;
+    h1 {
+        text-align: center;
+        color: $primary-col;
+        padding: 10px;
+    }
+}
+
+.image_sec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:$width_hundred;
+
+    img {
+        margin: auto auto;
+        border-radius: 50%;
+        border: 4px solid $secondary-col;
+        padding: 4px;
+    }
+}
+
+.tables {
+    width: $width_hundred;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tables1, .tables2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding: 10px;
+    
+    h2 {
+        padding-bottom: 5px;
+        color: $primary-col;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    width: $width_hundred;
+
+    td {
+        padding: 1%;
+        border: 2px solid $primary-col;
+    }
+}
+
+footer {
+    width: $width_hundred;
+    margin-top: 30px;
+    background-color: $primary-col;
+
+    p {
+        color: $third-col;
+        padding: 10px;
+    }
+}

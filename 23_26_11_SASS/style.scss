@@ -1,0 +1,80 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+@import 'style2';
+
+@mixin border-box($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+.first {
+    display: flex;
+    height: 200px;
+    width: 100%;
+    background-color: $primary-color;
+    font-family: $font-stack;
+    @include border-box(10px);
+    p {
+        color: white;
+        margin: auto auto;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+}
+
+.message {
+    border: 2px solid #ccc;
+    padding: 10px;
+    height: 200px;
+    width: 100%;
+    color: $primary-color;
+}
+
+.success {
+    @extend .message;
+    border-color: green;
+    height: 100px;
+}
+
+.error {
+    @extend .message;
+    border-color: red;
+    height: 100px;
+}
+
+.warning {
+    @extend .message;
+    border-color: yellow;
+    height: 100px;
+}
+
+div[name="success"] {
+    background-color: $primary-color;
+}
+
+$parentWidth: 400px;
+$minWidth: 50px;
+.parent {
+    width: $parentWidth;
+    height: 200px;
+    display: flex;
+}
+
+@function calculateWidth($n) {
+    @return $minWidth * $n;
+}
+
+@for $i from 1 through 3 {
+    .item-#{$i} {
+        width: calculateWidth($i);
+        height: 100%;
+        margin: 0 10px;
+        background-color: $primary-color;
+    }
+}
+
+
