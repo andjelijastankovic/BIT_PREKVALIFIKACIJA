@@ -1,0 +1,37 @@
+$color1: red;
+$color2: blue;
+$color3: green;
+$width: 1200px;
+$paras_width: 320px;
+
+@function calculateWidth($n) {
+    @return $paras_width * $n;
+}
+
+@for $i from 1 through 3 {
+    .item-#{$i} {
+        min-width: calculateWidth($i);
+        height: 100%;
+    }
+}
+
+.paras {
+    width: $width;
+}
+
+.par_1 {
+    border: 2px solid $color1;
+    padding: 10px;
+    text-align: center;
+}
+
+.par_2 {
+    @extend .par_1;
+    border: 2px solid $color2;
+}
+
+.par_3 {
+    @extend .par_1;
+    border: 2px solid $color3;
+}
+

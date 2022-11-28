@@ -1,0 +1,27 @@
+.item-1 {
+  min-width: 320px;
+  height: 100%; }
+
+.item-2 {
+  min-width: 640px;
+  height: 100%; }
+
+.item-3 {
+  min-width: 960px;
+  height: 100%; }
+
+.paras {
+  width: 1200px; }
+
+.par_1, .par_2, .par_3 {
+  border: 2px solid red;
+  padding: 10px;
+  text-align: center; }
+
+.par_2 {
+  border: 2px solid blue; }
+
+.par_3 {
+  border: 2px solid green; }
+
+/*# sourceMappingURL=style.css.map */
