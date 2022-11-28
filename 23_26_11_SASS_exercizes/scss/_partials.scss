@@ -1,0 +1,23 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+$primary-col: rgb(3, 4, 94);
+$secondary-col: rgb(0, 119, 182);
+$third-col: rgb(0, 180, 216);
+$forth-col: rgb(202, 240, 248);
+$width_hundred: 100%;
+
+@mixin box-shadow($shadow) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
+@mixin text-shadow($shadowT) {
+    text-shadow: $shadowT;
+}
