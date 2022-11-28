@@ -211,16 +211,6 @@ console.log(firstInSecond([3, 4, 1, 1, 1, 1], [8, 9, 3, 1, 11, 4, 3, 86, 1, 1, 1
 */
 
 function sortArrayByInputLetter(input, letter) {
-    /*
-        var countA = 0;
-    
-        for(var i = 0; i < arr.length; i++) {
-            for(var j = 0; j < arr[i].length; j++) {
-                var lower = arr[i].toLowerCase();
-
-            }
-        }
-    */
 
     //nikolino resenje
     if(!input || input.length == 0 || !letter || letter.length != 1) {
@@ -237,10 +227,7 @@ function sortArrayByInputLetter(input, letter) {
             }
         }
 
-
-
-        
-        //ne radi kako treba
+        //ne radi kako treba, kopiraj sa nikolinog github-a
         if(result.length > 1) {
             var maxCount = 0;
             for(var z = 0; z < result.length; z++) {
@@ -270,20 +257,63 @@ console.log(sortArrayByInputLetter(['apple', 'tea', 'amazing', 'morning', 'JavaS
     9. Write a function that prints out the date of the next day.
     Output: 25. 10. 2018.
 */
+function printTomorrow() {
+    var now = new Date(Date.now()).toLocaleDateString();
+    var day = Number(now.substring(3, 5)) + 1;
+    var month = now.substring(0,2);
+    var year = now.substring(6, 10);
+    var result = day + '. ' + month + '. ' + year + '.';
+    console.log(result);
+}
+printTomorrow();
 
 /* 
     10. Write a function that prints out the date of the 
     previous day.
     Output: 23. 10. 2018.
 */
+function previousDay() {
+    var now = new Date(Date.now()).toLocaleDateString();
+    var day = Number(now.substring(3, 5)) -1;
+    var month = now.substring(0,2);
+    var year = now.substring(6, 10);
+    var result = day + '. ' + month + '. ' + year + '.';
+    console.log(result);
+}
+previousDay();
 
 /* 
     11. Write a function that prints out an array of the 
     numbers aligned from the right side.
     Input: [78, 111, 4, 4321]
     Output:
-        78
-        111
-        4
-        4321
+            78
+           111
+             4
+          4321
 */
+
+function printRight(arr) {
+    var maxLengthOfElement = 0;
+    //loop for finding array element with max length
+    for(var i = 0; i < arr.length; i++) {
+        if(arr[i].toString().length > maxLengthOfElement) {
+            maxLengthOfElement = arr[i].toString().length;
+        }
+    }
+    
+    
+    
+    
+    //OVO RADI, NISTA NE DIRAJ NI SLUCAJNO
+    function printWithWhiteSpace(element) {
+        var white = ' ';
+        for(var i = 0; i < element.length; i++) {
+            var needLength = maxLengthOfElement + (maxLengthOfElement - element[i].toString().length);
+            console.log(white.repeat(needLength) + element[i]);
+        }
+    }
+    printWithWhiteSpace(arr);
+    
+}
+printRight([78, 111, 4, 4321]);
