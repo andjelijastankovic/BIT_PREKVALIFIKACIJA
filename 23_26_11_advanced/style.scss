@@ -1,0 +1,111 @@
+ul {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        background-color: green;
+        color: white;
+        padding: 15px;
+        &:active{
+            background-color: yellow;
+            color: red;
+        }
+    
+        &:visited{
+            background-color: orange;
+        }
+    }
+}
+
+.important {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+$color_one: rgb(248, 69, 69);
+$color_two: rgb(233, 233, 64);
+$color_three: rgb(127, 219, 219);
+$color_four: rgb(219, 99, 199);
+
+@mixin diff_background($num) {
+    @for $i from 1 through 4 {
+        @if $num == 1 {
+            background-color: $color_one;
+        } @else if $num == 2 {
+            background-color: $color_two;
+        } @else if $num == 3 {
+            background-color: $color_three;
+        } @else {
+            background-color: $color_four;
+        }
+    }
+}
+
+@mixin diff_back($num) {
+    background-color: rgb(random(255), random(255), random(255));
+}
+
+$font-size: 16;
+@for $i from 1 through 4 {
+    .par_#{$i} {
+        @include diff_back($i);
+        font-size: ($font-size*1px);
+    }
+
+    $font-size: $font-size + 2;
+}
+
+/*  Create a function that translates content-box 
+    width to border-box width of the element
+*/
+$box-sizing: border-box;
+$padding: 0;
+$margin: 0;
+@function contentToBorder($box-siz) {
+    @return $box-siz;
+}
+
+.paras_1 {
+    width: 500px;
+    padding: 20px;
+}
+
+.paras_2 {
+    box-sizing: contentToBorder($box-sizing);
+    width: 500px;
+    padding: 20px;
+}
+
+/* 
+    Create a function that for overall width of the table 
+    and the number of equally-sized
+    columns calculates the width of each column
+*/
+
+@function widthTable($width) {
+    @return $width;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+
+    th, td {
+       border: 2px solid black; 
+       width: widthTable(20%);
+    }
+
+    img {
+        width: widthTable(20%);
+        margin: auto;
+    }
+}

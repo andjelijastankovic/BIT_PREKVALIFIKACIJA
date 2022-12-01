@@ -1,0 +1,68 @@
+ul {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; }
+  ul li {
+    list-style: none; }
+  ul a {
+    text-decoration: none;
+    background-color: green;
+    color: white;
+    padding: 15px; }
+    ul a:active {
+      background-color: yellow;
+      color: red; }
+    ul a:visited {
+      background-color: orange; }
+
+.important {
+  font-weight: bold;
+  text-transform: uppercase; }
+
+.par_1 {
+  background-color: #f6b6db;
+  font-size: 16px; }
+
+.par_2 {
+  background-color: #966c1f;
+  font-size: 18px; }
+
+.par_3 {
+  background-color: #ce5652;
+  font-size: 20px; }
+
+.par_4 {
+  background-color: #f2de5d;
+  font-size: 22px; }
+
+/*  Create a function that translates content-box 
+    width to border-box width of the element
+*/
+.paras_1 {
+  width: 500px;
+  padding: 20px; }
+
+.paras_2 {
+  box-sizing: border-box;
+  width: 500px;
+  padding: 20px; }
+
+/* 
+    Create a function that for overall width of the table 
+    and the number of equally-sized
+    columns calculates the width of each column
+*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center; }
+  table th, table td {
+    border: 2px solid black;
+    width: 20%; }
+  table img {
+    width: 20%;
+    margin: auto; }
+
+/*# sourceMappingURL=style.css.map */
