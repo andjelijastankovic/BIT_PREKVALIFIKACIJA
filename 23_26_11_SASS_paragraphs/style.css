@@ -1,22 +1,30 @@
-.item-1 {
-  min-width: 320px;
-  height: 100%; }
-
-.item-2 {
-  min-width: 640px;
-  height: 100%; }
-
-.item-3 {
-  min-width: 960px;
-  height: 100%; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
 
 .paras {
-  width: 1200px; }
+  border: 2px solid black;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  gap: 10px; }
+
+.par_1, .par_2, .par_3 {
+  width: 250px; }
+
+.par_2 {
+  width: 500px; }
+
+.par_3 {
+  width: 750px; }
 
 .par_1, .par_2, .par_3 {
   border: 2px solid red;
+  text-align: center;
   padding: 10px;
-  text-align: center; }
+  margin: 10px; }
 
 .par_2 {
   border: 2px solid blue; }
