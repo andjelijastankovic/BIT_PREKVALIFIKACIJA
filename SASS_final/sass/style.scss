@@ -1,0 +1,465 @@
+@import 'fonts';
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+
+//mobile design
+body,
+html {
+    overflow-x: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    scroll-behavior: smooth;
+}
+
+.wrap_all {
+    overflow-x: hidden;
+
+    .container {
+        width: 100%;
+
+        header {
+            width: 100%;
+
+            .logo {
+                color: $color_gray;
+                font-size: 3vw;
+                font-family: $robotoblack;
+                padding-bottom: 2%;
+
+                span {
+                    padding: 3px 0 3px 5px;
+                    color: $color_orange;
+                    border: 3px solid $color_gray;
+                    border-right: 0;
+                }
+            }
+
+            nav {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                padding: 5%;
+
+                ul {
+                    width: 100%;
+                    margin-top: 5%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    li {
+                        width: 100%;
+                        display: inline-block;
+                        text-align: center;
+                        background-color: $color_light_blue;
+
+                        a {
+                            display: block;
+                            width: 100%;
+                            padding: 3%;
+                            font-size: 3vw;
+                            font-family: $robotoblack;
+                            color: $color_white;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+
+        .head_text {
+            width: 100%;
+            height: 500px;
+            background-repeat: no-repeat;
+            // background-size: cover;
+            background-size: 100% 100%;
+            background-image: url(../assets/images/banner3.jpg);
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: $robotothin;
+            letter-spacing: 2px;
+            font-size: 3vw;
+            text-align: center;
+            color: $color_white;
+
+            .text_and_button {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+
+                h1 {
+                    margin: 5px;
+                }
+
+                .section_button {
+                    border: none;
+                    width: 170px;
+                    background: $color_blue;
+                    border-radius: 30px;
+                    letter-spacing: 2px;
+                    font-size: 12px;
+
+                    a {
+                        width: 100%;
+                        display: block;
+                        color: $color_white;
+                        padding: 12px 30px;
+                    }
+                }
+            }
+        }
+    }
+
+    .who_we_are {
+        width: 100%;
+        /*display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        align-items: center;
+        justify-content: center;*/
+        padding: 0 5%;
+        margin-top: 100px;
+
+        .center_items {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .texts_image {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-content: flex-end;
+                gap: 20px;
+
+                .text {
+                    h3 {
+                        padding-bottom: 20px;
+                        color: $color_medium_blue;
+                        font-size: 22px;
+                    }
+
+                    p {
+                        line-height: 1.5;
+                        padding: 5px 0px 5px 0;
+                    }
+
+                    .list {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: flex-start;
+
+                        p {
+                            line-height: 1.5;
+                            padding: 5px 0px 5px 0;
+                            color: $color_gray;
+                        }
+                    }
+                }
+
+                .section_image {
+                    .img_in_section {
+                        display: block;
+                        margin: auto;
+                        max-width: 100%;
+                    }
+                }
+
+            }
+        }
+    }
+
+    .subheading_shape {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+
+        .subheading {
+            font-size: 32px;
+            text-align: center;
+        }
+
+        .shape {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 2px;
+
+            .line {
+                border: 1px solid $color_black;
+                width: 80px;
+                height: 1px;
+            }
+
+            .rectangle {
+                width: 20px;
+                height: 20px;
+                border: 1px solid $color_black;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    /* what people say - mobile */
+    .what_people_say {
+        /*display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        align-items: center;
+        justify-content: center;*/
+        padding: 0 10%;
+        margin-top: 100px;
+
+        .stars {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            .williamson {
+                background-color: $color_light_blue;
+                padding: 40px 10px 40px 20px;
+                
+                .image_name_stars {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 20px;
+                    align-items: center;
+                    justify-content: flex-start;
+                    /* margin-left: 20px; */
+
+                    .image_div {
+                        .stars_img {
+                            width: 100px;
+                            border-radius: 50%;
+                            border: 3px solid $color_white;
+                            padding: 3px;
+                        }
+                    }
+
+                    .name_and_stars {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        gap: 5px;
+
+                        p {
+                            font-family: $robotobold;
+                        }
+
+                        span {
+                            color: $color_white;
+                            display: flex;
+                            flex-direction: row;
+                            gap: 2px;
+                        }
+                    }
+                }
+
+                .white_p {
+                    color: $color_white;
+                    line-height: 2;
+                }
+            }
+
+            .lopez {
+                @extend .williamson;
+            }
+
+            .gomez {
+                @extend .williamson;
+            }
+        }
+    }
+
+    /* GET IN TOUCH section */
+    .get_in_touch {
+        margin-top: 100px;
+
+        .data {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            color: $color_white;
+            
+            h4 {
+                padding-bottom: 20px;
+                font-size: 24px;
+                font-family: $robotothin;
+            }
+
+            .contact {
+                background-color: $contact_color;
+                display: flex;
+                flex: 50%;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                flex-shrink: 0;
+                flex-grow: 0;
+                padding: 1%;
+                text-align: center;
+                font-family: $robotolight;
+                gap: 5px;
+            }
+
+            .connect {
+                background-color: $connect_color;
+                @extend .contact;
+
+                #logos {
+                    span {
+                        margin-right: 5px;
+                    }
+                }
+            }
+
+            .address {
+                background-color: $color_blue;
+                @extend .contact;
+
+                p {
+                    text-align: center;
+                }
+            }
+
+            .home {
+                background-color: $color_light_blue;
+                @extend .contact;
+
+                img {
+                    display: block;
+                    margin: auto;
+                    width: 70%;
+                }
+            }
+        }
+
+        .location {
+            width: 100%;
+
+            iframe {
+                width: 100%;
+            }
+        }
+    }
+
+    /* mail us section - mobile */
+    .mail_us {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 5%;
+        margin-top: 100px;
+        margin-bottom: 100px;
+
+        .mail_us_form {
+            width: 100%;
+
+            .inputs {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                input {
+                    /* flex: 100%; */
+                    height: 40px;
+                    padding: 8px;
+                }
+
+                ::placeholder {
+                    font-family: $robotolight;
+                }
+            }
+
+            textarea {
+                width: 100%;
+                margin-top: 20px;
+                padding: 8px;
+                resize: vertical;
+                min-height: 200px;
+                max-height: 350px;
+            }
+
+            .mail_us_button {
+                background-color: $color_orange;
+                border: none;
+                width: 150px;
+                margin-top: 10px;
+                border-radius: 2px;
+                font-size: 15px;
+                font-family: $robotobold;
+
+                a {
+                    display: block;
+                    width: 100%;
+                    text-decoration: none;
+                    color: $color_white;
+                    padding: 12px 30px;
+                }
+            }
+        }
+    }
+
+    footer {
+        width: 100%;
+        padding: 5% 0;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        background-color: $footer_color;
+        color: $color_white;
+        font-family: $robotobold;
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+
+            a {
+                color: $color_white;
+            }
+        }
+
+        .creator {
+            p {
+                text-align: center;
+            }
+        }
+    }
+}
+
+/* another phone size design from _mixins.scss */
+@include phone(500px);
+
+/* tablet design from _mixins.scss */
+@include tablet(768px);
+
+/* desktop design from _mixins.scss */
+@include desktop(1200px);

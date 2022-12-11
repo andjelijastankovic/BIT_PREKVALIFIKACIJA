@@ -1,0 +1,554 @@
+@font-face {
+  font-family: "robotoblack";
+  src: url("../assets/fonts/Roboto-Black.ttf");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'robotoblack_italic';
+  src: url("../assets/fonts/Roboto-BlackItalic.ttf");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "robotobold";
+  src: url("../assets/fonts/Roboto-Bold.ttf");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "robotobold_italic";
+  src: url("../assets/fonts/Roboto-BoldItalic.ttf");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "robotoitalic";
+  src: url("../assets/fonts/Roboto-Italic.ttf");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "robotolight";
+  src: url("../assets/fonts/Roboto-Light.ttf");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "robotolight_italic";
+  src: url("../assets/fonts/Roboto-LightItalic.ttf");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "robotomedium";
+  src: url("../assets/fonts/Roboto-Medium.ttf");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'robotomedium_italic';
+  src: url("../assets/fonts/Roboto-MediumItalic.ttf");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "robotoregular";
+  src: url("../assets/fonts/Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "robotothin";
+  src: url("../assets/fonts/Roboto-Thin.ttf");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "robotothin_italic";
+  src: url("../assets/fonts/Roboto-ThinItalic.ttf");
+  font-weight: normal;
+  font-style: normal; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none; }
+
+html {
+  font-family: 'robotoregular'; }
+
+li {
+  list-style: none; }
+
+body,
+html {
+  overflow-x: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  scroll-behavior: smooth; }
+
+.wrap_all {
+  overflow-x: hidden;
+  /* what people say - mobile */
+  /* GET IN TOUCH section */
+  /* mail us section - mobile */ }
+  .wrap_all .container {
+    width: 100%; }
+    .wrap_all .container header {
+      width: 100%; }
+      .wrap_all .container header .logo {
+        color: #777777;
+        font-size: 3vw;
+        font-family: "robotoblack";
+        padding-bottom: 2%; }
+        .wrap_all .container header .logo span {
+          padding: 3px 0 3px 5px;
+          color: #fd9727;
+          border: 3px solid #777777;
+          border-right: 0; }
+      .wrap_all .container header nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5%; }
+        .wrap_all .container header nav ul {
+          width: 100%;
+          margin-top: 5%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center; }
+          .wrap_all .container header nav ul li {
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+            background-color: #82c3f5; }
+            .wrap_all .container header nav ul li a {
+              display: block;
+              width: 100%;
+              padding: 3%;
+              font-size: 3vw;
+              font-family: "robotoblack";
+              color: white;
+              font-weight: bold; }
+    .wrap_all .container .head_text {
+      width: 100%;
+      height: 500px;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-image: url(../assets/images/banner3.jpg);
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-family: "robotothin";
+      letter-spacing: 2px;
+      font-size: 3vw;
+      text-align: center;
+      color: white; }
+      .wrap_all .container .head_text .text_and_button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px; }
+        .wrap_all .container .head_text .text_and_button h1 {
+          margin: 5px; }
+        .wrap_all .container .head_text .text_and_button .section_button {
+          border: none;
+          width: 170px;
+          background: #1c70b1;
+          border-radius: 30px;
+          letter-spacing: 2px;
+          font-size: 12px; }
+          .wrap_all .container .head_text .text_and_button .section_button a {
+            width: 100%;
+            display: block;
+            color: white;
+            padding: 12px 30px; }
+  .wrap_all .who_we_are {
+    width: 100%;
+    /*display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    align-items: center;
+    justify-content: center;*/
+    padding: 0 5%;
+    margin-top: 100px; }
+    .wrap_all .who_we_are .center_items {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      .wrap_all .who_we_are .center_items .texts_image {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        gap: 20px; }
+        .wrap_all .who_we_are .center_items .texts_image .text h3 {
+          padding-bottom: 20px;
+          color: #53a2e0;
+          font-size: 22px; }
+        .wrap_all .who_we_are .center_items .texts_image .text p {
+          line-height: 1.5;
+          padding: 5px 0px 5px 0; }
+        .wrap_all .who_we_are .center_items .texts_image .text .list {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start; }
+          .wrap_all .who_we_are .center_items .texts_image .text .list p {
+            line-height: 1.5;
+            padding: 5px 0px 5px 0;
+            color: #777777; }
+        .wrap_all .who_we_are .center_items .texts_image .section_image .img_in_section {
+          display: block;
+          margin: auto;
+          max-width: 100%; }
+  .wrap_all .subheading_shape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%; }
+    .wrap_all .subheading_shape .subheading {
+      font-size: 32px;
+      text-align: center; }
+    .wrap_all .subheading_shape .shape {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 2px; }
+      .wrap_all .subheading_shape .shape .line {
+        border: 1px solid black;
+        width: 80px;
+        height: 1px; }
+      .wrap_all .subheading_shape .shape .rectangle {
+        width: 20px;
+        height: 20px;
+        border: 1px solid black;
+        transform: rotate(45deg); }
+  .wrap_all .what_people_say {
+    /*display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    align-items: center;
+    justify-content: center;*/
+    padding: 0 10%;
+    margin-top: 100px; }
+    .wrap_all .what_people_say .stars {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 10px; }
+      .wrap_all .what_people_say .stars .williamson, .wrap_all .what_people_say .stars .lopez, .wrap_all .what_people_say .stars .gomez {
+        background-color: #82c3f5;
+        padding: 40px 10px 40px 20px; }
+        .wrap_all .what_people_say .stars .williamson .image_name_stars, .wrap_all .what_people_say .stars .lopez .image_name_stars, .wrap_all .what_people_say .stars .gomez .image_name_stars {
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+          align-items: center;
+          justify-content: flex-start;
+          /* margin-left: 20px; */ }
+          .wrap_all .what_people_say .stars .williamson .image_name_stars .image_div .stars_img, .wrap_all .what_people_say .stars .lopez .image_name_stars .image_div .stars_img, .wrap_all .what_people_say .stars .gomez .image_name_stars .image_div .stars_img {
+            width: 100px;
+            border-radius: 50%;
+            border: 3px solid white;
+            padding: 3px; }
+          .wrap_all .what_people_say .stars .williamson .image_name_stars .name_and_stars, .wrap_all .what_people_say .stars .lopez .image_name_stars .name_and_stars, .wrap_all .what_people_say .stars .gomez .image_name_stars .name_and_stars {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 5px; }
+            .wrap_all .what_people_say .stars .williamson .image_name_stars .name_and_stars p, .wrap_all .what_people_say .stars .lopez .image_name_stars .name_and_stars p, .wrap_all .what_people_say .stars .gomez .image_name_stars .name_and_stars p {
+              font-family: "robotobold"; }
+            .wrap_all .what_people_say .stars .williamson .image_name_stars .name_and_stars span, .wrap_all .what_people_say .stars .lopez .image_name_stars .name_and_stars span, .wrap_all .what_people_say .stars .gomez .image_name_stars .name_and_stars span {
+              color: white;
+              display: flex;
+              flex-direction: row;
+              gap: 2px; }
+        .wrap_all .what_people_say .stars .williamson .white_p, .wrap_all .what_people_say .stars .lopez .white_p, .wrap_all .what_people_say .stars .gomez .white_p {
+          color: white;
+          line-height: 2; }
+  .wrap_all .get_in_touch {
+    margin-top: 100px; }
+    .wrap_all .get_in_touch .data {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      color: white; }
+      .wrap_all .get_in_touch .data h4 {
+        padding-bottom: 20px;
+        font-size: 24px;
+        font-family: "robotothin"; }
+      .wrap_all .get_in_touch .data .contact, .wrap_all .get_in_touch .data .connect, .wrap_all .get_in_touch .data .address, .wrap_all .get_in_touch .data .home {
+        background-color: #3bdd9a;
+        display: flex;
+        flex: 50%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        flex-shrink: 0;
+        flex-grow: 0;
+        padding: 1%;
+        text-align: center;
+        font-family: "robotolight";
+        gap: 5px; }
+      .wrap_all .get_in_touch .data .connect {
+        background-color: #fd5282; }
+        .wrap_all .get_in_touch .data .connect #logos span {
+          margin-right: 5px; }
+      .wrap_all .get_in_touch .data .address {
+        background-color: #1c70b1; }
+        .wrap_all .get_in_touch .data .address p {
+          text-align: center; }
+      .wrap_all .get_in_touch .data .home {
+        background-color: #82c3f5; }
+        .wrap_all .get_in_touch .data .home img {
+          display: block;
+          margin: auto;
+          width: 70%; }
+    .wrap_all .get_in_touch .location {
+      width: 100%; }
+      .wrap_all .get_in_touch .location iframe {
+        width: 100%; }
+  .wrap_all .mail_us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5%;
+    margin-top: 100px;
+    margin-bottom: 100px; }
+    .wrap_all .mail_us .mail_us_form {
+      width: 100%; }
+      .wrap_all .mail_us .mail_us_form .inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; }
+        .wrap_all .mail_us .mail_us_form .inputs input {
+          /* flex: 100%; */
+          height: 40px;
+          padding: 8px; }
+        .wrap_all .mail_us .mail_us_form .inputs ::placeholder {
+          font-family: "robotolight"; }
+      .wrap_all .mail_us .mail_us_form textarea {
+        width: 100%;
+        margin-top: 20px;
+        padding: 8px;
+        resize: vertical;
+        min-height: 200px;
+        max-height: 350px; }
+      .wrap_all .mail_us .mail_us_form .mail_us_button {
+        background-color: #fd9727;
+        border: none;
+        width: 150px;
+        margin-top: 10px;
+        border-radius: 2px;
+        font-size: 15px;
+        font-family: "robotobold"; }
+        .wrap_all .mail_us .mail_us_form .mail_us_button a {
+          display: block;
+          width: 100%;
+          text-decoration: none;
+          color: white;
+          padding: 12px 30px; }
+  .wrap_all footer {
+    width: 100%;
+    padding: 5% 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    background-color: #212121;
+    color: white;
+    font-family: "robotobold"; }
+    .wrap_all footer .links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 25px; }
+      .wrap_all footer .links a {
+        color: white; }
+    .wrap_all footer .creator p {
+      text-align: center; }
+
+/* another phone size design from _mixins.scss */
+@media screen and (min-width: 500px) {
+  .wrap_all footer {
+    padding: 2% 0;
+    height: 120px; }
+    .wrap_all footer .links {
+      flex-direction: row; } }
+/* tablet design from _mixins.scss */
+@media screen and (min-width: 768px) {
+  .wrap_all {
+    overflow-x: hidden;
+    /* who we are section - tablet */
+    /* WHAT PEOPLE SAY tablet */
+    /* GET IN TOUCH section - tablet */
+    /* MAIL US tablet */ }
+    .wrap_all .container {
+      width: 100%; }
+      .wrap_all .container header {
+        position: absolute; }
+        .wrap_all .container header nav {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          padding: 20px; }
+          .wrap_all .container header nav .logo {
+            color: white;
+            padding: 0; }
+            .wrap_all .container header nav .logo span {
+              color: #fd9727;
+              border: 3px solid white;
+              border-right: 0; }
+          .wrap_all .container header nav ul {
+            width: 60%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0; }
+            .wrap_all .container header nav ul li {
+              display: inline-block;
+              padding: 10px 20px;
+              background-color: transparent; }
+              .wrap_all .container header nav ul li a {
+                font-size: 2vw;
+                white-space: nowrap; }
+      .wrap_all .container .head_text {
+        z-index: -1;
+        height: 800px; }
+    .wrap_all .who_we_are {
+      width: 100%;
+      align-content: flex-end;
+      padding: 0 10%; }
+      .wrap_all .who_we_are .center_items .texts_image {
+        flex-wrap: wrap;
+        align-content: flex-end; }
+        .wrap_all .who_we_are .center_items .texts_image #tablet_width {
+          width: 100%; }
+        .wrap_all .who_we_are .center_items .texts_image .text {
+          width: 48%;
+          flex-basis: auto; }
+          .wrap_all .who_we_are .center_items .texts_image .text h3 {
+            padding-bottom: 20px; }
+          .wrap_all .who_we_are .center_items .texts_image .text p {
+            line-height: 1.5; }
+        .wrap_all .who_we_are .center_items .texts_image .section_image {
+          width: 48%;
+          padding: 0 5px;
+          overflow: hidden;
+          flex-basis: auto; }
+          .wrap_all .who_we_are .center_items .texts_image .section_image .img_in_section {
+            max-width: 100%;
+            margin: auto; }
+    .wrap_all .what_people_say {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: flex-end;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10%;
+      margin-bottom: 20px; }
+      .wrap_all .what_people_say .stars {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px; }
+        .wrap_all .what_people_say .stars .williamson, .wrap_all .what_people_say .stars .lopez, .wrap_all .what_people_say .stars .gomez {
+          width: 49%;
+          padding: 40px 20px; }
+          .wrap_all .what_people_say .stars .williamson .image_name_stars, .wrap_all .what_people_say .stars .lopez .image_name_stars, .wrap_all .what_people_say .stars .gomez .image_name_stars {
+            align-items: flex-start; }
+            .wrap_all .what_people_say .stars .williamson .image_name_stars .name_and_stars, .wrap_all .what_people_say .stars .lopez .image_name_stars .name_and_stars, .wrap_all .what_people_say .stars .gomez .image_name_stars .name_and_stars {
+              padding-top: 15px;
+              gap: 5px; }
+    .wrap_all .get_in_touch .data {
+      flex-wrap: wrap; }
+      .wrap_all .get_in_touch .data .contact, .wrap_all .get_in_touch .data .connect, .wrap_all .get_in_touch .data .address, .wrap_all .get_in_touch .data .home, .wrap_all .get_in_touch .data .connect, .wrap_all .get_in_touch .data .address, .wrap_all .get_in_touch .data .home {
+        flex: 50%;
+        padding: 40px 60px; }
+      .wrap_all .get_in_touch .data .home img {
+        display: block;
+        margin: auto;
+        width: 50%; }
+    .wrap_all .mail_us .mail_us_form {
+      width: 100%; }
+      .wrap_all .mail_us .mail_us_form .inputs {
+        flex-direction: row; }
+        .wrap_all .mail_us .mail_us_form .inputs input {
+          flex: 33.33%; } }
+/* desktop design from _mixins.scss */
+@media screen and (min-width: 1200px) {
+  .wrap_all {
+    overflow-x: hidden;
+    /* who we are section - desktop */
+    /* WHAT PEOPLE SAY desktop */
+    /* GET IN TOUCH section - desktop */ }
+    .wrap_all .who_we_are {
+      flex-direction: column;
+      padding: 0 5%;
+      margin-top: 100px;
+      margin-bottom: 20px;
+      gap: 0; }
+      .wrap_all .who_we_are .center_items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; }
+        .wrap_all .who_we_are .center_items .texts_image {
+          flex-direction: row;
+          align-items: flex-start; }
+          .wrap_all .who_we_are .center_items .texts_image .text {
+            flex-basis: 31%; }
+            .wrap_all .who_we_are .center_items .texts_image .text h3 {
+              padding-bottom: 40px;
+              color: #53a2e0;
+              font-size: 22px; }
+            .wrap_all .who_we_are .center_items .texts_image .text p {
+              line-height: 2.5;
+              padding: 5px 0px 5px 0; }
+          .wrap_all .who_we_are .center_items .texts_image .list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; }
+            .wrap_all .who_we_are .center_items .texts_image .list p {
+              color: #777777; }
+          .wrap_all .who_we_are .center_items .texts_image .section_image {
+            flex-basis: 33%; }
+            .wrap_all .who_we_are .center_items .texts_image .section_image .img_in_section {
+              display: block;
+              justify-content: center;
+              margin: auto;
+              max-width: 86%;
+              overflow: hidden; }
+    .wrap_all .what_people_say {
+      padding: 0 5%; }
+      .wrap_all .what_people_say .stars {
+        justify-content: center; }
+        .wrap_all .what_people_say .stars .williamson, .wrap_all .what_people_say .stars .lopez, .wrap_all .what_people_say .stars .gomez {
+          width: 32%;
+          padding: 40px 60px 40px 40px; }
+          .wrap_all .what_people_say .stars .williamson .image_name_stars, .wrap_all .what_people_say .stars .lopez .image_name_stars, .wrap_all .what_people_say .stars .gomez .image_name_stars {
+            align-items: center; }
+            .wrap_all .what_people_say .stars .williamson .image_name_stars .name_and_stars, .wrap_all .what_people_say .stars .lopez .image_name_stars .name_and_stars, .wrap_all .what_people_say .stars .gomez .image_name_stars .name_and_stars {
+              padding: 0;
+              gap: 5px; }
+    .wrap_all .get_in_touch .data .contact, .wrap_all .get_in_touch .data .connect, .wrap_all .get_in_touch .data .address, .wrap_all .get_in_touch .data .home, .wrap_all .get_in_touch .data .connect, .wrap_all .get_in_touch .data .address, .wrap_all .get_in_touch .data .home {
+      flex: 25%; }
+    .wrap_all .get_in_touch .data .home img {
+      display: block;
+      margin: auto;
+      min-width: 80%;
+      max-width: 90%; } }

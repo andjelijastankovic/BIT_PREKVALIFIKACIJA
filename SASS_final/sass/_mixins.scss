@@ -1,0 +1,295 @@
+@mixin phone($phone-size) {
+    @media screen and (min-width: $phone-size) {
+        
+        .wrap_all {
+            footer {
+                padding: 2% 0;
+                height: 120px;
+                .links {
+                    flex-direction: row;
+                }
+            }
+        }
+        
+    }
+}
+
+//mixin for tablet device
+@mixin tablet($tablet-size) {
+    @media screen and (min-width: $tablet-size) {
+
+        .wrap_all {
+            overflow-x: hidden;
+            .container {
+                width: 100%;
+                header {
+                    position: absolute;
+    
+                    nav {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 20px;
+    
+                        .logo {
+                            color: $color_white;
+                            padding: 0;
+                            span {
+                                color: $color_orange;
+                                border: 3px solid $color_white;
+                                border-right: 0;
+                            }
+                        }
+    
+                        ul {
+                            width: 60%;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin: 0;
+    
+                            li {
+                                display: inline-block;
+                                padding: 10px 20px;
+                                background-color: transparent;
+    
+                                a {
+                                    font-size: 2vw;
+                                    white-space: nowrap; 
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+    
+                .head_text {
+                    z-index: -1;
+                    height: 800px;
+                }
+            }
+    
+            /* who we are section - tablet */
+            .who_we_are {
+                width: 100%;
+                align-content: flex-end;
+                padding: 0 10%;
+    
+                .center_items {
+    
+                    .texts_image {
+                        flex-wrap: wrap;
+                        align-content: flex-end;
+    
+                        #tablet_width {
+                            width: 100%;
+                        }
+    
+                        .text {
+                            width: 48%;
+                            flex-basis: auto;
+    
+                            h3 {
+                                padding-bottom: 20px;
+                            }
+    
+                            p {
+                                line-height: 1.5;
+                            }
+                        }
+    
+                        .section_image {
+                            width: 48%;
+                            padding: 0 5px;
+                            overflow: hidden;
+                            flex-basis: auto;
+    
+                            .img_in_section {
+                                max-width: 100%;
+                                margin: auto;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            /* WHAT PEOPLE SAY tablet */
+            .what_people_say {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-content: flex-end;
+                align-items: center;
+                justify-content: center;
+                padding: 0 10%;
+                margin-bottom: 20px;
+    
+                .stars {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap; 
+                    gap: 10px;
+    
+                    .williamson {
+                        width: 49%;
+                        padding: 40px 20px;
+    
+                        .image_name_stars {
+                            align-items: flex-start;
+    
+                            .name_and_stars {
+                                padding-top: 15px;
+                                gap: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            /* GET IN TOUCH section - tablet */
+            .get_in_touch {
+                .data {
+                    flex-wrap: wrap;
+    
+                    .contact, .connect, .address, .home {
+                        flex: 50%;
+                        padding: 40px 60px;
+                    }
+    
+                    .home {
+                        img {
+                            display: block;
+                            margin: auto;
+                            width: 50%;
+                        }
+                    }
+                }
+            }
+    
+            /* MAIL US tablet */
+            .mail_us {
+    
+                .mail_us_form {
+                    width: 100%;
+    
+                    .inputs {
+                        flex-direction: row;
+    
+                        input {
+                            flex: 33.33%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin desktop($desktop-size) {
+    @media screen and (min-width: 1200px) {
+        .wrap_all {
+            overflow-x: hidden;
+            /* who we are section - desktop */
+            .who_we_are {
+                flex-direction: column;
+                padding: 0 5%;
+                margin-top: 100px;
+                margin-bottom: 20px;
+                gap: 0;
+                .center_items {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+            
+                    .texts_image {
+                        flex-direction: row;
+                        align-items: flex-start;
+            
+                        .text {
+                            flex-basis: 31%;
+            
+                            h3 {
+                                padding-bottom: 40px;
+                                color: $color_medium_blue;
+                                font-size: 22px;
+                            }
+            
+                            p {
+                                line-height: 2.5;
+                                padding: 5px 0px 5px 0;
+                            }
+                        }
+            
+                        .list {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: flex-start;
+            
+                            p {
+                                color: $color_gray;
+                            }
+                        }
+                        
+                        .section_image {
+                            flex-basis: 33%;
+            
+                            .img_in_section {
+                                display: block;
+                                justify-content: center;
+                                margin: auto;
+                                max-width: 86%;
+                                overflow: hidden;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            /* WHAT PEOPLE SAY desktop */
+            .what_people_say {
+                padding: 0 5%;
+    
+                .stars {
+                    justify-content: center;
+    
+                    .williamson {
+                        width: 32%;
+                        padding: 40px 60px 40px 40px;
+    
+                        .image_name_stars {
+                            align-items: center;
+    
+                            .name_and_stars {
+                                padding: 0;
+                                gap: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            /* GET IN TOUCH section - desktop */
+            .get_in_touch {
+                .data {
+    
+                    .contact, .connect, .address, .home {
+                        flex: 25%;
+                    }
+    
+                    .home {
+                        img {
+                            display: block;
+                            margin: auto;
+                            min-width: 80%;
+                            max-width: 90%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
