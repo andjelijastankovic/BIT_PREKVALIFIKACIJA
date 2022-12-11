@@ -361,15 +361,40 @@ console.log(avg([{ name: "John", notes: [3, 5, 4] }]));
 function getBestStudent(arr) {
     var avg = 0;
     var sum = 0;
-
+    var arr_obj = [];
+    var sum_arrays = [];
     for(var i = 0; i < arr.length; i++) {
         var gradesLength = arr[i].grades.length;
         var grades = arr[i].grades;
         
         for (var j = 0; j < gradesLength; j++) {
             sum += grades[j];
-            avg = sum / gradesLength;
+            avg = sum / gradesLength;  
         }
+        //creating new object with name, grades and average of grades
+        var obj = {
+            name: arr[i].name,
+            grades: arr[i].grades,
+            avg: avg
+        }
+        arr_obj.push(obj); //making new array of objects
+        //reseting sum and avg
+        sum = 0;
+        avg = 0;
     }
+
+    for(var i = 0; i < arr_obj.length; i++) {
+        var biggestAverageName = '';
+        var biggestAverage = arr_obj[0].avg;
+        var averages = arr_obj[i].avg;
+        var averagesLength = arr_obj[i].avg.length;
+        if(arr_obj[i].avg > biggestAverage) {
+            biggestAverage = arr_obj[i].avg;
+            biggestAverageName = arr_obj[i].name;
+        }
+        
+    }
+
+    return biggestAverageName + ' ' + biggestAverage;
 }
-console.log(getBestStudent([{ name: 'John', grades: [100, 90, 80]}, {name: 'Bob', grades: [100, 70, 80]}]));
+console.log(getBestStudent([{ name: 'John', grades: [100, 90, 80]}, {name: 'Bob', grades: [100, 70, 80]}, {name: 'Andja', grades: [10000]}]));
