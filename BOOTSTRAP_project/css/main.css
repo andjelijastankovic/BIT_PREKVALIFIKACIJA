@@ -1,2 +1,27 @@
+.musthead {
+  background-color: #18bc9c; }
+
+label {
+  color: #495057; }
+
+.inputs {
+  border: none;
+  border-radius: 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+
+textarea {
+  resize: vertical;
+  max-height: 200px; }
+
 nav {
+  background-color: #2c3e50; }
+
+.lines_and_star .line {
+  width: 50px;
+  height: 3px; }
+
+.about {
+  background-color: #18bc9c; }
+
+footer {
   background-color: #2c3e50; }
