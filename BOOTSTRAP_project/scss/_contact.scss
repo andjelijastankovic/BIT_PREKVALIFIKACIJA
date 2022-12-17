@@ -27,13 +27,13 @@ label {
     &:focus {
         border: none;
         border-radius: 0px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-bottom: 1.5px solid rgba(0, 0, 0, 0.7);
     }
 
     &:focus-visible {
         border: none;
         border-radius: 0px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-bottom: 1.5px solid rgba(0, 0, 0, 0.7);
     }
 }
 
