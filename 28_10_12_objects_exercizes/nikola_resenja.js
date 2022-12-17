@@ -122,3 +122,210 @@ function mapLetters2(str = '') {
     return result;
 }
 console.log(mapLetters2('dodo'));
+
+/* 
+    4. And who cursed the most in the fight between 
+    you and your spouse? Given an object
+    with three rounds, with nested objects as your 
+    scores per round, return a string of who
+    cursed the most: If you, return "ME!" 
+    If your spouse, return "SPOUSE!" If a draw, return
+    "DRAW!"
+    Examples:
+    determineWhoCursedTheMost([{me: 10, spouse: 5 }, { me: 5, spouse: 10 },
+    { me: 0, spouse: 10, }]) ➞ "DRAW!"
+    determineWhoCursedTheMost([{me: 40,spouse: 5}, {me: 9, spouse: 10}, { me: 9,
+    spouse: 10}]) ➞ "ME!"
+    determineWhoCursedTheMost([{ me: 10,spouse: 5 }, { me: 9, spouse: 44 }, { me: 10,
+    spouse: 55}]) ➞ "SPOUSE!"
+*/
+
+function determineWhoCursedTheMost(input = []) {
+    if(!input || input.length == 0) {
+        return '';
+    }
+
+    var sumA = 0;
+    var sumB = 0;
+
+    for(var i = 0; i < input.length; i++) {
+        sumA += input[i].me;
+        sumB += input[i].spouse;
+    }
+
+    if(sumA > sumB) {
+        return 'Me';
+    } else if(sumA < sumB) {
+        return 'Spouse';
+    } 
+
+    return 'Draw';
+}
+
+console.log(determineWhoCursedTheMost([{ me: 10, spouse: 5 }, { me: 5, spouse: 10 }, { me: 10, spouse: 10 }]));
+console.log(determineWhoCursedTheMost([{ me: 40, spouse: 5 }, { me: 9, spouse: 10 }, { me: 9, spouse: 10 }]));
+console.log(determineWhoCursedTheMost([{ me: 10, spouse: 5 }, { me: 9, spouse: 44 }, { me: 10, spouse: 55 }]));
+
+
+/* 
+    5. Create a function that converts color in RGB format to Hex format.
+    Examples:
+    rgbToHex({red: 0, green: 128, blue: 192}) ➞ "#0080c0"
+*/
+function checkColor(color = 0) {
+    //dovoljan uslov da izadje iz funkcije ukoliko je ispod 0 ili iznad 255
+    return color < 0 || color > 255;
+}
+function rgbToHex(color = {}) {
+    if(!color || checkColor(color.red) || checkColor(color.green) || checkColor(color.blue)) {
+        return 'Invalid';
+    }
+
+    var red = color.red.toString(16).padStart(2, '0');
+    var green = color.green.toString(16).padStart(2, '0');
+    var blue = color.blue.toString(16).padStart(2, '0');
+
+    return `#${red}${green}${blue}`;
+}
+
+function hexToRgb(str = '') {
+    if(!str || !str.startsWith('#') || str.length != 7) {
+        return null;
+    }
+
+    var colorString = str.split('#')[1];
+    var red = parseInt(colorString.substring(0,2), 16);
+    var green = parseInt(colorString.substring(2,4), 16);
+    var blue = parseInt(colorString.substring(4), 16);
+
+    return {red, green, blue};
+}
+
+var hex = rgbToHex({red: 0, green: 128, blue: 192});
+console.log(hex);
+console.log(hexToRgb(hex));
+
+/* 
+    6. Create a function that takes an amount of 
+    monetary change (e.g. 47 cents) and breaks
+    down the most efficient way that change can be 
+    made using USD quarters, dimes,
+    nickels and pennies. Your function should return an object.
+    Examples:
+    makeChange(47) ➞ { "q": 1, "d": 2, "n": 0, "p": 2 }
+    makeChange(24) ➞ { "q": 0, "d": 2, "n": 0, "p": 4 }
+    makeChange(92) ➞ { "q": 3, "d": 1, "n": 1, "p": 2 }
+    penny - 1
+    nickel - 5
+    dime - 10
+    quarter - 25
+*/
+
+function makeChange(change = 0) {
+    if(!change || change < 0) {
+        return null;
+    }
+
+    var map = {};
+    
+    var mod_q = change % 25;
+    map['q'] = (change - mod_q) / 25;
+
+    var mod_d = mod_q % 10;
+    map['d'] = (mod_q - mod_d) / 10;
+
+    var mod_n = mod_d % 5;
+    map['n'] = (mod_d - mod_n) / 5;
+    map['p'] = mod_n;
+
+    return map;
+}
+console.log(makeChange(51));
+console.log(makeChange(24));
+console.log(makeChange(92));
+
+/*
+
+    7. Create a function that takes an array of objects 
+    like { name: "John", notes: [3, 5, 4]} and
+    returns an array of objects like 
+    { name: "John", avg Note: 4 }. 
+    If student has no notes (an empty array) then 
+    let's assume avg Note: 0.
+    Examples:
+    [
+        { name: "John", notes: [3, 5, 4]}
+    ]
+    ➞
+    [
+    { name: "John", avgNote: 4 }
+    ]
+*/
+function avgNotes(input = []) {
+    if(!input || input.length == 0) {
+        return null;
+    }
+
+    var result = {};
+
+    for(var i = 0; i < input.length; i++) {
+        var item = input[i];
+        var newObject = {
+            name: item.name
+        }
+
+        var sum = 0;
+
+        for(var j = 0; j < item.notes.length; j++) {
+            sum += item.notes[j];
+        }
+
+        var avg = parseFloat(sum / item.notes.length).toFixed(2);
+        newObject['avgNote'] = avg;
+        result.push(newObject);
+    }
+
+    return result;
+}
+console.log(avg([{ name: "John", notes: [3, 5, 4] }]));
+
+/* 
+    8. Given an object with students and the 
+    grades that they made on the tests that they
+    took, determine which student has the 
+    best Test Average. The key will be the student's
+    name and the value will be an array of their grades. 
+    You will only have to return the student's name. 
+    You do not need to return their Test Average.
+    getBestStudent([{ name: ‘John’, grades: [100, 90, 80]}, 
+    {name: ‘Bob’, grades: [100, 70, 80]}…]) ➞ "John" 
+    // John's avg = 90 // Bob's avg = 83.33
+*/
+
+function getBestStudent(input = []) {
+    if(!input || input.length == 0) {
+        return null;
+    }
+
+    var maxAverage = 0;
+    var name;
+
+    for(var i = 0; i < input.length; i++) {
+        var item = input[i];
+        var avgGrade = 0;
+        var sum = 0;
+
+        for(var j = 0; j < item.grades.length; j++) {
+            sum += item.grades[i];
+        }
+
+        avgGrade = parseFloat(sum / item.grades.length).toFixed(2);
+        if(avgGrade > maxAverage) {
+            maxAverage = avgGrade;
+            name = item.name;
+        }
+    }
+
+    return {name: name, averageGrade: maxAverage};
+}
+console.log(getBestStudent([{ name: 'John', grades: [100, 90, 80]}, {name: 'Mark', grades: [100, 70, 80]}, {name: 'Bob', grades: [100, 70, 8000]}]));
