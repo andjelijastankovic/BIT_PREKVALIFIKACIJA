@@ -1,5 +1,19 @@
 @import 'variables';
 
+.contact {
+    .container {
+        .heading_and_shape {
+            .lines_and_star {
+                .line {
+                    background-color: $blueish;
+                }
+                .fa-star {
+                    color: $blueish;
+                }
+            }
+        }
+    }
+}
 
 label {
     color: $contactFormInputText;
@@ -9,6 +23,18 @@ label {
     border: none;
     border-radius: 0px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    &:focus {
+        border: none;
+        border-radius: 0px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    }
+
+    &:focus-visible {
+        border: none;
+        border-radius: 0px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    }
 }
 
 textarea {

@@ -1,0 +1,16 @@
+@import 'variables';
+
+.portfolio {
+    .container {
+        .heading_and_shape {
+            .lines_and_star {
+                .line {
+                    background-color: $blueish;
+                }
+                .fa-star {
+                    color: $blueish;
+                }
+            }
+        }
+    }
+}

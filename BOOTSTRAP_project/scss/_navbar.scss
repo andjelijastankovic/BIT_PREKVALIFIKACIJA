@@ -1,0 +1,11 @@
+nav {
+    background-color: $blueish;
+
+    .navbar-toggler {
+        border: 1px solid white;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}

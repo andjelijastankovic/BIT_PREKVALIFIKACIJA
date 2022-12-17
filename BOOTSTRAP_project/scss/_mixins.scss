@@ -1,0 +1,11 @@
+@import 'variables';
+@import 'navbar';
+
+@mixin green-menu($color) {
+    @media screen and (max-width: $breakpoint) {
+        .navbar-toggler {
+            background-color: $greenish;
+            color: white;
+        }
+    }
+}

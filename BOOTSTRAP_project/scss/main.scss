@@ -1,23 +1,9 @@
 @import 'variables';
+@import 'navbar';
 @import 'musthead';
 @import 'portfolio';
 @import 'contact';
+@import 'mixins';
+@import 'global';
 
-nav {
-    background-color: $blueish;
-}
-
-.lines_and_star {
-    .line {
-        width: 50px;
-        height: 3px;
-    }
-}
-
-.about {
-    background-color: $greenish;
-}
-
-footer {
-    background-color: $blueish;
-}
+@include green-menu($greenish);
