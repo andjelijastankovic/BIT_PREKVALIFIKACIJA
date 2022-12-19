@@ -7,12 +7,12 @@
 */
 
 function duplicateArrayItem(arr = []) {
-    if(!arr || arr.length == 0) {
+    if (!arr || arr.length == 0) {
         return null;
     }
 
     var duplicate = [];
-    for(var i = 0; i < arr.length; i++) {
+    for (var i = 0; i < arr.length; i++) {
         duplicate.push(arr[i], arr[i]);
     }
 
@@ -28,7 +28,7 @@ console.log(duplicateArrayItem([2, 4, 7, 11, -2, 1]));
 */
 
 function deleteDuplicates(arr = []) {
-    if(!arr || arr.length == 0) {
+    if (!arr || arr.length == 0) {
         return [];
     }
     var newArr = [... new Set(arr)];
@@ -46,11 +46,11 @@ console.log(deleteDuplicates([8, 13, 8, 9, 12, 8, 1, 1, 4, 13]));
 
 //3a
 function checkArray(arr = []) {
-    if(!arr || arr.length == 0) {
+    if (!arr || arr.length == 0) {
         return [];
     }
 
-    if(arr.length % 2 != 0) {
+    if (arr.length % 2 != 0) {
         return true;
     } else {
         return false;
@@ -67,21 +67,21 @@ console.log(checkArray([1, 2, 9, 2, 1]));
 //3b
 function countAndError(arr = []) {
 
-    if(checkArray(arr) == false) {
+    if (checkArray(arr) == false) {
         var ourError = new Error('Even number of elements in array');
         return ourError;
-    } else if(checkArray(arr) == true) {
+    } else if (checkArray(arr) == true) {
         var counter = 0;
-        var middle = arr[(arr.length - 1)/2];
-        
-        for(var i = 0; i < arr.length; i++) {
-            if(arr[i] < middle) {
+        var middle = arr[(arr.length - 1) / 2];
+
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] < middle) {
                 counter++;
             }
         }
     }
 
-    return counter;    
+    return counter;
 }
 console.log(countAndError([-1, 8.1, 3, 6, 2.3, 44, 2.11]));
 
@@ -93,19 +93,19 @@ console.log(countAndError([-1, 8.1, 3, 6, 2.3, 44, 2.11]));
 */
 
 function smallObj(arr = []) {
-    if(!arr || arr.length == 0) {
+    if (!arr || arr.length == 0) {
         return [];
     }
 
     var min = 0;
-    for(var i = 0; i < arr.length; i++) {
-        if(arr[i] < min) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] < min) {
             min = arr[i];
         }
 
         var minLastIndex = arr.lastIndexOf(min);
     }
-    return {minValue: min, minLastIndex: minLastIndex};
+    return { minValue: min, minLastIndex: minLastIndex };
 }
 console.log(smallObj([1, 4, -2, 11, 8, 1, -2, 3]));
 
@@ -117,14 +117,14 @@ console.log(smallObj([1, 4, -2, 11, 8, 1, -2, 3]));
 */
 //5a
 function findLessThanGiven(arr = [], given) {
-    if(!arr || !given || arr.length == 0 || typeof given != 'number') {
+    if (!arr || !given || arr.length == 0 || typeof given != 'number') {
         var err = new Error('You have an error somewhere.');
         return err;
     }
 
     var lessThan = [];
-    for(var i = 0; i < arr.length; i++) {
-        if(arr[i] < given) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] < given) {
             lessThan.push(arr[i]);
         }
     }
@@ -143,22 +143,22 @@ console.log(findLessThanGiven([2, 3, 8, -2, 11, 4], 6));
 */
 //5b
 function proSub(arr = [], word) {
-    if(!arr || !word || arr.length == 0 || word.length == 0 || typeof word != 'string') {
+    if (!arr || !word || arr.length == 0 || word.length == 0 || typeof word != 'string') {
         return null;
     }
 
     var newArr = [];
     var neWord = word.toLowerCase();
-    
-    for(var i = 0; i < arr.length; i++) {
+
+    for (var i = 0; i < arr.length; i++) {
         var lowerArrayItems = arr[i].toLowerCase();
-        
-        if(lowerArrayItems.startsWith(neWord)) {
+
+        if (lowerArrayItems.startsWith(neWord)) {
             newArr.push(arr[i]);
         }
     }
 
-    return newArr;    
+    return newArr;
 }
 console.log(proSub(['JavaScript', 'Programming', 'fun', 'product', 'concatenation'], 'con'));
 
@@ -216,9 +216,9 @@ var object3 = { name: 'bananas', price: 150 }
 //console.log(makeObjectsInArray(object1, object2, object3));
 */
 var arrGroceries = [
-    {name: 'apples', price: 100},
-    {name: 'milk', price: 80},
-    {name:'bananas', price: 150}
+    { name: 'apples', price: 100 },
+    { name: 'milk', price: 80 },
+    { name: 'bananas', price: 150 }
 ]
 /*
     b. Write a function that calculates the total price of your 
@@ -226,12 +226,12 @@ var arrGroceries = [
 */
 //6b
 function totalPrice(arr = []) {
-    if(!arr || arr.length == 0) {
+    if (!arr || arr.length == 0) {
         return [];
     }
 
     var sum = 0;
-    for(var i = 0; i < arr.length; i++) {
+    for (var i = 0; i < arr.length; i++) {
         var price = arr[i].price;
         sum += price;
     }
@@ -258,15 +258,15 @@ console.log(averageProductPrice(arrGroceries));
 */
 //6d
 function upperExpensive(arr = []) {
-    if(!arr || arr.length == 0) {
+    if (!arr || arr.length == 0) {
         return [];
     }
 
     var highest = 0;
     var name;
-    for(var i = 0; i < arr.length; i++) {
+    for (var i = 0; i < arr.length; i++) {
         var prices = arr[i].price;
-        if(prices > highest) {
+        if (prices > highest) {
             highest = prices;
             name = arr[i].name.toUpperCase();
         }
@@ -286,6 +286,90 @@ console.log(upperExpensive(arrGroceries));
     stringValidator, passwordValidator, colorValidator, and yearValidator referencing
     the functions from a) to d).
 */
+function allCapitals(string = '') {
+    if (!string || string.length == 0) {
+        return '';
+    }
+
+    var capsLockOn = string.toUpperCase();
+    if (string == capsLockOn) {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(allCapitals('WWWW'));
+
+function checkDigits(string = '') {
+    if (!string || string.length == 0) {
+        return '';
+    }
+
+    for (var i = 0; i < string.length; i++) {
+        if (!isNaN(string[i])) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+console.log(checkDigits('fereger'));
+
+function isItHexadecimal(string = '') {
+
+    if (!string || string.length == 0) {
+        return '';
+    }
+
+    if (string[0] != '#') {
+        return false;
+    }
+
+    if (!(string.length == 4 || string.length == 7)) {
+        return false;
+    }
+
+    //var allowed = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f', 'A', 'B', 'C', 'D', 'E', 'F'];
+    var allow = '0123456789abcdefABCDEF';
+
+    for (var i = 1; i < string.length; i++) {
+        if (allow.includes(string[i])) {
+            continue;
+        }
+        return false;
+    }
+    return true;
+}
+console.log(isItHexadecimal('#1DFFa1'));
+
+function yearCheck(year) {
+    if (!year || isNaN(year)) {
+        return false;
+    }
+
+    if (year < 1900 || year > 2022) {
+        return false;
+    }
+
+    return true;
+}
+console.log(yearCheck(2024));
+/*
+    Write a function named validator that returns an object with properties
+    stringValidator, passwordValidator, colorValidator, and yearValidator referencing
+    the functions from a) to d).
+*/
+function validator(str) {
+    var object = {
+        stringValidator: allCapitals(str),
+        digitsValidator: checkDigits(str),
+        colorValidator: isItHexadecimal(str),
+        yearValidator: yearCheck(str)
+    }
+
+    return object;
+}
+console.log(validator('213egrerDDDD'));
 
 /*
     8. Write a function that calculates a number of days to your birthday.
@@ -315,7 +399,7 @@ var one = new Point(3, 5, 1);
 var two = new Point(7, 4, 1);
 
 function distance(obj1 = {}, obj2 = {}) {
-    if(!obj1 || !obj2) {
+    if (!obj1 || !obj2) {
         return null;
     }
 
@@ -340,9 +424,69 @@ console.log(distance(one, two));
     c. Write a function which expects a number and a callback generator function and
     returns an array of numbers produced by the generator function.
 */
+function fromFiveToTwenty() {
+    var min = Math.ceil(5);
+    var max = Math.floor(20);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+console.log(fromFiveToTwenty());
+
+function fromFiftyToHundred() {
+    var min = Math.ceil(50);
+    var max = Math.floor(100);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+console.log(fromFiftyToHundred());
+
+/*
+    c. Write a function which expects a number and a callback generator function and
+    returns an array of numbers produced by the generator function.
+*/
+function expectsNumber(num) {
+    if (!num || isNaN(num)) {
+        return false;
+    }
+
+    function generator() {
+        var arr = [];
+        var min = 0;
+        var max = Math.floor(num);
+        var rand = Math.floor(Math.random() * (max - min + 1) + min);
+        for (var i = 0; i < num; i++) {
+            arr.push((Math.floor(Math.random() * (max - min + 1) + min)));
+        }
+        return arr;
+    }
+
+    return generator(num);
+}
+console.log(expectsNumber(24));
 
 /*
     12. Write a function that shuffles the elements of a given array.
     Input: [3, 6, 11, 2, 9, 1]
     Output: [6, 2, 9, 1, 3, 11] (it can be any random permutation of the given array)
 */
+// https://dev.to/codebubb/how-to-shuffle-an-array-in-javascript-2ikj
+function shuffleArrayElements(arr = []) {
+    if (!arr || arr.length == 0) {
+        return [];
+    }
+
+    var shuffledArray = arr.sort((a, b) => 0.5 - Math.random());
+    return shuffledArray;
+}
+console.log(shuffleArrayElements([3, 6, 11, 2, 9, 1]));
+
+// https://www.geeksforgeeks.org/how-to-shuffle-an-array-using-javascript/
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        // Generate random number
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
+console.log(shuffleArray([3, 6, 11, 2, 9, 1]));
