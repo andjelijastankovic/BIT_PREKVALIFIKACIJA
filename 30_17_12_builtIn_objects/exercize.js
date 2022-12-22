@@ -376,14 +376,41 @@ console.log(validator('213egrerDDDD'));
     Input: 25 February
     Output: 5 days
 */
+function birthday(start, birthday) {
+    var today = new Date(start);
+    var birthday = new Date(birthday);
+    const oneDay = 1000 * 60 * 60 * 24;
 
+    var diffInTime = birthday.getTime() - today.getTime();
+
+    var difference = Math.round(diffInTime / oneDay);
+
+    return difference + ' days to your birthday';
+}
+console.log(birthday('12/21/2022','04/27/2023'));
 /* 
     9. Write a function that for a given departure and arrival time calculates the time the trip
     takes.
     Input: 8:22:13 11:43:22
     Output: 3 hours 21 minutes 9 seconds
 */
+function elapsedTime(start, end) {
+    start = start.split(":");
+    end = end.split(":");
+    var startDate = new Date(0, 0, 0, start[0], start[1], 0);
+    //var sec = new Date(0, 0, 0, start[0], start[1], start[2], 0);
+    var endDate = new Date(0, 0, 0, end[0], end[1], 0);
+    var diff = endDate.getTime() - startDate.getTime();
+    var hours = Math.floor(diff / 1000 / 60 / 60);
+    diff -= hours * 1000 * 60 * 60;
+    var minutes = Math.floor(diff / 1000 / 60);
+    // If using time pickers with 24 hours format, add the below line get exact hours
+    if (hours < 0)
+        hours = hours + 24;
 
+    return (hours <= 9 ? "0" : "") + hours + ":" + (minutes <= 9 ? "0" : "") + minutes + ":" + seconds;
+}
+console.log(elapsedTime('8:22:13', '11:43:22'));
 /* 
     10.
     a. Write a constructor function that creates points in space. Each point in space has
