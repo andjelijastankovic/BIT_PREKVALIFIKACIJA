@@ -251,7 +251,7 @@ printTime();
 
 function printDate() {
     var date = new Date();
-    var day = date.getUTCDay();
+    var day = date.getDate();
     var month = date.getUTCMonth() + 1;
     var year = date.getUTCFullYear();
     console.log(`${day}.${month}.${year}.`);
