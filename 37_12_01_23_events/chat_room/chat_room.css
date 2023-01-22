@@ -1,0 +1,7 @@
+.show_messages {
+    height: 500px;
+    background-color: azure;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
