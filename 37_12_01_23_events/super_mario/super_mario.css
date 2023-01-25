@@ -1,0 +1,17 @@
+div {
+    background-image: url('./bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#mario {
+    width: 150px;
+    position: absolute;
+    top: 57%;
+    left: 45%;
+}
+
