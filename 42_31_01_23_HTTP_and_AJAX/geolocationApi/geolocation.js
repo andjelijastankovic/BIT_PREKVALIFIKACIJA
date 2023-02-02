@@ -18,7 +18,25 @@ $(document).ready(function () {
     showGeolocation();
 })
 
+function showGeolocation() {
+    $('#btn').on('click', function(){
 
+        var request = new XMLHttpRequest();
+        var ipValue = $('#ip').val();
+        request.open('GET', `http://www.geoplugin.net/xml.gp?ip=${ipValue}`);
+
+        request.onload = function() {
+            var response = request.responseXML;
+            var countryName = response.querySelector('geoplugin_countryName');
+            console.log(countryName);
+            $('#geo').append(countryName);
+        }
+
+        request.send();
+    });
+}
+
+/*
 function showGeolocation() {
     var request = new XMLHttpRequest();
     request.open('GET', 'geolocation.xml', false);
@@ -33,3 +51,4 @@ function showGeolocation() {
     request.send();
     
 }
+*/
