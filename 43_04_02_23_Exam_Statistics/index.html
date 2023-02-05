@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <title>MVC - Exam Statistics</title>
+</head>
+<body>
+    <header>
+        <h1>Exam statistics - <span id="month"></span></h1>
+        <h4>Total students: <span id="totalStudents"></span></h4>
+
+        <div class="studentsPassFail">
+            <div class="passStudents">
+                <p>Passed <span id="numberPassed"></span></p>
+            </div>
+            <div class="failStudents">
+                <p>Failed  <span id="numberFailed"></span> <span id="percent"></span></p>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <form action="">
+            <select name="subject" id="">
+                <option value="JavaScript">JavaScript</option>
+                <option value="PHP">PHP</option>
+                <option value="Java">Java</option>
+                <option value="C#">C#</option>
+            </select>
+
+            <input type="text" name="" id="nameSurname" placeholder="Name and surname">
+            <input type="number" name="" id="grade" placeholder="Grade">
+            <button type="button">Add</button>
+        </form>
+    </section>
+
+    <div id="passedFailed">
+
+        <div class="passed"> 
+            <h3>Passed:</h3>
+            <ul id="listPass"></ul> 
+        </div>
+
+        <div class="failed"> 
+            <h3>Failed:</h3>
+            <ul id="listFall"></ul>
+        </div>
+    </div>
+
+    <!--JS scripts-->
+    <script src="./js/subject.js"></script>
+    <script src="./js/form.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/exam.js"></script>
+    <script src="./js/student.js"></script>
+</body>
+</html>
