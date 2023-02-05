@@ -11,7 +11,7 @@
     than 5.
 */
 
-class Exam{
+export class Exam{
     constructor(subject, student, grade){
         this.subject = subject;
         this.student = student;

@@ -5,7 +5,7 @@
     done - add to its prototype a method getSubjectName that 
     returns the subject name
 */
-class Subject {
+export class Subject {
     constructor(name){
         this.name = name;
     }

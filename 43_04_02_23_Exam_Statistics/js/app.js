@@ -4,49 +4,41 @@
     and failed exams as well as their statistics.
     - Write all code that connects a user behaviour with application logic.   
 */
-
+import {Exam} from './exam.js';
 $(document).ready(function(){
     $(document).ready(function () {
-        $('button').click(function() {
-            collectData();
-            updateList();
-            statistics();
-        })
+        month();
     });
-    
-    month();
 });
-
-class App{
+export class App{
     constructor(examList) {
         this.examList = [];
     }
 
     addExam(exam) {
-        if(exam.hasPassed()) {
-            this.examList.push(exam);
-        }
+        
+        this.examList.push(exam);
+        
     }
 
     getFail() {
         var count = 0;
-        for(var i = 0; i < this.examList.length; i++) {
-            if(!this.examList[i]) {
+        this.examList.forEach(exam => {
+            if(!exam.hasPassed()) {
                 count++;
             }
-        }
+        });
 
         return count;
     }
 
     getPass() {
         var count = 0;
-        for(var i = 0; i < this.examList.length; i++) {
-            if(this.examList[i]) {
+        this.examList.forEach(exam => {
+            if(exam.hasPassed()) {
                 count++;
             }
-        }
-
+        });
         return count;
     }
 

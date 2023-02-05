@@ -6,7 +6,7 @@
     that returns the name and surname of the student
 */
 
-class Student{
+export class Student{
     constructor(name, surname) {
         this.name = name;
         this.surname = surname;
