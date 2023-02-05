@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <title>DOM exercizes 1</title>
+</head>
+<body>
+    <div>
+        <ul id="first">
+            <li>First unordered list item 1</li>
+            <li>First unordered list item 2</li>
+            <li>First unordered list item 3</li>
+            <li>First unordered list item 4</li>
+        </ul>
+    </div>
+    
+    <div>
+        <ul>
+            <li>Second unordered list item 1</li>
+            <li class="active">Second unordered list item 2</li>
+            <li>Second unordered list item 3</li>
+            <li>Second unordered list item 4</li>
+        </ul>
+    </div>
+
+    <div>
+        <ul>
+            <li id="node"><a href="#">HOME</a></li>
+            <li><a href="#">About</a></li>
+            <li id="last"><a href="#">CONTACT</a></li>
+        </ul>
+    </div>
+    
+    <div>
+        <form method="post" action="./exercize1.html">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required>
+
+            <label for="surname">Surname:</label>
+            <input type="text" name="surname" id="surname" required>
+
+            <label for="phone">Phone number:</label>
+            <input type="number" name="phone" id="phone">
+
+            <button type="submit" onclick="validateForm()">Submit</button>
+        </form>
+    </div>
+    <script src="exercize1.js"></script>
+</body>
+</html>

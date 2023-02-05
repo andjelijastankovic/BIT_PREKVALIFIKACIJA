@@ -1,51 +1,4 @@
 /*
-    Selecting One/Multiple Elements
-
-    Create two unordered lists on the page.
-    Create a function that selects the second list and applies
-    a class that sets some background color to it.
-    
-    Create a second function that, when triggered, selects all
-    <li> elements on the page. The function also sets a class that 
-    sets some bg color to every <li> element.
-
-    Create one more unordered list and one more function
-    The function​ should select only <li> elements from that last list
-    Each <li> element should get a class that sets some bg color and transforms the
-    text to uppercase.
-*/
-
-function backgroundRed(color) {
-    var list = document.querySelector('.second');
-    list.style.padding = '20px';
-    list.style.backgroundColor = color;
-}
-backgroundRed('red');
-
-function listElements() {
-    var listItems = document.querySelectorAll('li');
-    for(var i = 0; i < listItems.length; i++) {
-        listItems[i].classList.add("listElements");
-        listItems[i].style.padding = '10px';
-        listItems[i].style.margin = '10px';
-        listItems[i].style.backgroundColor = 'green';
-    }
-}
-listElements();
-
-
-function lastList() {
-
-    var x = document.querySelector(".third").querySelectorAll("li");    
-    for (var i = 0; i < x.length; i++) {
-        x[i].classList.add("bg-color");
-        x[i].style.backgroundColor = "pink";
-        x[i].style.textTransform = "uppercase";
-    }
-}
-lastList();
-
-/*
     Traversing
 
     Create two unordered lists.
@@ -59,6 +12,12 @@ lastList();
 */
 
 
+var activeClass = document.querySelector('.active');
+activeClass.style.backgroundColor = 'red';
+activeClass.classList.remove('active');
+var firstUl = document.querySelector('ul');
+var secondLi = firstUl.children[1];
+secondLi.classList.add('active');
 
 /*
     Access/Update Text Node
@@ -72,6 +31,16 @@ lastList();
     The function should select the last <li> element in the list and replace its text with
     text passed as the function argument.
 */
+function alertLi() {
+    var listItem = document.getElementById('node');
+    alert(listItem.textContent);
+}
+//alertLi();
+
+function replace() {
+    var last = document.getElementById('last').textContent = 'some text';
+}
+replace();
 
 /*
     InnerHTML
@@ -84,7 +53,7 @@ lastList();
     is a DOM node to which the dropdown will be added.
     Create options that correspond to items in the passed array and add them to the
     select element.
-    Add the whole dropdown list to DOM .
+    Add the whole dropdown list to DOM.
     Use this function to create two selects on the page.
     The first select should be appended to the first div on the page.
     The second select should be appended to the last div on the page.
@@ -99,3 +68,14 @@ lastList();
     The function checks each input element that belongs to the form.
     If the element has the required attribute and no data, it should get red borders.
 */
+
+function validateForm() {
+    var inputs = document.querySelector('form').elements;
+    for(var i = 0; i < inputs.length; i++) {
+        if(inputs[i].hasAttribute('required') && inputs[i].value == '') {
+            inputs[i].style.border = '2px solid red';
+        } else {
+            inputs[i].style.border = '1px solid black';
+        }
+    }
+}
