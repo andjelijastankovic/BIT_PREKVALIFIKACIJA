@@ -1,11 +1,12 @@
 $(document).ready(function() {
     
     var user = '';
-    $('form').submit(function(event){
-        event.preventDefault();
-        
-        var searchValue = $('#search').val();
-        gitSearch(searchValue);
+    $('form').on('keypress',function(event){
+        if(event.keyCode === 13) {
+            var searchValue = $('#search').val();
+            gitSearch(searchValue);
+            event.preventDefault();
+        }
 
     });
 
