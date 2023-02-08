@@ -10,10 +10,12 @@ $(document).ready(function() {
 
     });
 
-    $('#search').change(function(){
-        var search = $('#search').val();
+    $('#search').change(function(event){
+        if(event.keyCode === 13) {
+            var search = $('#search').val();
 
-        gitSearch(search);
+            gitSearch(search);
+        }
     })
 });
 
