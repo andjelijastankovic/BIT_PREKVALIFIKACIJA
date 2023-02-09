@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Movie Form</title>
+</head>
+<body>
+    <header>
+        <h1>Movie festival</h1>
+    </header>
+
+    <form>
+        <fieldset>
+            <p>Please fill in the form</p>
+            <p>Movie</p>
+
+            <fieldset>
+                <label for="title">Title</label>
+                <input type="text" placeholder="Title" id="movieTitle">
+
+                <label for="movieLength">Length (min)</label>
+                <input type="number" id="movieLength" placeholder="Length of movie in minutes" min="1" required>
+
+                <select name="genreSelect" id="">
+                    <option value="">-</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Action">Action</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Commedy">Commedy</option>
+                </select>
+
+                <div class="errorMovies"></div>
+                
+                <button id="createMovie">Create movie</button>
+
+                <div class="listMovies"></div>
+            </fieldset>
+
+            <p>Program</p>
+            
+            <fieldset>
+                <label for="date">Date</label>
+                <input type="date" name="" id="">
+
+                <div class="errorPrograms"></div>
+
+                <button type="submit">Create program</button>
+
+                <label for="selectMovie">Movie</label>
+                <select name="selectMovie" id="">
+                    <option value="">-</option>
+                </select>
+
+                <label for="selectProgram">Program</label>
+                <select name="selectProgram" id="">
+                    <option value="">-</option>
+                </select>
+
+                <div class="movieProgramError"></div>
+
+                <button type="submit">Add movie to program</button>
+            </fieldset>
+        </fieldset>
+    </form>
+
+    <!-- JS scripts -->
+    <script src="./js/entities.js"></script>
+    <script src="./js/form.js"></script>
+</body>
+</html>
