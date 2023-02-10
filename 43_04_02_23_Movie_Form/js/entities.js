@@ -42,19 +42,15 @@ class Program {
     }
     
     getProgramData() {
-        /*
-        if(!this.getProgramDuration()) {
-            return this.getProgramDuration() = 'will be announced';
-        }
-        */
-       
+        var str = '';
         var programDateString = `${this.dateProgram.getDate()}.${this.dateProgram.getMonth()+1}.${this.dateProgram.getFullYear()}.`;
-        var str = `${programDateString}, ${this.listOfMovies.length} movies, duration: ${this.getProgramDuration()} minutes \n`;
 
-        for(var i = 0; i < this.listOfMovies.length; i++) {
-            str += `\t\t${this.listOfMovies[i].getMovieData()}\n`;
+        if(this.listOfMovies.length == 0) {
+            str = `${programDateString}, duration: to be announced`;
+        } else {
+            var str = `${programDateString}, ${this.listOfMovies.length} movies, duration: ${this.getProgramDuration()} minutes \n`;
         }
-
+        
         return str;
     }
 }
@@ -81,9 +77,6 @@ class Festival {
     getFestivalData() {
         var str = '';
         str = `${this.festivalName} has ${this.getNumberOfMovies()} movie titles \n`;
-        for(var i = 0; i < this.listOfPrograms.length; i++) {
-            str += `\t${this.listOfPrograms[i].getProgramData()}\n`;
-        }
 
         return str;
     }

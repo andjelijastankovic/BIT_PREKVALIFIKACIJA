@@ -52,7 +52,3 @@ button:hover {
 .errorMovies, .errorPrograms, .movieProgramError {
     color: red;
 }
-
-ul {
-    list-style: none;
-}
