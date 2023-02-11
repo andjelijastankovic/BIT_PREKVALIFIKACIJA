@@ -1,0 +1,26 @@
+.container {
+    #popularShows {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .shows {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr;
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+            margin-top: 15px;
+            width: 80%;
+            margin: auto;
+
+            .show {
+                align-items: center;
+                text-align: center;
+            } &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
