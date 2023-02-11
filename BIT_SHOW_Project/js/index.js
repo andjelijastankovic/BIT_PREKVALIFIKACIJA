@@ -18,7 +18,7 @@ function popularShows() {
         showDivs.addClass('shows');
         var show = '';
         $.each(top50, function (index) { 
-            show += `<div class='show' onclick='goToShow(${top50[index].id})'><img src='${top50[index].image.medium}'> <p>${top50[index].name}</p></div>`;
+            show += `<div class='show' ><img src='${top50[index].image.medium}' onclick='goToShow(${top50[index].id})'> <p>${top50[index].name}</p></div>`;
         });
         
         showDivs.append(show);

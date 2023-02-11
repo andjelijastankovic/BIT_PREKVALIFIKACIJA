@@ -1,3 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none; }
+
+.container nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #343a40;
+  color: white;
+  padding: 10px; }
+  .container nav h2 {
+    letter-spacing: 3px; }
+    .container nav h2 a:visited {
+      color: white; }
+  .container nav form #search {
+    height: 40px;
+    padding-left: 5px; }
 .container #popularShows {
   display: flex;
   flex-direction: column;
@@ -15,5 +36,48 @@
     .container #popularShows .shows .show {
       align-items: center;
       text-align: center; }
-    .container #popularShows .shows:hover {
-      cursor: pointer; }
+      .container #popularShows .shows .show img:hover {
+        cursor: pointer; }
+.container #aboutShow {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0; }
+  .container #aboutShow .divTitle {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0; }
+  .container #aboutShow .divSummary {
+    width: 80%;
+    align-self: center;
+    text-align: justify;
+    order: 5; }
+    .container #aboutShow .divSummary h2 {
+      margin-bottom: 10px; }
+  .container #aboutShow .divImgSeasonCast {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+    justify-items: center;
+    width: 80%;
+    margin: auto; }
+    .container #aboutShow .divImgSeasonCast .imgDiv img {
+      margin: auto;
+      width: 100%;
+      max-width: 600px;
+      height: auto; }
+    .container #aboutShow .divImgSeasonCast .divSeasonCast .divSeason ul {
+      list-style-position: inside;
+      margin: 10px 0 0 20px; }
+    .container #aboutShow .divImgSeasonCast .divSeasonCast .divCast {
+      margin-top: 15px; }
+      .container #aboutShow .divImgSeasonCast .divSeasonCast .divCast ul {
+        list-style-position: inside;
+        margin: 10px 0 0 20px; }
+.container footer {
+  margin-top: 10px;
+  background-color: #343a40;
+  color: white;
+  padding: 10px;
+  text-align: center; }
