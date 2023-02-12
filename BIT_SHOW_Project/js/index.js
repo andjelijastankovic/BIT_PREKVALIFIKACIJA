@@ -29,3 +29,8 @@ function popularShows() {
         console.log(response);
     })
 }
+
+function goToShow(someId) {
+    localStorage.setItem('showId', someId);
+    window.location.assign('./showInfo.html');
+}

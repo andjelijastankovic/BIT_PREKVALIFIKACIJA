@@ -1,22 +1,9 @@
 $(document).ready(function() {
     showInfo();
     showSeason();
-    showCast()
+    showCast();
 });
 
-function goToShow(someId) {
-    // var endpoint = `https://api.tvmaze.com/shows/${someId}`;
-    // $.ajax({
-    //     method: 'GET',
-    //     url: endpoint
-    // }).done(function(response) {
-    //     localStorage.setItem('showId', someId);
-    // }).fail(function(response) {
-    //     console.log(response);
-    // })
-    localStorage.setItem('showId', someId);
-    window.location.assign('./showInfo.html');
-}
 
 var showId = localStorage.getItem('showId');
 
@@ -70,7 +57,7 @@ function showSeason() {
         divSeason.append(`<h2> Seasons (${response.length}) </h2>`);
         var list = $('<ul></ul>');
         $.each(response, function (index) { 
-            list.append(`<li>Premiere date: ${response[index].premiereDate} | End date: ${response[index].endDate}</li>`);    
+            list.append(`<li>Premiere date: ${response[index].premiereDate} / End date: ${response[index].endDate}</li>`);    
         });
         divSeason.append(list);
         divSeasonCast.prepend(divSeason);
@@ -82,7 +69,7 @@ function showSeason() {
 }
 
 function showCast() {
-    var aboutShow = $('#aboutShow');
+    var divImgSeasonCast = $('.divImgSeasonCast');
     var endpoint = `https://api.tvmaze.com/shows/${showId}/cast`;
 
     $.ajax({
@@ -90,7 +77,6 @@ function showCast() {
         url: endpoint
     }).done(function(response){
         var limit10 = response.slice(0, 10);
-        console.log(limit10);
         var divSeasonCast = $('.divSeasonCast');
         var divCast = $('<div></div>');
         divCast.addClass('divCast');
@@ -101,6 +87,7 @@ function showCast() {
         });
         divCast.append(list);
         divSeasonCast.append(divCast);
+        divImgSeasonCast.append(divSeasonCast);
         //aboutShow.append(divCast);
 
     }).fail(function(response) {
