@@ -19,14 +19,12 @@ function searchList() {
                 method: 'GET',
                 url: endpoint
             }).done(function(response) {
-                var drop = '';
                 var top10 = response.slice(0, 10);
 
                 $.each(top10, function (index) { 
-                    var showName = top10[index].show.name;
-                    var drop = `<div onclick='goToShow(${top10[index].show.id})'>
-                        <li> <a href='./showInfo.html'>${showName}</a> </li>
-                    </div>`;
+                    var drop = `
+                        <li onclick='goToShow(${top10[index].show.id})'> <a href='./showInfo.html'>${top10[index].show.name}</a> </li>
+                    `;
                     $('.drop').append(drop);
                     $('.drop').css('display', 'block');
                 });
