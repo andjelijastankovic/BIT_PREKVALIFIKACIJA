@@ -2,6 +2,12 @@ $(document).ready(function() {
     searchList();
 })
 
+$(document).click(function() {
+    $('.drop').css('display', 'none');
+    $('.drop').html('');
+    $('#search').val('');
+});
+
 function searchList() {
     $('#search').keypress(function(event) {
         $('.drop').css('display', 'none');
@@ -14,14 +20,6 @@ function searchList() {
                 url: endpoint
             }).done(function(response) {
                 var drop = '';
-                for(var i = 0; i <= 9; i++) {
-                    drop += `<div onclick='goToShow(${response[i].show.id})'>
-                        <li> <a href='./showInfo.html'>${response[i].show.name}</a> </li>
-                    </div>`;
-                }
-                $('.drop').append(drop);
-                $('.drop').css('display', 'block');
-                /*
                 var top10 = response.slice(0, 10);
 
                 $.each(top10, function (index) { 
@@ -32,11 +30,16 @@ function searchList() {
                     $('.drop').append(drop);
                     $('.drop').css('display', 'block');
                 });
-                */
+                
 
             }).fail(function(response) {
                 console.log(response);
             })
         }
     })
+}
+
+function goToShow(someId) {
+    localStorage.setItem('showId', someId);
+    window.location.assign('./showInfo.html');
 }
