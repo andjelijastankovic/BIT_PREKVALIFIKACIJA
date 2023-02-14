@@ -10,6 +10,7 @@ $(document).click(function() {
 
 function searchList() {
     $('#search').keypress(function(event) {
+        $('.drop').html('');
         $('.drop').css('display', 'none');
         if(event.key == 'Enter') {
             event.preventDefault();
