@@ -90,7 +90,7 @@
       margin: auto;
       width: 100%;
       max-width: 600px;
-      height: auto; }
+      max-height: 550px; }
     .container #aboutShow .divImgSeasonCast .divSeasonCast .divSeason ul {
       list-style-position: inside;
       margin: 10px 0 0 20px; }
@@ -99,6 +99,8 @@
       .container #aboutShow .divImgSeasonCast .divSeasonCast .divCast ul {
         list-style-position: inside;
         margin: 10px 0 0 20px; }
+        .container #aboutShow .divImgSeasonCast .divSeasonCast .divCast ul .char {
+          color: #343a40; }
 .container footer {
   width: 100%;
   margin-top: 10px;

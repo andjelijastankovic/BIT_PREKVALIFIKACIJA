@@ -116,7 +116,7 @@
                     margin: auto;
                     width: 100%;
                     max-width: 600px;
-                    height: auto;
+                    max-height: 550px;
                 }
             }
 
@@ -133,6 +133,10 @@
                     ul {
                         list-style-position: inside;
                         margin: 10px 0 0 20px;
+
+                        .char {
+                            color: rgb(52,58,64);
+                        }
                     }
                 }
             }

@@ -83,7 +83,7 @@ function showCast() {
         divCast.append(`<h2>Cast</h2>`);
         var list = $('<ul></ul>');
         $.each(limit10, function (index) { 
-            list.append(`<li>${limit10[index].person.name}</li>`);    
+            list.append(`<li>${limit10[index].person.name} (<span class='char'>${limit10[index].character.name}</span>)</li>`);    
         });
         divCast.append(list);
         divSeasonCast.append(divCast);
