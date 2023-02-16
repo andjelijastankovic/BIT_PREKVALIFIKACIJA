@@ -2,6 +2,9 @@ $(document).ready(async function () {
     await showInfo();
     await showSeason();
     await showCast();
+    await showAKAs();
+    await showCrew();
+    await showEpisodes();
 });
 
 
@@ -96,3 +99,80 @@ function showCast() {
         console.log(response);
     })
 }
+
+function showAKAs() {
+    var aboutShow = $('#aboutShow');
+    var akaCrew = $('<div></div>');
+    akaCrew.addClass('akaCrew');
+    var ulAkas = $('<ul></ul>');
+
+    var akas = $('<div></div>');
+    akas.addClass('akas');
+    var endpoint = `https://api.tvmaze.com/shows/${showId}/akas`;
+    return $.ajax({
+        method: 'GET',
+        url: endpoint
+    }).done(function(response) {
+        var top5 = response.slice(0, 5);
+        $.each(top5, function (index) { 
+            var aka = `<li>${top5[index].name} <span>(${top5[index].country.name})</span></li>`;
+            ulAkas.append(aka);
+        });
+        akas.prepend('<h2>AKA\'s</h2>');
+        akas.append(ulAkas);
+        akaCrew.prepend(akas);
+        akaCrew.insertAfter(aboutShow);
+    }).fail(function(response) {
+        console.log(response);
+    })
+}
+
+function showCrew() {
+    var akaCrew = $('.akaCrew');
+    var crew = $('<div></div>');
+    crew.addClass('crew');
+    var ulCrew = $('<ul></ul>');
+    var endpoint = `https://api.tvmaze.com/shows/${showId}/crew`;
+
+    return $.ajax({
+        method: 'GET',
+        url: endpoint
+    }).done(function(response) {
+        var top10 = response.slice(0, 5);
+        $.each(top10, function (index) { 
+            var li = `<li>${response[index].person.name} <span>(${response[index].type})</span></li>`;
+            ulCrew.append(li);
+        });
+        crew.prepend('<h2>Crew</h2>');
+        crew.append(ulCrew);
+        akaCrew.append(crew);
+        
+    }).fail(function(response) {
+        console.log(response);
+    })
+}
+
+function showEpisodes() {
+    var akaCrew = $('.akaCrew');
+    var episodes = $('<div></div>');
+    episodes.addClass('episodes');
+    var ulEp = $('<ul></ul>');
+    var endpoint = `https://api.tvmaze.com/shows/${showId}/episodes`;
+
+    return $.ajax({
+        method: 'GET',
+        url: endpoint
+    }).done(function(response) {
+        $.each(response, function (index) { 
+            var li = `<li>S${response[index].season}E${response[index].number}: ${response[index].name}</li>`;
+            ulEp.append(li);
+        });
+        episodes.prepend('<h2>Episodes</h2>');
+        episodes.append(ulEp);
+        episodes.insertAfter(akaCrew);
+    }).fail(function(response) {
+        console.log(response);
+    })
+
+}
+

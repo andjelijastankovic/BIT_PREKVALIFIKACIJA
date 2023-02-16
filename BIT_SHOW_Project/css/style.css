@@ -76,7 +76,7 @@ html {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin: 10px 0 50px 0; }
+  margin: 10px 0 10px 0; }
   .container #aboutShow .divTitle {
     width: 100%;
     text-align: center;
@@ -110,6 +110,34 @@ html {
         margin: 10px 0 0 20px; }
         .container #aboutShow .divImgSeasonCast .divSeasonCast .divCast ul .char {
           color: #343a40; }
+.container .akaCrew {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 10px auto; }
+  .container .akaCrew .akas h2, .container .akaCrew .crew h2 {
+    margin-bottom: 10px; }
+  .container .akaCrew .akas ul, .container .akaCrew .crew ul {
+    list-style-position: inside;
+    margin: 10px 0 0 20px; }
+    .container .akaCrew .akas ul li span, .container .akaCrew .crew ul li span {
+      color: #343a40; }
+.container .episodes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto 50px auto; }
+  .container .episodes h2 {
+    margin-bottom: 10px; }
+  .container .episodes ul {
+    width: 35%;
+    max-height: 200px;
+    overflow-x: scroll;
+    list-style-position: inside; }
 .container footer {
   width: 100%;
   margin-top: 10px;
@@ -166,4 +194,13 @@ html {
   .container #aboutShow .divImgSeasonCast {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr max-content;
-    grid-row-gap: 10px; } }
+    grid-row-gap: 10px; }
+  .container .akaCrew {
+    flex-direction: column;
+    align-items: flex-start; }
+  .container .episodes ul {
+    align-self: center;
+    width: 90%;
+    max-height: 200px;
+    overflow-x: scroll;
+    list-style-position: inside; } }

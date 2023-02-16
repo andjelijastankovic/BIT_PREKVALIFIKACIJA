@@ -96,7 +96,7 @@ html {
         display: flex;
         flex-direction: column;
         gap: 10px;
-        margin: 10px 0 50px 0;
+        margin: 10px 0 10px 0;
 
         .divTitle {
             width: 100%;
@@ -152,6 +152,56 @@ html {
                     }
                 }
             }
+        }
+    }
+
+    .akaCrew {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        margin: 10px auto;
+
+        .akas {
+            h2 {
+                margin-bottom: 10px;
+            }
+
+            ul {
+                list-style-position: inside;
+                margin: 10px 0 0 20px;
+
+                li {
+                    span {
+                        color: rgb(52,58,64);
+                    }
+                }
+            }
+        }
+
+        .crew {
+            @extend .akas;
+        }
+    }
+
+    .episodes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10px auto 50px auto;
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            width: 35%;
+            max-height: 200px; 
+            overflow-x: scroll;
+            list-style-position: inside;
         }
     }
 
@@ -256,6 +306,23 @@ html {
                 grid-row-gap: 10px;
             }
         }
+
+
+        .akaCrew {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    
+        .episodes {
+            ul {
+                align-self: center;
+                width: 90%;
+                max-height: 200px; 
+                overflow-x: scroll;
+                list-style-position: inside;
+            }
+        }
+    
     }
 }
 
