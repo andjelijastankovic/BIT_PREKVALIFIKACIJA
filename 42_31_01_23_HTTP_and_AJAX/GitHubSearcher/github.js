@@ -19,18 +19,23 @@ $(document).ready(function() {
     })
 });
 
-
+function userProfile(login) {
+    localStorage.setItem('login', login);
+    window.location.assign('./user.html');
+}
 
 function gitSearch(username) {
     $('.showUsers').empty();
+    $.ajax({
+        method: 'GET',
+        url: `https://api.github.com/search/users?q=${username}in:user`
+    }).done(function(response) {
+        var items = response.items;
+        console.log(items);
+        $.each(items, function (i) {
 
-    $.get(`https://api.github.com/search/users?q=${username}in:user`,
-    function(data) {
-        console.log(data);
-        data.items.forEach(item => {
-            user = `<div class='grid-item'><a target='_blank' href='${item.html_url}'><img src='${item.avatar_url}'></a><p>${item.login}</p></div>`;
+            var user = `<div class='grid-item' onclick='userProfile("${items[i].login}")'><img src='${items[i].avatar_url}'> <p>${items[i].login}</p></div>`;
             $('.showUsers').append(user);
         });
     })
 }
-

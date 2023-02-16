@@ -5,7 +5,7 @@
 
 }
 
-.showUsers {
+.showUsers, .showRepo {
     display: flex;
     flex-wrap: wrap;
     padding: 0 2px;
