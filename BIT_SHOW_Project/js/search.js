@@ -9,11 +9,10 @@ $(document).click(function() {
 });
 
 function searchList() {
-    $('#search').keypress(function(event) {
+    $('#search').keyup(function(event) {
         $('.drop').html('');
         $('.drop').css('display', 'none');
-        if(event.key == 'Enter') {
-            event.preventDefault();
+            //event.preventDefault();
             var search = encodeURIComponent($('#search').val());
             var endpoint = `http://api.tvmaze.com/search/shows?q=${search}`;
             $.ajax({
@@ -34,7 +33,6 @@ function searchList() {
             }).fail(function(response) {
                 console.log(response);
             })
-        }
     })
 }
 
