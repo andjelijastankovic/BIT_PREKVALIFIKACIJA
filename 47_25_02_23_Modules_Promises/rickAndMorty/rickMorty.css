@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 45px;
+    margin-bottom: 20px;
+    background-color: rgb(67, 67, 67);
+}
+
+header h3 {
+    padding-left: 15%;
+    font-size: 28px;
+}
+
+h3 > a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color:rgb(0, 167, 76);
+    padding: 2px 10px;
+    border: 1px solid rgb(0, 167, 76);
+    border-radius: 5px;
+    background-color: white;
+    transition: 0.6s ease;
+}
+
+.characters {
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 2px;
+    margin: auto;
+    gap: 10px;
+}
+
+.character {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    width: 24%;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    border: 1px solid rgb(89, 112, 43);
+    background-color: rgb(248,249,250);
+}
+
+img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+button {
+    display: block;
+    width: 100%;
+    height: 40px;
+    color: rgb(0,167,76);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 167, 76);
+}
+
+button:hover {
+    color: white;
+    background-color: rgb(0,167,76);
+    border: 1px color white;
+}
+
+.singleChar {
+    width: 30%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.charImg {
+    display: block;
+    max-width: 300px;
+    margin: auto;
+}
