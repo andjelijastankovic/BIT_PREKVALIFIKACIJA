@@ -1,5 +1,8 @@
+import { pagination } from "./pagionation.js";
+
 $(document).ready(function() {
     characters();
+    pagination();
 });
 
 const characters = () => {
