@@ -12,13 +12,15 @@ export function getTop50(response) {
     return top50;
 }
 
-function getId(id) {
-    localStorage.setItem('charId', id);
-    location.assign('./show.html');
-}
+// function getId(id) {
+//     localStorage.setItem('showId', id);
+//     location.assign('./show.html');
+// }
 
 export function getShowId() {
     $('img').click((event) => {
-        getId(event.currentTarget.id);
+        const id = event.currentTarget.id;
+        localStorage.setItem('showId', id);
+        location.assign('./show.html');
     });
 }
