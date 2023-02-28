@@ -1,6 +1,6 @@
 import { pagination } from "./pagionation.js";
 
-$(document).ready(function() {
+$(document).ready(function () {
     characters();
     pagination();
 });
@@ -15,18 +15,25 @@ const characters = () => {
         const charactersDiv = $('.characters');
         response.results.forEach(element => {
             var char = `<div class='character'>
-                <img src ='${element.image}' onclick='getId(${element.id})'>
+                <img src ='${element.image}' id='${element.id}'>
                 <p>${element.name}</p>
                 <button>Like</button>
             </div>`;
             charactersDiv.append(char);
         });
+
+        addEventListener();
     }).catch(error => {
         console.log(error.message);
     })
 }
 
 const getId = (id) => {
-    localStorage.setItem('charId',id);
+    localStorage.setItem('charId', id);
     location.assign('./charPage.html');
+}
+const addEventListener = () => {
+    $('img').click((event) => {
+        getId(event.currentTarget.id)
+    });
 }

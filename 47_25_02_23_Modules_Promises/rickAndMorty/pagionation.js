@@ -16,7 +16,7 @@ export const pagination = () => {
             charactersDiv.html('');
             response.results.forEach(element => {
                 var char = `<div class='character'>
-                    <img src ='${element.image}' onclick='getId(${element.id})'>
+                    <img src ='${element.image}' id='${element.id}'>
                     <p>${element.name}</p>
                     <button>Like</button>
                 </div>`;
