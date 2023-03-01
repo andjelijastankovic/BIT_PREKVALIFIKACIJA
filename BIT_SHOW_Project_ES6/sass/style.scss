@@ -160,16 +160,16 @@ html {
         flex-direction: row;
         gap: 10px;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         width: 80%;
-        margin: 10px auto;
+        margin: 20px auto;
 
         .akas {
             h2 {
                 margin-bottom: 10px;
             }
 
-            ul {
+            .akasList {
                 list-style-position: inside;
                 margin: 10px 0 0 20px;
 
@@ -183,6 +183,10 @@ html {
 
         .crew {
             @extend .akas;
+
+            .crewList {
+                @extend .akasList;
+            }
         }
     }
 
@@ -191,16 +195,16 @@ html {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin: 10px auto 50px auto;
+        margin: 20px auto 50px auto;
 
         h2 {
             margin-bottom: 10px;
         }
 
-        ul {
+        .episodesList {
             width: 35%;
             max-height: 200px; 
-            overflow-x: scroll;
+            overflow-y: scroll;
             list-style-position: inside;
         }
     }

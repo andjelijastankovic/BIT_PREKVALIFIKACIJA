@@ -115,28 +115,28 @@ html {
   flex-direction: row;
   gap: 10px;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 80%;
-  margin: 10px auto; }
+  margin: 20px auto; }
   .container .akaCrew .akas h2, .container .akaCrew .crew h2 {
     margin-bottom: 10px; }
-  .container .akaCrew .akas ul, .container .akaCrew .crew ul {
+  .container .akaCrew .akas .akasList, .container .akaCrew .crew .akasList, .container .akaCrew .crew .crewList {
     list-style-position: inside;
     margin: 10px 0 0 20px; }
-    .container .akaCrew .akas ul li span, .container .akaCrew .crew ul li span {
+    .container .akaCrew .akas .akasList li span, .container .akaCrew .crew .akasList li span, .container .akaCrew .crew .crewList li span {
       color: #343a40; }
 .container .episodes {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 10px auto 50px auto; }
+  margin: 20px auto 50px auto; }
   .container .episodes h2 {
     margin-bottom: 10px; }
-  .container .episodes ul {
+  .container .episodes .episodesList {
     width: 35%;
     max-height: 200px;
-    overflow-x: scroll;
+    overflow-y: scroll;
     list-style-position: inside; }
 .container footer {
   width: 100%;
