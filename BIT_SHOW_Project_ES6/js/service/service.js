@@ -19,16 +19,3 @@ export function getTop10(response) {
     const top = sortedRating.slice(0, 10);
     return top;
 }
-
-// function getId(id) {
-//     localStorage.setItem('showId', id);
-//     location.assign('./show.html');
-// }
-
-export function getShowId(element) {
-    $(element).click((event) => {
-        const id = event.currentTarget.id;
-        localStorage.setItem('showId', id);
-        location.assign('./show.html');
-    });
-}

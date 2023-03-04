@@ -16,21 +16,16 @@ export function searchDropdown(show) {
 export function popularShows(shows) {
     const show = `<div class='show'><img src='${shows.image}' id='${shows.id}'> <p>${shows.name}</p></div>`;
     $('.shows').append(show);
-    $('#popularShows').append($('.shows'));
 }
 
 export function showNameImageSummary(show) {
     const title = $(`<h2>${show.name}</h2>`);
-    $('.divTitle').append(title);
     const img = $(`<img src='${show.image}'>`);
-    $('.imgDiv').append(img);
-
-    $('.divImgSeasonCast').prepend($('.imgDiv'));
     const summary = $(`${show.summary}`);
+
+    $('.divTitle').append(title);
+    $('.imgDiv').append(img);
     $('.divSummary').append(summary);
-    $('#aboutShow').append($('.divTitle'));
-    $('#aboutShow').append($('.divImgSeasonCast'));
-    $('#aboutShow').append($('.divSummary'));
 }
 
 export function seasonNumber(number) {

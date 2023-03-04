@@ -1,6 +1,12 @@
-import { getData, getShowId, getTop50, getTop10 } from "./js/service/service.js";
+import { getData, getTop50, getTop10 } from "./js/service/service.js";
+import { getShowId } from "./js/service/getId.js";
 import { popularShows, searchDropdown, controlDropdown, resetSearch, showNameImageSummary, seasonNumber, showSeasons, showCasts, showAKAs, showCrews, showEpisodes } from "./js/view/ui.js";
-import { Show, Season, Cast, Aka, Crew, Episode } from "./js/entities/showClasses.js";
+import { Aka } from "./js/entities/aka.js";
+import { Cast } from "./js/entities/cast.js";
+import { Crew } from "./js/entities/crew.js";
+import { Episode } from "./js/entities/episode.js";
+import { Season } from "./js/entities/season.js";
+import { Show } from "./js/entities/show.js";
 
 var showId = localStorage.getItem('showId');
 const showsApi = 'http://api.tvmaze.com/shows';
@@ -31,10 +37,9 @@ $(document).click(function() {
 function allShows() {
     getData(showsApi).then(response => {
         const top50 = getTop50(response);
-
-        $.each(top50, function (i) { 
-            const show = new Show(response[i].id, response[i].name, response[i].image.medium, response[i].summary);
-            popularShows(show);   
+        top50.forEach(element => {
+            const show = new Show(element.id, element.name, element.image.medium, element.summary);
+            popularShows(show); 
         });
 
         getShowId('img');
@@ -48,13 +53,8 @@ function search() {
         getData(api).then(response => {
             controlDropdown();
             const top10 = getTop10(response);
-
-            $.each(top10, function(i) {
-                let image = top10[i].show.image;
-                if(image == null) {
-                    image = 'https://www.charlotteathleticclub.com/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png';
-                }
-                const show = new Show(top10[i].show.id, top10[i].show.name, image, top10[i].show.summary);
+            top10.forEach(element => {
+                const show = new Show(element.show.id, element.show.name, element.show.image, element.show.summary);
                 searchDropdown(show);
             });
 
@@ -67,62 +67,56 @@ function showInfo() {
     getData(showInfoApi).then(response => {
         const show = new Show(response.id, response.name, response.image.original, response.summary);
         showNameImageSummary(show);
-    })
+    });
 }
 
 function showSeason() {
     getData(showSeasonApi).then(response => {
         let numberOfSeasons = response.length;
         seasonNumber(numberOfSeasons);
-        $.each(response, function (i) {
-            if(response[i].premiereDate == null) {
-                response[i].premiereDate = 'Unknown date';
-            } 
-            if(response[i].premiereDate == null) {
-                response[i].premiereDate = 'Unknown date';
-            } 
-            const season = new Season(response[i].premiereDate, response[i].premiereDate);
-            showSeasons(season, numberOfSeasons);
+        response.forEach(element => {
+            const season = new Season(element.premiereDate, element.premiereDate);
+            showSeasons(season);
         });
-    })
+    });
 }
 
 function showCast() {
     getData(showCastApi).then(response => {
         let top10 = response.slice(0, 10);
-        $.each(top10, function (i) { 
-            const cast = new Cast(response[i].character.name, response[i].person.name);
+        top10.forEach(element => {
+            const cast = new Cast(element.character.name, element.person.name);
             showCasts(cast);
         });
-    })
+    });
 }
 
 function showAKA() {
     getData(showAKASApi).then(response => {
         let top5 = response.slice(0, 5);
-        $.each(top5, function (i) {
-            const aka = new Aka(response[i].name, response[i].country.name);
+        top5.forEach(element => {
+            const aka = new Aka(element.name, element.country.name);
             showAKAs(aka);
         });
-    })
+    });
 }
 
 function showCrew() {
     getData(showCrewApi).then(response => {
         let top5 = response.slice(0, 5);
-        $.each(top5, function(i) {
-            const crew = new Crew(response[i].person.name, response[i].type);
+        top5.forEach(element => {
+            const crew = new Crew(element.person.name, element.type);
             showCrews(crew);
-        })
-    })
+        });
+    });
 }
 
 function showEpisode() {
     getData(episodesApi).then(response => {
-        $.each(response, function (i) { 
-            const episode = new Episode(response[i].season, response[i].number, response[i].name, response[i].rating.average);
+        response.forEach(element => {
+            const episode = new Episode(element.season, element.number, element.name, element.rating.average);
             showEpisodes(episode);
         });
-    })
+    });
 }
 
