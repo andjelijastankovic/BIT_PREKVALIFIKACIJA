@@ -37,13 +37,20 @@ html {
                 position: absolute;
                 background-color: white;
                 box-shadow: 0px 2px 3px 1px rgba(0,0,0,0.3);
-                a {
-                    display: block;
-                    width: 100%;
-                    padding: 10px;
-                    border-bottom: 1px solid rgb(184, 180, 180);
-                    color: rgb(52,58,64);
+                li {
+                    a {
+                        display: block;
+                        width: 100%;
+                        padding: 10px;
+                        border-bottom: 1px solid rgb(226, 220, 220);
+                        color: rgb(52,58,64);
+                    }&:hover {
+                        background-color: rgb(231, 224, 224);
+                        font-weight: 700;
+                        transition: 0.3s ease;
+                    }
                 }
+                
             }
 
             #search {
@@ -111,7 +118,6 @@ html {
             width: 80%;
             align-self: center;
             text-align: justify;
-            order: 5;
         }
 
         .divImgSeasonCast {
@@ -134,7 +140,7 @@ html {
 
             .divSeasonCast {
                 .divSeason {
-                    ul {
+                    .seasonList {
                         list-style-position: inside;
                         margin: 10px 0 0 20px;
                     }
@@ -142,7 +148,7 @@ html {
 
                 .divCast {
                     margin-top: 15px;
-                    ul {
+                    .castList {
                         list-style-position: inside;
                         margin: 10px 0 0 20px;
 
@@ -243,7 +249,6 @@ html {
                 
                 align-self: center;
                 text-align: justify;
-                order: 5;
             }
     
             .divImgSeasonCast {
@@ -318,7 +323,7 @@ html {
         }
     
         .episodes {
-            ul {
+            .episodesList {
                 align-self: center;
                 width: 90%;
                 max-height: 200px; 

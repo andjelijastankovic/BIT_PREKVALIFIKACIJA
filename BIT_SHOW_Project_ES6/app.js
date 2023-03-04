@@ -1,6 +1,6 @@
 import { getData, getTop50, getTop10 } from "./js/service/service.js";
 import { getShowId } from "./js/service/getId.js";
-import { popularShows, searchDropdown, controlDropdown, resetSearch, showNameImageSummary, seasonNumber, showSeasons, showCasts, showAKAs, showCrews, showEpisodes } from "./js/view/ui.js";
+import { popularShows, searchDropdown, controlDropdown, resetSearch, showNameImageSummary, seasonNumber, showSeasons, noEntry, showCasts, showAKAs, showCrews, showEpisodes, dateString } from "./js/view/ui.js";
 import { Aka } from "./js/entities/aka.js";
 import { Cast } from "./js/entities/cast.js";
 import { Crew } from "./js/entities/crew.js";
@@ -65,7 +65,7 @@ function search() {
 
 function showInfo() {
     getData(showInfoApi).then(response => {
-        const show = new Show(response.id, response.name, response.image.original, response.summary);
+        const show = new Show(response.id, response.name, response.image, response.summary);
         showNameImageSummary(show);
     });
 }
@@ -75,7 +75,9 @@ function showSeason() {
         let numberOfSeasons = response.length;
         seasonNumber(numberOfSeasons);
         response.forEach(element => {
-            const season = new Season(element.premiereDate, element.premiereDate);
+            let premiere = dateString(element.premiereDate);
+            let end = dateString(element.endDate);
+            const season = new Season(premiere, end);
             showSeasons(season);
         });
     });
@@ -83,31 +85,44 @@ function showSeason() {
 
 function showCast() {
     getData(showCastApi).then(response => {
-        let top10 = response.slice(0, 10);
-        top10.forEach(element => {
-            const cast = new Cast(element.character.name, element.person.name);
-            showCasts(cast);
-        });
+        if(response.length == 0) {
+            noEntry('.castList', 'Cast');
+        } else {
+            let top10 = response.slice(0, 10);
+            top10.forEach(element => {
+                const cast = new Cast(element.character.name, element.person.name);
+                showCasts(cast);
+            });
+        }
+        
     });
 }
 
 function showAKA() {
     getData(showAKASApi).then(response => {
-        let top5 = response.slice(0, 5);
-        top5.forEach(element => {
-            const aka = new Aka(element.name, element.country.name);
-            showAKAs(aka);
-        });
+        if(response.length == 0) {
+            noEntry('.akasList', 'AKA\'s');
+        } else {
+            let top5 = response.slice(0, 5);
+            top5.forEach(element => {
+                const aka = new Aka(element.name, element.country);
+                showAKAs(aka);
+            });
+        }
     });
 }
 
 function showCrew() {
     getData(showCrewApi).then(response => {
-        let top5 = response.slice(0, 5);
-        top5.forEach(element => {
-            const crew = new Crew(element.person.name, element.type);
-            showCrews(crew);
-        });
+        if(response.length == 0) {
+            noEntry('.crewList', 'Crew');
+        } else {
+            let top5 = response.slice(0, 5);
+            top5.forEach(element => {
+                const crew = new Crew(element.person.name, element.type);
+                showCrews(crew);
+            });
+        }
     });
 }
 

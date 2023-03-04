@@ -34,12 +34,16 @@ html {
       position: absolute;
       background-color: white;
       box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.3); }
-      .container nav form .drop a {
+      .container nav form .drop li a {
         display: block;
         width: 100%;
         padding: 10px;
-        border-bottom: 1px solid #b8b4b4;
+        border-bottom: 1px solid #e2dcdc;
         color: #343a40; }
+      .container nav form .drop li:hover {
+        background-color: #e7e0e0;
+        font-weight: 700;
+        transition: 0.3s ease; }
     .container nav form #search {
       height: 40px;
       padding-left: 5px; }
@@ -84,8 +88,7 @@ html {
   .container #aboutShow .divSummary {
     width: 80%;
     align-self: center;
-    text-align: justify;
-    order: 5; }
+    text-align: justify; }
     .container #aboutShow .divSummary h2 {
       margin-bottom: 10px; }
   .container #aboutShow .divImgSeasonCast {
@@ -100,15 +103,15 @@ html {
       width: 100%;
       max-width: 600px;
       max-height: 550px; }
-    .container #aboutShow .divImgSeasonCast .divSeasonCast .divSeason ul {
+    .container #aboutShow .divImgSeasonCast .divSeasonCast .divSeason .seasonList {
       list-style-position: inside;
       margin: 10px 0 0 20px; }
     .container #aboutShow .divImgSeasonCast .divSeasonCast .divCast {
       margin-top: 15px; }
-      .container #aboutShow .divImgSeasonCast .divSeasonCast .divCast ul {
+      .container #aboutShow .divImgSeasonCast .divSeasonCast .divCast .castList {
         list-style-position: inside;
         margin: 10px 0 0 20px; }
-        .container #aboutShow .divImgSeasonCast .divSeasonCast .divCast ul .char {
+        .container #aboutShow .divImgSeasonCast .divSeasonCast .divCast .castList .char {
           color: #343a40; }
 .container .akaCrew {
   display: flex;
@@ -157,8 +160,7 @@ html {
     padding: 15px 0; }
   .container #aboutShow .divSummary {
     align-self: center;
-    text-align: justify;
-    order: 5; }
+    text-align: justify; }
     .container #aboutShow .divSummary h2 {
       margin-bottom: 10px; }
   .container #aboutShow .divImgSeasonCast {
@@ -198,7 +200,7 @@ html {
   .container .akaCrew {
     flex-direction: column;
     align-items: flex-start; }
-  .container .episodes ul {
+  .container .episodes .episodesList {
     align-self: center;
     width: 90%;
     max-height: 200px;
