@@ -66,7 +66,7 @@ function allShows() {
         });
         getShowId('img');
         $('img').click(() => {
-            $('#popularShows').hide();
+            empty();
             aboutShowStyle();
             showInfo();
             showSeason();

@@ -1,8 +1,8 @@
 export function empty() {
     $('#popularShows').hide();
-    $('#popularShows').html('');
+    $('#popularShows').empty();
     $('#aboutShow').hide();
-    $('#aboutShow').html('');
+    $('#aboutShow').empty();
 }
 
 export function resetSearch() {
