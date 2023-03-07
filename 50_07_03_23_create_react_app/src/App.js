@@ -1,13 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import { HelloWorld } from './components/HelloWorld';
-import HelloWorldFunc from './components/HelloWorldFunc';
+import Header from './components/Header';
+import Post from './components/Post';
 
 function App() {
   return (
     <div>
-      <HelloWorld/>
-      <HelloWorldFunc/>
+      <Header/>
+      <Post/>
     </div>
   );
 }
