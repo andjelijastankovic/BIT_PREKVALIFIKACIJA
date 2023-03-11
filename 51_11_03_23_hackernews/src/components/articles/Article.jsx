@@ -24,11 +24,12 @@ export const Article = ({id}) => {
     }
 
     const time = setTime(article.time);
-    const domain = extractDomain(article.url);
+    let dom = encodeURI(article.url);
+    const domain = extractDomain(dom);
 
     return (
         <li>
-            <h4>{article.title} <span><a href={article.url}>({domain})</a></span> </h4>
+            <h4>{article.title} <span><a href={article.url} target='_blank'>({domain})</a></span> </h4>
             <div className="spans">
                 <span>{article.score} points</span>
                 <span className="author">{article.by}</span>
