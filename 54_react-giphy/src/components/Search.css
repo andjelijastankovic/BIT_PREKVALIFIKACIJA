@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+.giphy {
+    text-align: center;
+    font-weight: 300;
+}
+
+.header {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header > div {
+    border: 1px solid rgb(30,126,229);
+}
+
+.header input {
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    width: 400px;
+}
+
+.header button {
+    background-color: rgb(30,126,229);
+    color: white;
+    font-weight: bold;
+    padding: 13px;
+    outline: none;
+    border: 1px solid rgb(30,126,229);
+    height: 100%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.result {
+    padding: 20px;
+}
+
+.result .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.result .list .item {
+    margin: 10px;
+    height: 190px;
+    border: 10px solid rgb(236, 235, 235);
+}
+
+.result .list .item img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.loading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.loading .loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgb(245, 245, 245);
+    border-top: 5px solid rgb(34, 34, 34);
+    border-radius: 50%;
+    transform: rotate(0deg);
+    animation: loading 500ms ease-in-out infinite;
+}
+
+@keyframes loading {
+    to {
+        transform: rotate(360deg);
+    }
+}
