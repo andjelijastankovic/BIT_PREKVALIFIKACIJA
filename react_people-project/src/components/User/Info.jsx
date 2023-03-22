@@ -6,30 +6,12 @@ import { Grid } from './Grid';
 import { NoUser } from "../NoUser/NoUser";
 
 import '../../styles/User.css';
-export const User = ({ listView }) => {
-    const [users, setUsers] = useState([]);
-    const [loading, setLoading] = useState(true);
+export const User = ({ listView, users, setUsers, loading, setLoading, noUser, setNoUser }) => {
     const [male, setMale] = useState(0);
     const [female, setFemale] = useState(0);
     const [searchValue, setSearchValue] = useState('');
     const [filterUsers, setFilterUsers] = useState([]);
-    const [noUser, setNoUser] = useState(false);
-
-    useEffect(() => {
-        const fetchData = () => {
-            setLoading(true);
-            fetch('https://randomuser.me/api/?results=15')
-                .then((response) => response.json())
-                .then(response => {
-                    setUsers(response.results);
-                    setNoUser(false);
-                    setLoading(false);
-                })
-        }
-
-        fetchData();
-    }, [])
-
+    
     useEffect(() => {
         const newFiltered = users.filter(user => user.name.first.toLowerCase().includes(searchValue.toLowerCase()) || user.name.last.toLowerCase().includes(searchValue.toLocaleLowerCase()));
         setFilterUsers(newFiltered);

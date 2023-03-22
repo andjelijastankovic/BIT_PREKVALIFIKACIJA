@@ -4,14 +4,14 @@ import { FaThList } from "react-icons/fa";
 import { TfiLayoutGrid3Alt } from "react-icons/tfi";
 import {Link } from "react-router-dom";
 
-export const Header = ({listView, setListView}) => {
+export const Header = ({listView, setListView, reload}) => {
     
     return (
         <header>
             <h1>REACT People</h1>
             <div className="aboutAndIcons">
                 <span> <Link to='/about' className='aboutLink'>About</Link></span> 
-                <span className="icon"><MdRefresh /></span> 
+                <span className="icon" onClick={reload}><MdRefresh /></span> 
                 <span className="icon" onClick={() => setListView(!listView)}>{ listView ? <FaThList/> : <TfiLayoutGrid3Alt/> }</span> 
             </div>
         </header>
